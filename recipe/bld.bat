@@ -15,9 +15,7 @@ cmake -G "NMake Makefiles" ^
       -DENABLE_CTEST=OFF ^
       -DWITH_TESTS=OFF ^
       -DWITH_LAZPERF=ON ^
-      -DWITH_LASZIP=ON
-
-
+      -DWITH_LASZIP=ON ^
       %SRC_DIR%
 if errorlevel 1 exit 1
 
