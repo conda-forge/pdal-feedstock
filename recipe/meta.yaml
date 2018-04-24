@@ -12,13 +12,17 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
-  skip: True  # [win or not py36]
+  number: 3
+  features:
+    - vc14  # [win]
+  skip: True  # [win and py!=36]
 
 requirements:
   build:
     - cmake
     - toolchain
+    - python
+    - vc 14  # [win]
     - numpy 1.11.*
     - gdal 2.2.*
     - postgresql 10.3
@@ -39,6 +43,7 @@ requirements:
     - nitro 2.7.*
     - hexer 1.4.0
     - laszip 3.2.2
+    - vc 14  # [win]
 
 test:
   commands:
