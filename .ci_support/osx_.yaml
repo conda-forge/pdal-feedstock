@@ -8,9 +8,5 @@ macos_min_version:
 - '10.9'
 numpy:
 - '1.9'
-pin_run_as_build:
-  numpy:
-    max_pin: x
-    min_pin: x.x
 sqlite:
 - '3'
