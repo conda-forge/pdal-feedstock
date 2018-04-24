@@ -23,3 +23,6 @@ cmake -G "Unix Makefiles" \
 # CircleCI offers two cores.
 make -j $CPU_COUNT
 make install
+
+# This will not be needed once we fix upstream.
+chmod 755 $PREFIX/bin/pdal-config
