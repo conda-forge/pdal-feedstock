@@ -24,25 +24,27 @@ requirements:
     - python
     - vc 14  # [win]
     - numpy 1.11.*
-    - gdal 2.2.*
-    - postgresql 10.3
+    - libgdal 2.2.*
+    - geos 3.6.*
+    - postgresql 10.3.*
     - jsoncpp
-    - eigen 3.3.3
+    - eigen 3.3.*
     - sqlite 3.20.*
-    - laz-perf 1.1.0
+    - laz-perf 1.1.*
     - nitro 2.7.*
-    - hexer 1.4.0
-    - laszip 3.2.2
+    - hexer 1.4.*
+    - laszip 3.2.*
   run:
     - numpy >=1.11
-    - gdal 2.2.*
-    - postgresql 10.3
+    - libgdal 2.2.*
+    - geos 3.6.*
+    - postgresql 10.3.*
     - jsoncpp
     - sqlite 3.20.*
-    - laz-perf 1.1.0
+    - laz-perf 1.1.*
     - nitro 2.7.*
-    - hexer 1.4.0
-    - laszip 3.2.2
+    - hexer 1.4.*
+    - laszip 3.2.*
     - vc 14  # [win]
 
 test:
