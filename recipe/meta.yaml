@@ -10,35 +10,44 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://download.osgeo.org/{{ name }}/PDAL-{{ version }}-src.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - geos.patch
 
 build:
-  number: 2
-  skip: True  # [win or not py36]
+  number: 3
+  features:
+    - vc14  # [win]
+  skip: True  # [win and py!=36]
 
 requirements:
   build:
     - cmake
     - toolchain
+    - python
+    - vc 14  # [win]
     - numpy 1.11.*
-    - gdal 2.2.*
-    - postgresql 10.3
+    - libgdal 2.2.*
+    - geos 3.6.*
+    - postgresql 10.3.*
     - jsoncpp
-    - eigen 3.3.3
+    - eigen 3.3.*
     - sqlite 3.20.*
-    - laz-perf 1.1.0
+    - laz-perf 1.1.*
     - nitro 2.7.*
-    - hexer 1.4.0
-    - laszip 3.2.2
+    - hexer 1.4.*
+    - laszip 3.2.*
   run:
     - numpy >=1.11
-    - gdal 2.2.*
-    - postgresql 10.3
+    - libgdal 2.2.*
+    - geos 3.6.*
+    - postgresql 10.3.*
     - jsoncpp
     - sqlite 3.20.*
-    - laz-perf 1.1.0
+    - laz-perf 1.1.*
     - nitro 2.7.*
-    - hexer 1.4.0
-    - laszip 3.2.2
+    - hexer 1.4.*
+    - laszip 3.2.*
+    - vc 14  # [win]
 
 test:
   commands:
