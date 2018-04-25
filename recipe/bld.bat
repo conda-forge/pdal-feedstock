@@ -15,6 +15,7 @@ cmake -G "NMake Makefiles" ^
       -DBUILD_PLUGIN_NITF=ON ^
       -DENABLE_CTEST=OFF ^
       -DWITH_TESTS=OFF ^
+      -DWITH_ZLIB=ON ^
       -DWITH_LAZPERF=ON ^
       -DWITH_LASZIP=ON ^
       %SRC_DIR%

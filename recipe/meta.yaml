@@ -14,7 +14,7 @@ source:
     - geos.patch
 
 build:
-  number: 6
+  number: 7
   features:
     - vc14  # [win]
   skip: True  # [win and py!=36]
@@ -37,6 +37,7 @@ requirements:
     - hexer 1.4.*
     - laszip 3.2.*
     - curl
+    - zlib
   run:
     - numpy >=1.11
     - libgdal 2.2.*
@@ -50,6 +51,7 @@ requirements:
     - laszip 3.2.*
     - vc 14  # [win]
     - curl
+    - zlib
 
 test:
   commands:
