@@ -14,7 +14,7 @@ source:
     - geos.patch
 
 build:
-  number: 4
+  number: 5
   features:
     - vc14  # [win]
   skip: True  # [win and py!=36]
