@@ -14,7 +14,7 @@ source:
     - geos.patch
 
 build:
-  number: 5
+  number: 6
   features:
     - vc14  # [win]
   skip: True  # [win and py!=36]
@@ -33,9 +33,10 @@ requirements:
     - eigen 3.3.*
     - sqlite 3.20.*
     - laz-perf 1.1.*
-    - nitro 2.7.*
+    - nitro <2.8
     - hexer 1.4.*
     - laszip 3.2.*
+    - curl
   run:
     - numpy >=1.11
     - libgdal 2.2.*
@@ -44,10 +45,11 @@ requirements:
     - jsoncpp
     - sqlite 3.20.*
     - laz-perf 1.1.*
-    - nitro 2.7.*
+    - nitro <2.8
     - hexer 1.4.*
     - laszip 3.2.*
     - vc 14  # [win]
+    - curl
 
 test:
   commands:
