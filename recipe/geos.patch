@@ -1,0 +1,13 @@
+diff --git a/cmake/modules/FindGEOS.cmake b/cmake/modules/FindGEOS.cmake
+index 5be0cf3..a9aa4bc 100644
+--- a/cmake/modules/FindGEOS.cmake
++++ b/cmake/modules/FindGEOS.cmake
+@@ -29,7 +29,7 @@ IF(WIN32)
+     ENDIF()  
+ 
+     FIND_PATH(GEOS_INCLUDE_DIR geos_c.h $ENV{LIB_DIR}/include $ENV{INCLUDE} ${OSGEO4W_ROOT_DIR}/include)
+-    FIND_LIBRARY(GEOS_LIBRARY NAMES geos geos_c PATHS 
++    FIND_LIBRARY(GEOS_LIBRARY NAMES geos_c PATHS 
+       "$ENV{LIB}/lib"
+       $ENV{LIB}
+       #mingw

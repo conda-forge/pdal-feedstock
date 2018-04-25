@@ -10,6 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://download.osgeo.org/{{ name }}/PDAL-{{ version }}-src.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - geos.patch
 
 build:
   number: 3
