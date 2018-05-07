@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 curl:
-- '7.44'
+- '7.59'
 geos:
 - 3.6.2
 libgdal:
@@ -14,7 +14,7 @@ numpy:
 - '1.9'
 pin_run_as_build:
   curl:
-    max_pin: x.x
+    max_pin: x
   geos:
     max_pin: x.x.x
   libgdal:
