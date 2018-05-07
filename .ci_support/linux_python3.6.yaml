@@ -1,5 +1,7 @@
 curl:
 - '7.59'
+cxx_compiler:
+- toolchain_cxx
 geos:
 - 3.6.2
 libgdal:
