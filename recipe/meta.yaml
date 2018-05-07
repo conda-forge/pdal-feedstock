@@ -14,24 +14,22 @@ source:
     - geos.patch
 
 build:
-  number: 9
-  features:
-    - vc14  # [win]
-  skip: True  # [win and py<35]
+  number: 10
+  skip: True  # [win and vc<14]
 
 requirements:
   build:
+    - {{ compiler('cxx') }}
     - cmake
-    - toolchain
+  host:
     - python
-    - vc 14  # [win]
-    - numpy 1.11.*
-    - libgdal 2.2.*
-    - geos 3.6.*
+    - numpy
+    - libgdal
+    - geos
     - postgresql 10.3.*
     - jsoncpp
     - eigen 3.3.*
-    - sqlite 3.20.*
+    - sqlite
     - laz-perf 1.1.*
     - nitro <2.8
     - hexer 1.4.*
@@ -40,19 +38,13 @@ requirements:
     - zlib
   run:
     - python
-    - numpy >=1.11
-    - libgdal 2.2.*
-    - geos 3.6.*
-    - postgresql 10.3.*
-    - jsoncpp
-    - sqlite 3.20.*
-    - laz-perf 1.1.*
-    - nitro <2.8
-    - hexer 1.4.*
-    - laszip 3.2.*
-    - vc 14  # [win]
-    - curl
-    - zlib
+    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible('jsoncpp', max_pin='x.x.x') }}
+    - {{ pin_compatible('postgresql', max_pin='x.x') }}
+    - {{ pin_compatible('laz-perf', max_pin='x.x') }}
+    - {{ pin_compatible('nitro', max_pin='x.x') }}
+    - {{ pin_compatible('hexer', max_pin='x.x') }}
+    - {{ pin_compatible('laszip', max_pin='x.x') }}
 
 test:
   commands:
