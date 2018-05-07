@@ -1,0 +1,28 @@
+curl:
+- '7.59'
+geos:
+- 3.6.2
+libgdal:
+- '2.2'
+numpy:
+- '1.9'
+pin_run_as_build:
+  curl:
+    max_pin: x
+  geos:
+    max_pin: x.x.x
+  libgdal:
+    max_pin: x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
+  sqlite:
+    max_pin: x
+  zlib:
+    max_pin: x.x
+python:
+- '3.5'
+sqlite:
+- '3'
+zlib:
+- '1.2'

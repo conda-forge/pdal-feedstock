@@ -14,10 +14,10 @@ source:
     - geos.patch
 
 build:
-  number: 8
+  number: 9
   features:
     - vc14  # [win]
-  skip: True  # [win and py!=36]
+  skip: True  # [win and py<35]
 
 requirements:
   build:
