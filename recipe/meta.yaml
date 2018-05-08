@@ -14,7 +14,7 @@ source:
     - geos.patch
 
 build:
-  number: 10
+  number: 11
   skip: True  # [win and vc<14]
 
 requirements:
@@ -45,6 +45,10 @@ requirements:
     - {{ pin_compatible('nitro', max_pin='x.x') }}
     - {{ pin_compatible('hexer', max_pin='x.x') }}
     - {{ pin_compatible('laszip', max_pin='x.x') }}
+    - libgdal
+    - geos
+    - curl
+    - zlib
 
 test:
   commands:
