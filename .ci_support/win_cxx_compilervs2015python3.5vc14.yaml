@@ -30,5 +30,9 @@ sqlite:
 - '3'
 vc:
 - '14'
+zip_keys:
+- - python
+  - vc
+  - cxx_compiler
 zlib:
 - '1.2'
