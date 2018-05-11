@@ -46,6 +46,7 @@ requirements:
     - {{ pin_compatible('nitro', max_pin='x.x') }}
     - {{ pin_compatible('hexer', max_pin='x.x') }}
     - {{ pin_compatible('laszip', max_pin='x.x') }}
+    - {{ pin_compatible('pcl', max_pin='x.x') }}
     - libgdal
     - geos
     - curl
