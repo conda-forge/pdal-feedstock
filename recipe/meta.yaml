@@ -1,6 +1,6 @@
 {% set name = "pdal" %}
-{% set version = "1.7.1" %}
-{% set sha256 = "b780b64e68bf68cf31530a7b5822228303c671516c8282a6c6e19c3f27fbb345" %}
+{% set version = "1.7.2" %}
+{% set sha256 = "f5dd28c7f25bcd13c460a845860eded67446f3abb6b6a2e2f394a776ad03428a" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
     - geos.patch
 
 build:
-  number: 12
+  number: 0
   skip: True  # [win and vc<14]
 
 requirements:
