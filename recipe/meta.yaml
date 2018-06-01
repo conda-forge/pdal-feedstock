@@ -14,7 +14,7 @@ source:
     - geos.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -30,7 +30,7 @@ requirements:
     - jsoncpp
     - eigen 3.3.*
     - sqlite
-    - laz-perf 1.1.*
+    - laz-perf 1.2.*
     - nitro <2.8
     - hexer 1.4.*
     - laszip 3.2.*
