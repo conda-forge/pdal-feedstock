@@ -14,7 +14,7 @@ source:
     - geos.patch
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win and vc<14]
 
 requirements:
@@ -37,6 +37,8 @@ requirements:
     - curl
     - zlib
     - pcl 1.8.*
+    - boost 1.67.*
+    - boost-cpp 1.67.*
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -47,6 +49,8 @@ requirements:
     - {{ pin_compatible('hexer', max_pin='x.x') }}
     - {{ pin_compatible('laszip', max_pin='x.x') }}
     - {{ pin_compatible('pcl', max_pin='x.x') }}
+    - {{ pin_compatible('boost', max_pin='x.x') }}
+    - {{ pin_compatible('boost-cpp', max_pin='x.x') }}
     - libgdal
     - geos
     - curl
