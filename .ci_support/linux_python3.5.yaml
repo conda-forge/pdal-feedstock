@@ -1,7 +1,13 @@
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
 curl:
 - '7.59'
 cxx_compiler:
 - toolchain_cxx
+docker_image:
+- condaforge/linux-anvil
 geos:
 - 3.6.2
 jsoncpp:
