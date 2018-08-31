@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - geos.patch
+    - hdf5.patch
 
 build:
   number: 2

@@ -1,0 +1,11 @@
+diff --git a/cmake/hdf5.cmake b/cmake/hdf5.cmake
+index d2b0a7145..1ef35259e 100644
+--- a/cmake/hdf5.cmake
++++ b/cmake/hdf5.cmake
+@@ -10,5 +10,6 @@ if(HDF5_FOUND)
+     endif()
+     include_directories(${HDF5_INCLUDE_DIR})
+     add_definitions(-DHAVE_HDF5=1)
++    add_definitions(-DH5_BUILT_AS_DYNAMIC_LIB=1)
+     set(PDAL_HAVE_HDF5 1)
+ endif()
