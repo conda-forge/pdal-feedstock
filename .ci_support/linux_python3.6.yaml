@@ -10,6 +10,8 @@ docker_image:
 - condaforge/linux-anvil
 geos:
 - 3.6.2
+hdf5:
+- 1.10.3
 jsoncpp:
 - 1.8.1
 libgdal:
@@ -20,6 +22,8 @@ pin_run_as_build:
   curl:
     max_pin: x
   geos:
+    max_pin: x.x.x
+  hdf5:
     max_pin: x.x.x
   jsoncpp:
     max_pin: x.x.x
