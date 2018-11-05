@@ -16,7 +16,7 @@ source:
     - hdf5.patch
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win and vc<14]
 
 requirements:
