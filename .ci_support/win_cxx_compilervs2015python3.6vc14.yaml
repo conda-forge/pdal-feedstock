@@ -12,8 +12,6 @@ hdf5:
 - 1.10.3
 jsoncpp:
 - 1.8.1
-libgdal:
-- '2.2'
 numpy:
 - '1.11'
 pin_run_as_build:
@@ -25,8 +23,6 @@ pin_run_as_build:
     max_pin: x.x.x
   jsoncpp:
     max_pin: x.x.x
-  libgdal:
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
