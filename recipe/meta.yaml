@@ -27,7 +27,7 @@ requirements:
   host:
     - python
     - numpy
-    - libgdal=2.3.2
+    - libgdal
     - geos
     - postgresql 10.3.*
     - jsoncpp
