@@ -15,7 +15,6 @@ index d2b0a7145..29f817a5c 100644
      include_directories(${HDF5_INCLUDE_DIR})
 +    if (WIN32)
 +        add_definitions(-DH5_BUILT_AS_DYNAMIC_LIB=1)
-+        add_definitions(-DHDF5CPP_USEDLL=1)
 +    endif()
      add_definitions(-DHAVE_HDF5=1)
      set(PDAL_HAVE_HDF5 1)
