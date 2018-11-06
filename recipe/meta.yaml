@@ -14,6 +14,7 @@ source:
   patches:
     - geos.patch
     - hdf5.patch
+    - pcl.patch
 
 build:
   number: 0
