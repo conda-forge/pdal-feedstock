@@ -56,8 +56,8 @@ requirements:
     - {{ pin_compatible('laszip', max_pin='x.x') }}
     - {{ pin_compatible('pcl', max_pin='x.x') }}
     - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
-    - libgdal
-    - geos
+    - {{ pin_compatible('geos', max_pin='x.x.x') }}
+    - {{ pin_compatible('libgdal', max_pin='x.x.x') }}
     - curl
     - zlib
 
