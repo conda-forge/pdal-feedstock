@@ -57,7 +57,7 @@ requirements:
     - {{ pin_compatible('pcl', max_pin='x.x') }}
     - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
     - {{ pin_compatible('geos', max_pin='x.x') }}
-    - {{ pin_compatible('libgdal', lower_bound='2.3', upper_bound='2.4')  }}
+    - {{ pin_compatible('libgdal', max_pin='x.x')  }}
     - curl
     - zlib
 
