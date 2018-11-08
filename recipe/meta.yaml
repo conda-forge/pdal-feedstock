@@ -58,7 +58,7 @@ requirements:
     - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
     - {{ pin_compatible('geos', max_pin='x.x.x') }}
     - curl
-    - libgdal
+    - libgdal=2.3.*
     - geos
     - zlib
 
