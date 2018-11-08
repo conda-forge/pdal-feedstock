@@ -17,7 +17,7 @@ source:
     - pcl.patch
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win and vc<14]
 
 requirements:
@@ -27,7 +27,7 @@ requirements:
   host:
     - python
     - numpy
-    - gdal=2.3.2
+    - libgdal=2.3.*
     - geos
     - geotiff
     - postgresql 10.3.*
@@ -57,8 +57,8 @@ requirements:
     - {{ pin_compatible('pcl', max_pin='x.x') }}
     - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
     - {{ pin_compatible('geos', max_pin='x.x.x') }}
-    - {{ pin_compatible('gdal', max_pin='x.x.x') }}
     - curl
+    - libgdal
     - zlib
 
 test:
