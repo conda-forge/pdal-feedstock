@@ -13,7 +13,7 @@ hdf5:
 jsoncpp:
 - 1.8.1
 libgdal:
-- '2.2'
+- '2.3'
 numpy:
 - '1.11'
 pin_run_as_build:
