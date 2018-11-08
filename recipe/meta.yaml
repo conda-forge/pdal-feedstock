@@ -59,6 +59,7 @@ requirements:
     - {{ pin_compatible('geos', max_pin='x.x.x') }}
     - curl
     - libgdal
+    - geos
     - zlib
 
 test:
