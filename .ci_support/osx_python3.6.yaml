@@ -8,8 +8,6 @@ curl:
 - '7.59'
 cxx_compiler:
 - toolchain_cxx
-gdal:
-- 2.3.2
 geos:
 - 3.6.2
 hdf5:
@@ -27,8 +25,6 @@ numpy:
 pin_run_as_build:
   curl:
     max_pin: x
-  gdal:
-    max_pin: x.x
   geos:
     max_pin: x.x.x
   hdf5:
