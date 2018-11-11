@@ -8,6 +8,8 @@ cxx_compiler:
 - toolchain_cxx
 docker_image:
 - condaforge/linux-anvil
+gdal:
+- '2.3'
 geos:
 - 3.6.2
 hdf5:
@@ -21,6 +23,8 @@ numpy:
 pin_run_as_build:
   curl:
     max_pin: x
+  gdal:
+    max_pin: x.x
   geos:
     max_pin: x.x.x
   hdf5:
