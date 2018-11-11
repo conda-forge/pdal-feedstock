@@ -1,18 +1,20 @@
 {% set name = "pdal" %}
-{% set version = "1.7.2" %}
-{% set sha256 = "f5dd28c7f25bcd13c460a845860eded67446f3abb6b6a2e2f394a776ad03428a" %}
+{% set version = "1.8.0" %}
+{% set sha256 = "1d88c96b9407396be22c9ebf564023feb82d65456b5666ecd50b0e7ea5f75ab0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: http://download.osgeo.org/{{ name }}/PDAL-{{ version }}-src.tar.gz
+  fn: {{ name }}-{{ version }}.tar.bz2
+  url: https://github.com/PDAL/PDAL/releases/download/{{version}}/PDAL-{{version}}-src.tar.bz2
+
   sha256: {{ sha256 }}
   patches:
     - geos.patch
     - hdf5.patch
+    - pcl.patch
 
 build:
   number: 3
@@ -25,10 +27,12 @@ requirements:
   host:
     - python
     - numpy
-    - libgdal
+    - libgdal=2.3.*
     - geos
+    - geotiff
     - postgresql 10.3.*
     - jsoncpp
+    - libkml
     - eigen 3.3.*
     - sqlite
     - laz-perf 1.2.*
@@ -45,13 +49,15 @@ requirements:
     - {{ pin_compatible('jsoncpp', max_pin='x.x.x') }}
     - {{ pin_compatible('postgresql', max_pin='x.x') }}
     - {{ pin_compatible('laz-perf', max_pin='x.x') }}
+    - {{ pin_compatible('geotiff', max_pin='x.x') }}
     - {{ pin_compatible('nitro', max_pin='x.x') }}
+    - {{ pin_compatible('libkml', max_pin='x.x') }}
     - {{ pin_compatible('hexer', max_pin='x.x') }}
     - {{ pin_compatible('laszip', max_pin='x.x') }}
     - {{ pin_compatible('pcl', max_pin='x.x') }}
     - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
-    - libgdal
-    - geos
+    - {{ pin_compatible('geos', max_pin='x.x') }}
+    - {{ pin_compatible('libgdal', lower_bound='2.3', upper_bound='2.4')  }}
     - curl
     - zlib
 
