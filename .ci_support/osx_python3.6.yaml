@@ -9,7 +9,7 @@ curl:
 cxx_compiler:
 - toolchain_cxx
 gdal:
-- 2.3.2
+- '2.3'
 geos:
 - 3.6.2
 hdf5:

@@ -9,7 +9,7 @@ cxx_compiler:
 docker_image:
 - condaforge/linux-anvil
 gdal:
-- 2.3.2
+- '2.3'
 geos:
 - 3.6.2
 hdf5:
