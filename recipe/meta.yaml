@@ -25,9 +25,10 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
   host:
+    - libgdal  {{ gdal }}
     - python
     - numpy
-    - libgdal=2.3.*
+    - libgdal 2.3.*
     - geos
     - geotiff
     - postgresql 10.3.*
