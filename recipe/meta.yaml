@@ -32,6 +32,7 @@ requirements:
     - geos
     - postgresql 10.3.*
     - jsoncpp
+    - libkml
     - eigen 3.3.*
     - sqlite
     - laz-perf 1.2.*
