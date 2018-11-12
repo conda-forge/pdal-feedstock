@@ -18,6 +18,8 @@ jsoncpp:
 - 1.8.1
 libgdal:
 - '2.3'
+libkml:
+- '1.3'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
@@ -36,6 +38,8 @@ pin_run_as_build:
   jsoncpp:
     max_pin: x.x.x
   libgdal:
+    max_pin: x.x
+  libkml:
     max_pin: x.x
   python:
     min_pin: x.x
