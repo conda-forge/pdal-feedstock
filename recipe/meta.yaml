@@ -17,7 +17,7 @@ source:
     - pcl.patch
 
 build:
-  number: 4
+  number: 5
   skip: True  # [win and vc<14]
 
 requirements:
