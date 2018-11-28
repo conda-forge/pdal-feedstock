@@ -17,7 +17,11 @@ source:
     - pcl.patch
 
 build:
+<<<<<<< HEAD
   number: 4
+=======
+  number: 5
+>>>>>>> 2e7425d3d405b205f8396820fd603a43f4f7630f
   skip: True  # [win and vc<14]
 
 requirements:
