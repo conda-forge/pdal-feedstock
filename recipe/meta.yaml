@@ -25,7 +25,6 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
   host:
-    - libgdal  {{ gdal }}
     - python
     - numpy
     - libgdal 2.3.*
@@ -38,7 +37,6 @@ requirements:
     - sqlite
     - laz-perf 1.2.*
     - nitro <2.8
-    - hexer 1.4.*
     - laszip 3.2.*
     - curl
     - zlib
@@ -53,7 +51,6 @@ requirements:
     - {{ pin_compatible('geotiff', max_pin='x.x') }}
     - {{ pin_compatible('nitro', max_pin='x.x') }}
     - {{ pin_compatible('libkml', max_pin='x.x') }}
-    - {{ pin_compatible('hexer', max_pin='x.x') }}
     - {{ pin_compatible('laszip', max_pin='x.x') }}
     - {{ pin_compatible('pcl', max_pin='x.x') }}
     - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
