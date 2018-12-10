@@ -29,7 +29,7 @@ requirements:
     - python
     - numpy
     - libgdal 2.3.*
-    - geos
+    - geos 3.6.*
     - geotiff
     - postgresql 10.3.*
     - jsoncpp
