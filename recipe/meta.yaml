@@ -41,7 +41,7 @@ requirements:
     - curl
     - zlib
     - pcl 1.9.*
-    - hdf5 1.10.*
+    - hdf5 1.10.20
   run:
     - python
     - {{ pin_compatible('numpy') }}
