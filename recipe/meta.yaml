@@ -27,7 +27,7 @@ requirements:
   host:
     - python
     - numpy
-    - libgdal 2.3.*
+    - libgdal 2.3.2
     - geos 3.6.*
     - geotiff
     - postgresql 10.3.*
@@ -41,7 +41,7 @@ requirements:
     - curl
     - zlib
     - pcl 1.9.*
-    - hdf5 1.10.2
+    - hdf5
   run:
     - python
     - {{ pin_compatible('numpy') }}
