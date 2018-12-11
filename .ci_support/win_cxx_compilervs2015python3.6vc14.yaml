@@ -6,10 +6,8 @@ curl:
 - '7.59'
 cxx_compiler:
 - vs2015
-gdal:
-- 2.2.4
-geos:
-- 3.6.2
+hdf5:
+- 1.10.2
 jsoncpp:
 - 1.8.4
 libkml:
@@ -19,10 +17,6 @@ numpy:
 pin_run_as_build:
   curl:
     max_pin: x
-  gdal:
-    max_pin: x.x
-  geos:
-    max_pin: x.x.x
   jsoncpp:
     max_pin: x.x.x
   libkml:
