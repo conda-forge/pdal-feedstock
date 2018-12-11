@@ -29,6 +29,7 @@ requirements:
     - numpy
     - libgdal 2.3.2
     - geos 3.6.*
+    - libtiff 4.0.9
     - geotiff
     - postgresql 10.3.*
     - jsoncpp
@@ -41,11 +42,12 @@ requirements:
     - curl
     - zlib
     - pcl 1.9.*
-    - hdf5
+    - hdf5 1.10.2
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('jsoncpp', max_pin='x.x.x') }}
+    - {{ pin_compatible('libtiff', max_pin='x.x.x') }}
     - {{ pin_compatible('postgresql', max_pin='x.x') }}
     - {{ pin_compatible('laz-perf', max_pin='x.x') }}
     - {{ pin_compatible('geotiff', max_pin='x.x') }}
