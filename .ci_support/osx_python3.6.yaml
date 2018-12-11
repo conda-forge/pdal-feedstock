@@ -8,8 +8,6 @@ curl:
 - '7.59'
 cxx_compiler:
 - toolchain_cxx
-hdf5:
-- 1.10.4
 jsoncpp:
 - 1.8.4
 libkml:

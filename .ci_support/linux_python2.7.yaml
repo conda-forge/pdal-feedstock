@@ -8,8 +8,6 @@ cxx_compiler:
 - toolchain_cxx
 docker_image:
 - condaforge/linux-anvil
-hdf5:
-- 1.10.4
 jsoncpp:
 - 1.8.4
 libkml:
