@@ -56,6 +56,8 @@ install:
     # compiler cleanup
     - |
       mangle_compiler ./ ./recipe ./.ci_support/${CONFIG}.yaml
+    - |
+      travis_wait mvn 20 install
 
 script:
   # generate the build number clobber
