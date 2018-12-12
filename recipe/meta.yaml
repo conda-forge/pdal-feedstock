@@ -29,7 +29,6 @@ requirements:
     - numpy
     - libgdal 2.3.2
     - geos 3.6.*
-    - libtiff 4.0.9
     - geotiff
     - postgresql 10.3.*
     - jsoncpp
