@@ -17,7 +17,7 @@ source:
     - pcl.patch
 
 build:
-  number: 5
+  number: 6
   skip: True  # [win and vc<14]
 
 requirements:
@@ -25,11 +25,10 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
   host:
-    - libgdal  {{ gdal }}
     - python
     - numpy
-    - libgdal 2.3.*
-    - geos
+    - libgdal 2.3.2
+    - geos 3.6.*
     - geotiff
     - postgresql 10.3.*
     - jsoncpp
@@ -38,22 +37,21 @@ requirements:
     - sqlite
     - laz-perf 1.2.*
     - nitro <2.8
-    - hexer 1.4.*
     - laszip 3.2.*
     - curl
     - zlib
-    - pcl 1.8.*
-    - hdf5
+    - pcl 1.9.*
+    - hdf5 1.10.*
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('jsoncpp', max_pin='x.x.x') }}
+    - {{ pin_compatible('libtiff', max_pin='x.x.x') }}
     - {{ pin_compatible('postgresql', max_pin='x.x') }}
     - {{ pin_compatible('laz-perf', max_pin='x.x') }}
     - {{ pin_compatible('geotiff', max_pin='x.x') }}
     - {{ pin_compatible('nitro', max_pin='x.x') }}
     - {{ pin_compatible('libkml', max_pin='x.x') }}
-    - {{ pin_compatible('hexer', max_pin='x.x') }}
     - {{ pin_compatible('laszip', max_pin='x.x') }}
     - {{ pin_compatible('pcl', max_pin='x.x') }}
     - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
