@@ -36,11 +36,11 @@ requirements:
     - eigen
     - sqlite
     - laz-perf
-    - nitro <2.8
+    - nitro
     - laszip
     - curl
     - zlib
-    - pcl
+    - pcl 1.9.*
     - hdf5
   run:
     - python
@@ -50,12 +50,12 @@ requirements:
     - laz-perf
     - geotiff
     - laszip
-    - pcl
+    - {{ pin_compatible('pcl', max_pin='x.x') }}
     - hdf5
     - geos
     - libgdal
     - {{ pin_compatible('numpy') }}
-    - {{ pin_compatible('nitro', max_pin='x.x') }}
+    - nitro
     - curl
     - zlib
 
