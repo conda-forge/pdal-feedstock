@@ -40,7 +40,7 @@ requirements:
     - laszip
     - curl
     - zlib
-    - pcl 1.9.*
+    - pcl
     - hdf5
   run:
     - python
@@ -50,7 +50,7 @@ requirements:
     - laz-perf
     - geotiff
     - laszip
-    - {{ pin_compatible('pcl', max_pin='x.x') }}
+    - pcl
     - hdf5
     - geos
     - libgdal
