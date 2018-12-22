@@ -17,7 +17,7 @@ source:
     - pcl.patch
 
 build:
-  number: 6
+  number: 7
   skip: True  # [win and vc<14]
 
 requirements:
@@ -27,36 +27,35 @@ requirements:
   host:
     - python
     - numpy
-    - libgdal 2.3.2
-    - geos 3.6.*
+    - libgdal
+    - geos
     - geotiff
-    - postgresql 10.3.*
+    - postgresql
     - jsoncpp
     - libkml
-    - eigen 3.3.*
+    - eigen
     - sqlite
-    - laz-perf 1.2.*
-    - nitro <2.8
-    - laszip 3.2.*
+    - laz-perf
+    - nitro
+    - laszip
     - curl
     - zlib
-    - pcl 1.9.*
-    - hdf5 1.10.*
+    - pcl
+    - hdf5
   run:
     - python
+    - numpy
+    - jsoncpp
+    - postgresql
+    - laz-perf
+    - geotiff
+    - laszip
+    - pcl
+    - hdf5
+    - geos
+    - libgdal
     - {{ pin_compatible('numpy') }}
-    - {{ pin_compatible('jsoncpp', max_pin='x.x.x') }}
-    - {{ pin_compatible('libtiff', max_pin='x.x.x') }}
-    - {{ pin_compatible('postgresql', max_pin='x.x') }}
-    - {{ pin_compatible('laz-perf', max_pin='x.x') }}
-    - {{ pin_compatible('geotiff', max_pin='x.x') }}
-    - {{ pin_compatible('nitro', max_pin='x.x') }}
-    - {{ pin_compatible('libkml', max_pin='x.x') }}
-    - {{ pin_compatible('laszip', max_pin='x.x') }}
-    - {{ pin_compatible('pcl', max_pin='x.x') }}
-    - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
-    - {{ pin_compatible('geos', max_pin='x.x') }}
-    - {{ pin_compatible('libgdal', max_pin='x.x') }}
+    - nitro
     - curl
     - zlib
 

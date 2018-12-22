@@ -4,7 +4,8 @@
 language: generic
 
 os: osx
-osx_image: xcode6.4
+osx_image: xcode9.4
+
 
 env:
   matrix:
@@ -48,7 +49,7 @@ install:
       echo "Configuring conda."
       source /Users/travis/miniconda3/bin/activate root
 
-      conda install --yes --quiet conda-forge::conda-forge-ci-setup=2
+      conda install -n root -c conda-forge --quiet --yes conda-forge-ci-setup=2
       setup_conda_rc ./ ./recipe ./.ci_support/${CONFIG}.yaml
 
       source run_conda_forge_build_setup
@@ -60,5 +61,5 @@ install:
 script:
   # generate the build number clobber
   - make_build_number ./ ./recipe ./.ci_support/${CONFIG}.yaml
-  - conda build ./recipe -m ./.ci_support/${CONFIG}.yaml --clobber-file ./.ci_support/clobber_${CONFIG}.yaml
+  - travis_wait 40 conda build ./recipe -m ./.ci_support/${CONFIG}.yaml --clobber-file ./.ci_support/clobber_${CONFIG}.yaml
   - upload_package ./ ./recipe ./.ci_support/${CONFIG}.yaml
