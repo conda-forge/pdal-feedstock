@@ -1,11 +1,11 @@
 channel_sources:
-- conda-forge,defaults
+- conda-forge/label/gcc7,defaults
 channel_targets:
-- conda-forge main
+- conda-forge gcc7
 curl:
 - '7.59'
 cxx_compiler:
-- toolchain_cxx
+- gxx
 docker_image:
 - condaforge/linux-anvil
 geos:
