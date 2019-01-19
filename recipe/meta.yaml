@@ -62,7 +62,7 @@ requirements:
 test:
   commands:
     - pdal --version
-    - pdal --drivers
+    - pdal --drivers --debug
 
 about:
   home: https://www.pdal.io
