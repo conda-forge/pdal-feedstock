@@ -50,9 +50,8 @@ docker run ${DOCKER_RUN_ARGS} \
            -e HOST_USER_ID \
            -e UPLOAD_PACKAGES \
            $DOCKER_IMAGE \
-           bash
-#           \
-#           /home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh
+           bash \
+           /home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh
 
 # verify that the end of the script was reached
 test -f "$DONE_CANARY"
