@@ -15,6 +15,7 @@ source:
     - geos.patch
     - hdf5.patch
     - pcl.patch
+    - apps.patch
 
 build:
   number: 8
