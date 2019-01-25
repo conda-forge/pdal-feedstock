@@ -3,6 +3,10 @@
 set -ex
 
 export CXXFLAGS="$CXXFLAGS -std=c++11"
+if [ "$(uname)" == "Linux" ]
+then
+   export LDFLAGS="$LDFLAGS -Wl,-rpath-link,${PREFIX}/lib"
+fi
 
 cmake -G "Unix Makefiles" \
   -DCMAKE_BUILD_TYPE=Release \
