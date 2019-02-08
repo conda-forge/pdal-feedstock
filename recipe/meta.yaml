@@ -15,9 +15,10 @@ source:
     - geos.patch
     - hdf5.patch
     - pcl.patch
+    - apps.patch
 
 build:
-  number: 1000
+  number: 8
   skip: True  # [win and vc<14]
 
 requirements:
@@ -62,7 +63,7 @@ requirements:
 test:
   commands:
     - pdal --version
-    - pdal --drivers
+    - pdal --drivers --debug
 
 about:
   home: https://www.pdal.io
