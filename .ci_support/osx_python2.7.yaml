@@ -8,6 +8,8 @@ curl:
 - '7.64'
 cxx_compiler:
 - clangxx
+cxx_compiler_version:
+- '4'
 geos:
 - 3.7.1
 geotiff:
