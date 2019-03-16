@@ -66,13 +66,13 @@ test:
     - pdal --drivers --debug
 
 about:
-  home: https://www.pdal.io
-  license: BSD 3-Clause
+  home: https://pdal.io
+  license: BSD
   license_file: LICENSE.txt
   summary: 'Point Data Abstraction Library (PDAL)'
   description: |
     Point cloud data processing.
-  doc_url: https://www.pdal.io
+  doc_url: https://pdal.io
   dev_url: https://github.com/pdal/pdal
 
 extra:
