@@ -5,9 +5,9 @@
 About pdal
 ==========
 
-Home: https://www.pdal.io
+Home: https://pdal.io
 
-Package license: BSD 3-Clause
+Package license: BSD
 
 Feedstock license: BSD 3-Clause
 
