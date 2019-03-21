@@ -2,10 +2,9 @@
 
 set -ex
 
-export CXXFLAGS="$CXXFLAGS -std=c++11"
-if [ "$(uname)" == "Linux" ]
-then
-   export LDFLAGS="$LDFLAGS -Wl,-rpath-link,${PREFIX}/lib"
+export CXXFLAGS="${CXXFLAGS} -std=c++11"
+if [ "$(uname)" == "Linux" ]; then
+   export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,${PREFIX}/lib"
 fi
 
 cmake -G "Unix Makefiles" \
@@ -17,6 +16,7 @@ cmake -G "Unix Makefiles" \
   -DBUILD_PLUGIN_I3S=ON \
   -DBUILD_PLUGIN_PCL=ON \
   -DBUILD_PLUGIN_PYTHON=ON \
+  -DPDAL_PYTHON_LIBRARY="libPython${SHLIB_EXT}" \
   -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
   -DBUILD_PLUGIN_SQLITE=ON \
   -DBUILD_PLUGIN_ICEBRIDGE=ON \

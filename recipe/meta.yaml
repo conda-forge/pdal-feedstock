@@ -1,16 +1,12 @@
-{% set name = "pdal" %}
 {% set version = "1.8.0" %}
-{% set sha256 = "1d88c96b9407396be22c9ebf564023feb82d65456b5666ecd50b0e7ea5f75ab0" %}
 
 package:
-  name: {{ name|lower }}
+  name: pdal
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
   url: https://github.com/PDAL/PDAL/releases/download/{{version}}/PDAL-{{version}}-src.tar.bz2
-
-  sha256: {{ sha256 }}
+  sha256: 1d88c96b9407396be22c9ebf564023feb82d65456b5666ecd50b0e7ea5f75ab0
   patches:
     - geos.patch
     - hdf5.patch
@@ -18,7 +14,7 @@ source:
     - apps.patch
 
 build:
-  number: 8
+  number: 9
   skip: True  # [win and vc<14]
 
 requirements:
@@ -67,12 +63,11 @@ test:
 
 about:
   home: https://www.pdal.io
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: 'Point Data Abstraction Library (PDAL)'
-  description: |
-    Point cloud data processing.
-  doc_url: https://www.pdal.io
+  description: Point cloud data processing.
+  doc_url: https://pdal.io
   dev_url: https://github.com/pdal/pdal
 
 extra:
