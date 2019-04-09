@@ -8,8 +8,6 @@ source:
   url: https://github.com/PDAL/PDAL/releases/download/{{version}}/PDAL-{{version}}-src.tar.bz2
   sha256: 7b7f37ae018e9350b1f3fb7604bb0bf11ddff812a4c95cf68b6363da2dcdbd09
   patches:
-    - geos.patch
-    - hdf5.patch
     - pcl.patch
     - apps.patch
 
@@ -20,6 +18,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
     - cmake
   host:
     - python
