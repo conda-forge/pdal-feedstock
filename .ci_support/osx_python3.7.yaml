@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+c_compiler:
+- clang
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -8,12 +10,10 @@ curl:
 - '7.64'
 cxx_compiler:
 - clangxx
-cxx_compiler_version:
-- '4'
 geos:
 - 3.7.1
 geotiff:
-- 1.4.2
+- 1.5.1
 hdf5:
 - 1.10.4
 jsoncpp:
@@ -34,7 +34,7 @@ pin_run_as_build:
   geos:
     max_pin: x.x.x
   geotiff:
-    max_pin: x.x
+    max_pin: x.x.x
   jsoncpp:
     max_pin: x.x.x
   libgdal:
