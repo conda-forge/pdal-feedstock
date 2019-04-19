@@ -1,3 +1,5 @@
+c_compiler:
+- gcc
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -6,14 +8,12 @@ curl:
 - '7.64'
 cxx_compiler:
 - gxx
-cxx_compiler_version:
-- '7'
 docker_image:
 - condaforge/linux-anvil-comp7
 geos:
 - 3.7.1
 geotiff:
-- 1.4.2
+- 1.5.1
 hdf5:
 - 1.10.4
 jsoncpp:
@@ -30,7 +30,7 @@ pin_run_as_build:
   geos:
     max_pin: x.x.x
   geotiff:
-    max_pin: x.x
+    max_pin: x.x.x
   jsoncpp:
     max_pin: x.x.x
   libgdal:
