@@ -1,4 +1,4 @@
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
 
 package:
   name: pdal
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{version}}/PDAL-{{version}}-src.tar.bz2
-  sha256: 7b7f37ae018e9350b1f3fb7604bb0bf11ddff812a4c95cf68b6363da2dcdbd09
+  sha256: 31a026279106aabb48aa3cffd94a889325d9247744a53d4ceeda91d12f38430d
   patches:
     - pcl.patch
     - apps.patch
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win and vc<14]
 
 requirements:
