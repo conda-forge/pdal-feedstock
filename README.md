@@ -1,7 +1,7 @@
 About pdal
 ==========
 
-Home: https://pdal.io
+Home: https://www.pdal.io
 
 Package license: BSD-3-Clause
 
@@ -23,7 +23,7 @@ Current build status
       </a>
     </td>
   </tr>
-
+    
   <tr>
     <td>Azure</td>
     <td>
