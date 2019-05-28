@@ -1,3 +1,5 @@
+c_compiler:
+- vs2015
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -9,7 +11,7 @@ cxx_compiler:
 geos:
 - 3.7.1
 geotiff:
-- 1.4.2
+- 1.5.1
 hdf5:
 - 1.10.4
 jsoncpp:
@@ -26,7 +28,7 @@ pin_run_as_build:
   geos:
     max_pin: x.x.x
   geotiff:
-    max_pin: x.x
+    max_pin: x.x.x
   jsoncpp:
     max_pin: x.x.x
   libgdal:
@@ -51,6 +53,7 @@ vc:
 zip_keys:
 - - python
   - vc
+  - c_compiler
   - cxx_compiler
 zlib:
 - '1.2'

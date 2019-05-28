@@ -3,14 +3,13 @@ About pdal
 
 Home: https://pdal.io
 
-Package license: BSD
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
 Summary: Point Data Abstraction Library (PDAL)
 
 Point cloud data processing.
-
 
 Current build status
 ====================
@@ -24,7 +23,7 @@ Current build status
       </a>
     </td>
   </tr>
-    
+
   <tr>
     <td>Azure</td>
     <td>
@@ -79,17 +78,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_cxx_compilervs2015python3.6vc14</td>
+              <td>win_c_compilervs2015cxx_compilervs2015python3.6vc14</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=master&jobName=win&configuration=win_cxx_compilervs2015python3.6vc14" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015python3.6vc14" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_cxx_compilervs2015python3.7vc14</td>
+              <td>win_c_compilervs2015cxx_compilervs2015python3.7vc14</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=master&jobName=win&configuration=win_cxx_compilervs2015python3.7vc14" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015python3.7vc14" alt="variant">
                 </a>
               </td>
             </tr>
@@ -98,6 +97,7 @@ Current build status
       </details>
     </td>
   </tr>
+![ppc64le disabled](https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg)
 </table>
 
 Current release info
