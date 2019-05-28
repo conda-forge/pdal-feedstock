@@ -13,7 +13,7 @@ source:
 
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -39,6 +39,7 @@ requirements:
     - zlib
     - pcl
     - hdf5
+    - zstd
   run:
     - python
     - numpy
@@ -55,6 +56,7 @@ requirements:
     - nitro
     - curl
     - zlib
+    - zstd
 
 test:
   commands:
