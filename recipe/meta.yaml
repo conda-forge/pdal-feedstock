@@ -12,7 +12,7 @@ source:
     - apps.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -38,6 +38,7 @@ requirements:
     - zlib
     - pcl
     - hdf5
+    - tiledb  # [not win]
   run:
     - python
     - numpy
@@ -54,6 +55,7 @@ requirements:
     - nitro
     - curl
     - zlib
+    - tiledb  # [not win]
 
 test:
   commands:
