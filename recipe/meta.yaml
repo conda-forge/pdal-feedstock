@@ -40,6 +40,7 @@ requirements:
     - pcl
     - hdf5
     - zstd
+    - tiledb  # [not win]
   run:
     - python
     - numpy
@@ -57,6 +58,7 @@ requirements:
     - curl
     - zlib
     - zstd
+    - tiledb  # [not win]
 
 test:
   commands:
