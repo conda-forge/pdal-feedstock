@@ -20,6 +20,7 @@ cmake -G "NMake Makefiles" ^
       -DWITH_TESTS=OFF ^
       -DWITH_ZLIB=ON ^
       -DWITH_ZSTD=ON ^
+      -DZSTD_LIBRARY="%LIBRARY_LIB%\libzstd.lib" ^
       -DWITH_LAZPERF=ON ^
       -DWITH_LASZIP=ON ^
       %SRC_DIR%
