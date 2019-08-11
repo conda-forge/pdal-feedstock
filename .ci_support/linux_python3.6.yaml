@@ -23,7 +23,7 @@ hdf5:
 jsoncpp:
 - 1.8.4
 libgdal:
-- '2.4'
+- '3.0'
 libkml:
 - '1.3'
 numpy:
