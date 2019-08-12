@@ -7,17 +7,9 @@ if [ "$(uname)" == "Linux" ]; then
    export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,${PREFIX}/lib"
 fi
 
-if [[ ${PY3K} == '1' ]]; then
-  export Python_ROOT_DIR="-D Python3_ROOT_DIR:FILEPATH=${PREFIX}"
-  export Python_FIND_STRATEGY="-D Python3_FIND_STRATEGY=LOCATION"
-else
-  export Python_ROOT_DIR="-D Python_ROOT_DIR:FILEPATH=${PREFIX}"
-  export Python_FIND_STRATEGY="-D Python_FIND_STRATEGY=LOCATION"
-fi
-
 cmake -G "Unix Makefiles" \
-   ${Python_ROOT_DIR} \
-   ${Python_FIND_STRATEGY} \
+  -D Python_ROOT_DIR:FILEPATH=${PREFIX} \
+  -D Python_FIND_STRATEGY=LOCATION \
   -D CMAKE_BUILD_TYPE=Release \
   -D CMAKE_INSTALL_PREFIX=${PREFIX} \
   -D CMAKE_LIBRARY_PATH=${PREFIX}/lib \
