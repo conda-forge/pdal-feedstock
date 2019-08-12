@@ -7,39 +7,48 @@ if [ "$(uname)" == "Linux" ]; then
    export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,${PREFIX}/lib"
 fi
 
+if [[ ${PY3K} == '1' ]]; then
+  export Python_ROOT_DIR="-D Python3_ROOT_DIR:FILEPATH=${PREFIX}"
+  export Python_FIND_STRATEGY="-D Python3_FIND_STRATEGY=LOCATION"
+else
+  export Python_ROOT_DIR="-D Python_ROOT_DIR:FILEPATH=${PREFIX}"
+  export Python_FIND_STRATEGY="-D Python_FIND_STRATEGY=LOCATION"
+fi
+
 cmake -G "Unix Makefiles" \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX=$PREFIX \
-  -DCMAKE_LIBRARY_PATH=$PREFIX/lib \
-  -DCMAKE_INCLUDE_PATH=$PREFIX/include \
-  -DPython3_ROOT_DIR:FILEPATH="$PREFIX" \
-  -DBUILD_PLUGIN_GREYHOUND=ON \
-  -DBUILD_PLUGIN_I3S=ON \
-  -DBUILD_PLUGIN_PCL=ON \
-  -DBUILD_PLUGIN_PYTHON=ON \
-  -DPDAL_PYTHON_LIBRARY="libPython${SHLIB_EXT}" \
-  -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
-  -DBUILD_PLUGIN_SQLITE=ON \
-  -DBUILD_PLUGIN_ICEBRIDGE=ON \
-  -DBUILD_PLUGIN_HEXBIN=ON \
-  -DBUILD_PLUGIN_NITF=ON \
-  -DBUILD_PLUGIN_TILEDB=ON \
-  -DENABLE_CTEST=OFF \
-  -DWITH_TESTS=OFF \
-  -DWITH_ZLIB=ON \
-  -DWITH_ZSTD=ON \
-  -DWITH_LAZPERF=ON \
-  -DWITH_LASZIP=ON
+   ${Python_ROOT_DIR} \
+   ${Python_FIND_STRATEGY} \
+  -D CMAKE_BUILD_TYPE=Release \
+  -D CMAKE_INSTALL_PREFIX=${PREFIX} \
+  -D CMAKE_LIBRARY_PATH=${PREFIX}/lib \
+  -D CMAKE_INCLUDE_PATH=${PREFIX}/include \
+  -D BUILD_PLUGIN_GREYHOUND=ON \
+  -D BUILD_PLUGIN_I3S=ON \
+  -D BUILD_PLUGIN_PCL=ON \
+  -D BUILD_PLUGIN_PYTHON=ON \
+  -D PDAL_PYTHON_LIBRARY="libPython${SHLIB_EXT}" \
+  -D BUILD_PLUGIN_PGPOINTCLOUD=ON \
+  -D BUILD_PLUGIN_SQLITE=ON \
+  -D BUILD_PLUGIN_ICEBRIDGE=ON \
+  -D BUILD_PLUGIN_HEXBIN=ON \
+  -D BUILD_PLUGIN_NITF=ON \
+  -D BUILD_PLUGIN_TILEDB=ON \
+  -D ENABLE_CTEST=OFF \
+  -D WITH_TESTS=OFF \
+  -D WITH_ZLIB=ON \
+  -D WITH_ZSTD=ON \
+  -D WITH_LAZPERF=ON \
+  -D WITH_LASZIP=ON
 
 # CircleCI offers two cores.
 make -j $CPU_COUNT
 make install
 
 # This will not be needed once we fix upstream.
-chmod 755 $PREFIX/bin/pdal-config
+chmod 755 ${PREFIX}/bin/pdal-config
 
-ACTIVATE_DIR=$PREFIX/etc/conda/activate.d
-DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d
+ACTIVATE_DIR=${PREFIX}/etc/conda/activate.d
+DEACTIVATE_DIR=${PREFIX}/etc/conda/deactivate.d
 mkdir -p $ACTIVATE_DIR
 mkdir -p $DEACTIVATE_DIR
 
