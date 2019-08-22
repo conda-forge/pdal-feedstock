@@ -33,6 +33,9 @@ pin_run_as_build:
     max_pin: x.x
   libkml:
     max_pin: x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
   sqlite:
     max_pin: x
   vc:
@@ -41,12 +44,15 @@ pin_run_as_build:
     max_pin: x.x
   zstd:
     max_pin: x.x.x
+python:
+- '3.6'
 sqlite:
 - '3'
 vc:
 - '14'
 zip_keys:
-- - vc
+- - python
+  - vc
   - c_compiler
   - cxx_compiler
 zlib:

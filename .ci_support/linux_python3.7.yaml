@@ -39,6 +39,9 @@ pin_run_as_build:
     max_pin: x.x
   libkml:
     max_pin: x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
   sqlite:
     max_pin: x
   tiledb:
@@ -47,6 +50,8 @@ pin_run_as_build:
     max_pin: x.x
   zstd:
     max_pin: x.x.x
+python:
+- '3.7'
 sqlite:
 - '3'
 tiledb:
