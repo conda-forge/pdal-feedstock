@@ -8,7 +8,6 @@ source:
   url: https://github.com/PDAL/PDAL/releases/download/{{version}}/PDAL-{{version}}-src.tar.bz2
   sha256: 9f0deb0ff6238c0e52283c2772163575d0e656c8f17562b9a1f1fbfd07dad7f7
   patches:
-    - pcl.patch
     - apps.patch
 
 build:
