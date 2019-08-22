@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - cmake
   host:
-    - python
+    - python >=3.5
     - numpy
     - libgdal
     - geos
@@ -40,7 +40,7 @@ requirements:
     - tiledb  # [not win]
     - zstd
   run:
-    - python
+    - python >=3.5
     - numpy
     - jsoncpp
     - postgresql
@@ -51,7 +51,7 @@ requirements:
     - hdf5
     - geos
     - libgdal
-    - {{ pin_compatible('numpy') }}
+    - numpy
     - nitro
     - curl
     - zlib
