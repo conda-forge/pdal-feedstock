@@ -36,7 +36,7 @@ requirements:
     - curl
     - zlib
     - hdf5
-    - tiledb  # [not win]
+    - tiledb
     - zstd
   run:
     - python>=3.5
@@ -53,7 +53,7 @@ requirements:
     - nitro
     - curl
     - zlib
-    - tiledb  # [not win]
+    - tiledb
     - zstd
 
 test:
