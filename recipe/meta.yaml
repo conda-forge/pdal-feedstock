@@ -35,7 +35,6 @@ requirements:
     - laszip
     - curl
     - zlib
-    - pcl
     - hdf5
     - tiledb  # [not win]
     - zstd
@@ -47,7 +46,6 @@ requirements:
     - laz-perf
     - geotiff
     - laszip
-    - pcl
     - hdf5
     - geos
     - libgdal
