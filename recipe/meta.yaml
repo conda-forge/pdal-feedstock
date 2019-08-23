@@ -55,6 +55,23 @@ requirements:
     - zlib
     - tiledb
     - zstd
+  build:
+    - python
+    - numpy
+    - jsoncpp
+    - postgresql
+    - laz-perf
+    - geotiff
+    - laszip
+    - hdf5
+    - geos
+    - libgdal
+    - {{ pin_compatible('numpy') }}
+    - nitro
+    - curl
+    - zlib
+    - tiledb
+    - zstd
 
 test:
   commands:
