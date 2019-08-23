@@ -21,7 +21,7 @@ requirements:
     - cmake
   host:
     - python
-    - numpy {{ numpy }}
+    - numpy
     - libgdal
     - geos
     - geotiff
@@ -40,7 +40,7 @@ requirements:
     - zstd
   run:
     - python
-    - numpy {{ numpy }}
+    - numpy
     - jsoncpp
     - postgresql
     - laz-perf
