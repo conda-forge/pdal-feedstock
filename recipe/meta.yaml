@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [win and vc<14]
+  skip: True  # [(win and vc<14) or py<35]
 
 requirements:
   build:
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - cmake
   host:
-    - python>=3.5
+    - python
     - numpy
     - libgdal
     - geos
@@ -39,7 +39,7 @@ requirements:
     - tiledb  # [not win]
     - zstd
   run:
-    - python>=3.5
+    - python
     - numpy
     - jsoncpp
     - postgresql
