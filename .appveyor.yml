@@ -8,7 +8,10 @@ environment:
   
 
   matrix:
-    - CONFIG: win_c_compilervs2015cxx_compilervs2015vc14
+    - CONFIG: win_c_compilervs2015cxx_compilervs2015python3.6vc14
+      CONDA_INSTALL_LOCN: C:\Miniconda36-x64
+
+    - CONFIG: win_c_compilervs2015cxx_compilervs2015python3.7vc14
       CONDA_INSTALL_LOCN: C:\Miniconda36-x64
 
 

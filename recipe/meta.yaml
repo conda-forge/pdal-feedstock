@@ -11,8 +11,8 @@ source:
     - apps.patch
 
 build:
-  number: 1
-  skip: True  # [win and vc<14]
+  number: 2
+  skip: True  # [(win and vc<14) or py<35]
 
 requirements:
   build:
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - cmake
   host:
-    - python>=3.5
+    - python
     - numpy
     - libgdal
     - geos
@@ -39,7 +39,7 @@ requirements:
     - tiledb
     - zstd
   run:
-    - python>=3.5
+    - python
     - numpy
     - jsoncpp
     - postgresql
