@@ -15,6 +15,26 @@ build:
   skip: True  # [(win and vc<14) or py<35]
 
 requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
+    - cmake
+    - python
+    - numpy
+    - jsoncpp
+    - postgresql
+    - laz-perf
+    - geotiff
+    - laszip
+    - hdf5
+    - geos
+    - libgdal
+    - {{ pin_compatible('numpy') }}
+    - nitro
+    - curl
+    - zlib
+    - tiledb
+    - zstd
   host:
     - python
     - numpy
@@ -51,27 +71,6 @@ requirements:
     - zlib
     - tiledb
     - zstd
-  build:
-    - {{ compiler('cxx') }}
-    - {{ compiler('c') }}
-    - cmake
-    - python
-    - numpy
-    - jsoncpp
-    - postgresql
-    - laz-perf
-    - geotiff
-    - laszip
-    - hdf5
-    - geos
-    - libgdal
-    - {{ pin_compatible('numpy') }}
-    - nitro
-    - curl
-    - zlib
-    - tiledb
-    - zstd
-
 test:
   commands:
     - pdal --version
