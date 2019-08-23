@@ -1,4 +1,4 @@
-{% set version = "1.9.1" %}
+{% set version = "2.0.0" %}
 
 package:
   name: pdal
@@ -6,13 +6,12 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{version}}/PDAL-{{version}}-src.tar.bz2
-  sha256: 31a026279106aabb48aa3cffd94a889325d9247744a53d4ceeda91d12f38430d
+  sha256: 9f0deb0ff6238c0e52283c2772163575d0e656c8f17562b9a1f1fbfd07dad7f7
   patches:
-    - pcl.patch
     - apps.patch
 
 build:
-  number: 6
+  number: 0
   skip: True  # [win and vc<14]
 
 requirements:
@@ -21,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - cmake
   host:
-    - python
+    - python>=3.5
     - numpy
     - libgdal
     - geos
@@ -41,7 +40,7 @@ requirements:
     - tiledb  # [not win]
     - zstd
   run:
-    - python
+    - python>=3.5
     - numpy
     - jsoncpp
     - postgresql
