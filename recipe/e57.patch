@@ -1,0 +1,15 @@
+diff --git a/plugins/e57/libE57Format/src/CheckedFile.h b/plugins/e57/libE57Format/src/CheckedFile.h
+index 7021ff1ac..934b66095 100644
+--- a/plugins/e57/libE57Format/src/CheckedFile.h
++++ b/plugins/e57/libE57Format/src/CheckedFile.h
+@@ -32,8 +32,10 @@
+ #include "Common.h"
+ 
+ #ifdef _WIN32
++#ifndef off_t
+ typedef int64_t off_t;
+ #endif
++#endif
+ 
+ namespace e57 {
+ 

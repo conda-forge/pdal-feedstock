@@ -9,6 +9,7 @@ source:
   sha256: d1e2d5bf031345ed585e340a3bc01100a53955ce0f885c4dfb0345bd2a0fe40a
   patches:
     - apps.patch
+    - e57.patch
 
 build:
   number: 3
