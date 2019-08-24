@@ -9,9 +9,10 @@ source:
   sha256: d1e2d5bf031345ed585e340a3bc01100a53955ce0f885c4dfb0345bd2a0fe40a
   patches:
     - apps.patch
+    - e57.patch
 
 build:
-  number: 2
+  number: 3
   skip: True  # [(win and vc<14) or py<35]
 
 requirements:
@@ -38,6 +39,7 @@ requirements:
     - hdf5
     - tiledb
     - zstd
+    - libxml2
   run:
     - python
     - numpy
@@ -55,6 +57,7 @@ requirements:
     - zlib
     - tiledb
     - zstd
+    - libxml2
 
 test:
   commands:
