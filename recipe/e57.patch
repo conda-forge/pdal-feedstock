@@ -1,5 +1,18 @@
+diff --git a/plugins/e57/io/E57Reader.cpp b/plugins/e57/io/E57Reader.cpp
+index a0cfcb7f1..e4939adc9 100644
+--- a/plugins/e57/io/E57Reader.cpp
++++ b/plugins/e57/io/E57Reader.cpp
+@@ -185,7 +185,7 @@ point_count_t E57Reader::read(PointViewPtr view, point_count_t count)
+     // How many do we read
+     PointId nextId = view->size();
+     point_count_t remainingInput = m_pointCount - nextId;
+-    point_count_t toReadCount = std::min(count, remainingInput);
++    point_count_t toReadCount = (std::min)(count, remainingInput);
+ 
+     point_count_t remaining = toReadCount;
+     for (point_count_t i=0; i < remaining; i++)
 diff --git a/plugins/e57/libE57Format/src/CheckedFile.h b/plugins/e57/libE57Format/src/CheckedFile.h
-index 7021ff1ac..52f3a4106 100644
+index 7021ff1ac..f54560408 100644
 --- a/plugins/e57/libE57Format/src/CheckedFile.h
 +++ b/plugins/e57/libE57Format/src/CheckedFile.h
 @@ -31,10 +31,6 @@
@@ -13,3 +26,25 @@ index 7021ff1ac..52f3a4106 100644
  namespace e57 {
  
     class CheckedFile
+@@ -118,7 +114,7 @@ namespace e57 {
+       const off_t page = physicalOffset >> physicalPageSizeLog2;
+       const size_t remainder = static_cast<size_t> (physicalOffset & physicalPageSizeMask);
+ 
+-      return page*logicalPageSize + std::min(remainder, logicalPageSize);
++      return page*logicalPageSize + (std::min)(remainder, logicalPageSize);
+    }
+ 
+ }
+diff --git a/plugins/e57/libE57Format/src/ImageFileImpl.cpp b/plugins/e57/libE57Format/src/ImageFileImpl.cpp
+index 496878757..95ff58a47 100644
+--- a/plugins/e57/libE57Format/src/ImageFileImpl.cpp
++++ b/plugins/e57/libE57Format/src/ImageFileImpl.cpp
+@@ -78,7 +78,7 @@ namespace e57
+       : isWriter_( false ),
+         writerCount_(0),
+         readerCount_(0),
+-        checksumPolicy( std::max( 0, std::min( policy, 100 ) ) ),
++        checksumPolicy( (std::max)( 0, (std::min)( policy, 100 ) ) ),
+         file_(nullptr),
+         xmlLogicalOffset_( 0 ),
+         xmlLogicalLength_( 0 ),
