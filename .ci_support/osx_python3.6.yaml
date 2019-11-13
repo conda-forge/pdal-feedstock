@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '4'
+- '9'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -13,7 +13,7 @@ curl:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '4'
+- '9'
 geos:
 - 3.7.2
 geotiff:
@@ -54,6 +54,8 @@ pin_run_as_build:
     max_pin: x
   tiledb:
     max_pin: x.x.x
+  xerces-c:
+    max_pin: x.x.x
   zlib:
     max_pin: x.x
   zstd:
@@ -64,7 +66,9 @@ sqlite:
 - '3'
 tiledb:
 - 1.6.2
+xerces_c:
+- 3.2.2
 zlib:
 - '1.2'
 zstd:
-- 1.4.0
+- 1.4.3
