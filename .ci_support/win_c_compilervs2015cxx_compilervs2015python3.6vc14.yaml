@@ -57,7 +57,7 @@ python:
 sqlite:
 - '3'
 tiledb:
-- 1.6.2
+- 1.7.0
 vc:
 - '14'
 xerces_c:
