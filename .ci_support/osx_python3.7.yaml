@@ -65,10 +65,10 @@ python:
 sqlite:
 - '3'
 tiledb:
-- 1.6.2
+- 1.7.0
 xerces_c:
 - 3.2.2
 zlib:
 - '1.2'
 zstd:
-- 1.4.3
+- 1.4.4

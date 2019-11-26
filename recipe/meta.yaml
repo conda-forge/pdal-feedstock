@@ -12,12 +12,12 @@ source:
     - e57.patch
 
 build:
-  number: 6
+  number: 7
   skip: True  # [(win and vc<14) or py<35]
 
 requirements:
   build:
-    -  {{ compiler('cxx') }}
+    - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - cmake
   host:
