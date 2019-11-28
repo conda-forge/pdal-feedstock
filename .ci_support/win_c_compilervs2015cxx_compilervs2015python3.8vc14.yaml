@@ -46,8 +46,6 @@ pin_run_as_build:
     max_pin: x.x.x
   vc:
     max_pin: x
-  xerces-c:
-    max_pin: x.x.x
   zlib:
     max_pin: x.x
   zstd:
@@ -60,8 +58,6 @@ tiledb:
 - 1.7.0
 vc:
 - '14'
-xerces_c:
-- 3.2.2
 zip_keys:
 - - python
   - vc
