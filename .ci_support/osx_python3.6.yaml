@@ -54,8 +54,6 @@ pin_run_as_build:
     max_pin: x
   tiledb:
     max_pin: x.x.x
-  xerces-c:
-    max_pin: x.x.x
   zlib:
     max_pin: x.x
   zstd:
@@ -66,8 +64,6 @@ sqlite:
 - '3'
 tiledb:
 - 1.7.0
-xerces_c:
-- 3.2.2
 zlib:
 - '1.2'
 zstd:
