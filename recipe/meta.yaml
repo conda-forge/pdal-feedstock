@@ -12,7 +12,7 @@ source:
     - e57.patch
 
 build:
-  number: 7
+  number: 9
   skip: True  # [(win and vc<14) or py<35]
 
 requirements:
@@ -40,7 +40,6 @@ requirements:
     - tiledb
     - zstd
     - libxml2
-    - xerces-c
   run:
     - python
     - numpy
@@ -59,7 +58,6 @@ requirements:
     - tiledb
     - zstd
     - libxml2
-    - xerces-c
 
 test:
   commands:

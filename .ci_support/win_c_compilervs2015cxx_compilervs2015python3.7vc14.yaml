@@ -9,7 +9,7 @@ curl:
 cxx_compiler:
 - vs2015
 geos:
-- 3.7.2
+- 3.8.0
 geotiff:
 - 1.5.1
 hdf5:
@@ -46,8 +46,6 @@ pin_run_as_build:
     max_pin: x.x.x
   vc:
     max_pin: x
-  xerces-c:
-    max_pin: x.x.x
   zlib:
     max_pin: x.x
   zstd:
@@ -60,8 +58,6 @@ tiledb:
 - 1.7.0
 vc:
 - '14'
-xerces_c:
-- 3.2.2
 zip_keys:
 - - python
   - vc
