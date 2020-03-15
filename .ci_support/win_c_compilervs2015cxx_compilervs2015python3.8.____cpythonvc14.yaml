@@ -1,7 +1,5 @@
 c_compiler:
-- gcc
-c_compiler_version:
-- '7'
+- vs2015
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -9,13 +7,9 @@ channel_targets:
 curl:
 - '7.64'
 cxx_compiler:
-- gxx
-cxx_compiler_version:
-- '7'
-docker_image:
-- condaforge/linux-anvil-comp7
+- vs2015
 geos:
-- 3.8.0
+- 3.8.1
 geotiff:
 - 1.5.1
 hdf5:
@@ -50,16 +44,25 @@ pin_run_as_build:
     max_pin: x
   tiledb:
     max_pin: x.x.x
+  vc:
+    max_pin: x
   zlib:
     max_pin: x.x
   zstd:
     max_pin: x.x.x
 python:
-- '3.8'
+- 3.8.* *_cpython
 sqlite:
 - '3'
 tiledb:
 - 1.7.0
+vc:
+- '14'
+zip_keys:
+- - python
+  - vc
+  - c_compiler
+  - cxx_compiler
 zlib:
 - '1.2'
 zstd:
