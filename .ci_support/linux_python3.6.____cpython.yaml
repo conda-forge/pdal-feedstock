@@ -15,7 +15,7 @@ cxx_compiler_version:
 docker_image:
 - condaforge/linux-anvil-comp7
 geos:
-- 3.8.0
+- 3.8.1
 geotiff:
 - 1.5.1
 hdf5:
@@ -55,7 +55,7 @@ pin_run_as_build:
   zstd:
     max_pin: x.x.x
 python:
-- '3.7'
+- 3.6.* *_cpython
 sqlite:
 - '3'
 tiledb:
