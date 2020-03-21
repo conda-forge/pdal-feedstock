@@ -1,4 +1,4 @@
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: pdal
@@ -6,13 +6,10 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{version}}/PDAL-{{version}}-src.tar.bz2
-  sha256: d1e2d5bf031345ed585e340a3bc01100a53955ce0f885c4dfb0345bd2a0fe40a
-  patches:
-    - apps.patch
-    - e57.patch
+  sha256: f7f8b1c1f1571da774d4030836dab2f9e6896f14a1591ae8da1f893c66abd339
 
 build:
-  number: 10
+  number: 0
   skip: True  # [(win and vc<14) or py<35]
 
 requirements:
@@ -21,8 +18,6 @@ requirements:
     - {{ compiler('c') }}
     - cmake
   host:
-    - python
-    - numpy
     - libgdal
     - geos
     - geotiff
@@ -41,7 +36,6 @@ requirements:
     - zstd
     - libxml2
   run:
-    - python
     - numpy
     - jsoncpp
     - postgresql
