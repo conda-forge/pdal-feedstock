@@ -7,7 +7,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 curl:
-- '7.64'
+- '7'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -19,7 +19,7 @@ geos:
 geotiff:
 - 1.5.1
 hdf5:
-- 1.10.5
+- 1.10.6
 jsoncpp:
 - 1.8.4
 libgdal:
@@ -44,7 +44,7 @@ pin_run_as_build:
   sqlite:
     max_pin: x
   tiledb:
-    max_pin: x.x.x
+    max_pin: x.x
   zlib:
     max_pin: x.x
   zstd:
@@ -52,7 +52,7 @@ pin_run_as_build:
 sqlite:
 - '3'
 tiledb:
-- 1.7.0
+- '1.7'
 zlib:
 - '1.2'
 zstd:
