@@ -5,13 +5,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/PDAL/PDAL/releases/download/{{version}}/PDAL-{{version}}-src.tar.bz2
+  url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
   sha256: f7f8b1c1f1571da774d4030836dab2f9e6896f14a1591ae8da1f893c66abd339
   patches:
     - interface.patch
 
 build:
-  number: 4
+  number: 5
   skip: True  # [(win and vc<14) or py<35]
 
 requirements:
