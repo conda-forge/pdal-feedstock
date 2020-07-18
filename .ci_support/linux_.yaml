@@ -17,7 +17,7 @@ docker_image:
 geos:
 - 3.8.1
 geotiff:
-- 1.5.1
+- '1.6'
 hdf5:
 - 1.10.6
 jsoncpp:
@@ -47,13 +47,11 @@ pin_run_as_build:
     max_pin: x.x
   zlib:
     max_pin: x.x
-  zstd:
-    max_pin: x.x.x
 sqlite:
 - '3'
 tiledb:
-- '1.7'
+- '2.0'
 zlib:
 - '1.2'
 zstd:
-- 1.4.4
+- '1.4'
