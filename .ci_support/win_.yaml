@@ -11,13 +11,13 @@ cxx_compiler:
 geos:
 - 3.8.1
 geotiff:
-- 1.5.1
+- '1.6'
 hdf5:
 - 1.10.6
 jsoncpp:
 - 1.8.4
 libgdal:
-- '3.0'
+- '3.1'
 libkml:
 - '1.3'
 libxml2:
@@ -41,8 +41,6 @@ pin_run_as_build:
     max_pin: x.x
   zlib:
     max_pin: x.x
-  zstd:
-    max_pin: x.x.x
 sqlite:
 - '3'
 tiledb:
@@ -52,4 +50,4 @@ vc:
 zlib:
 - '1.2'
 zstd:
-- 1.4.4
+- '1.4'
