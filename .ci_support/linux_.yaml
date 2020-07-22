@@ -50,7 +50,7 @@ pin_run_as_build:
 sqlite:
 - '3'
 tiledb:
-- '1.7'
+- '2.0'
 zlib:
 - '1.2'
 zstd:
