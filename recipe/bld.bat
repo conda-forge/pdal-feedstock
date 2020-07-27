@@ -12,6 +12,7 @@ cmake -G "NMake Makefiles" ^
       -DBUILD_PLUGIN_ICEBRIDGE=ON ^
       -DBUILD_PLUGIN_NITF=OFF ^
       -DBUILD_PLUGIN_TILEDB=ON ^
+      -DBUILD_PLUGIN_HDF=ON ^
       -DENABLE_CTEST=OFF ^
       -DWITH_TESTS=OFF ^
       -DWITH_ZLIB=ON ^
