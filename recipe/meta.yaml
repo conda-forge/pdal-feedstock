@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: pdal
@@ -6,13 +6,11 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: f7f8b1c1f1571da774d4030836dab2f9e6896f14a1591ae8da1f893c66abd339
-  patches:
-    - interface.patch
+  sha256: 7f6406d8f6536701f28f215d7b77c2c476f2fa100c1a391ebbcc868210114273
 
 build:
-  number: 7
-  skip: True  # [(win and vc<14) or py<35]
+  number: 0
+  skip: true  # [(win and vc<14) or py<35]
 
 requirements:
   build:
@@ -64,7 +62,7 @@ about:
   home: https://www.pdal.io
   license: BSD-3-Clause
   license_file: LICENSE.txt
-  summary: 'Point Data Abstraction Library (PDAL)'
+  summary: Point Data Abstraction Library (PDAL)
   description: Point cloud data processing.
   doc_url: https://pdal.io
   dev_url: https://github.com/pdal/pdal
