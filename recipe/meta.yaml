@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
   sha256: 7f6406d8f6536701f28f215d7b77c2c476f2fa100c1a391ebbcc868210114273
-  patches:
-    - interface.patch
 
 build:
   number: 0
