@@ -52,7 +52,7 @@ sqlite:
 target_platform:
 - linux-64
 tiledb:
-- '2.0'
+- '2.1'
 zlib:
 - '1.2'
 zstd:
