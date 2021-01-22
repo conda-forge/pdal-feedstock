@@ -23,7 +23,7 @@ geotiff:
 hdf5:
 - 1.10.6
 jsoncpp:
-- '1.9'
+- 1.9.4
 libgdal:
 - '3.1'
 libkml:
