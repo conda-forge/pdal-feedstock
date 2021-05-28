@@ -1,4 +1,4 @@
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: pdal
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: 7f6406d8f6536701f28f215d7b77c2c476f2fa100c1a391ebbcc868210114273
+  sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
 
 build:
-  number: 9
+  number: 0
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
@@ -17,6 +17,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - cmake
+    - pkgconfig
   host:
     - libgdal
     - geos
@@ -35,6 +36,7 @@ requirements:
     - tiledb
     - zstd
     - libxml2
+    - draco
   run:
     - numpy
     - jsoncpp
@@ -52,6 +54,7 @@ requirements:
     - tiledb
     - zstd
     - libxml2
+    - draco
 
 test:
   commands:
