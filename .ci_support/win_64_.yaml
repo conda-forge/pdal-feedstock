@@ -46,7 +46,7 @@ sqlite:
 target_platform:
 - win-64
 tiledb:
-- '2.2'
+- '2.3'
 vc:
 - '14'
 zlib:
