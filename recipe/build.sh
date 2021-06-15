@@ -5,6 +5,9 @@ set -ex
 export CXXFLAGS="${CXXFLAGS} -std=c++11"
 if [ "$(uname)" == "Linux" ]; then
    export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,${PREFIX}/lib"
+
+   # need this for draco finding
+   export PKG_CONFIG_PATH="$PKG_CONFIG_PATH;${PREFIX}/lib64/pkgconfig"
 fi
 
 cmake -G "Unix Makefiles" \
