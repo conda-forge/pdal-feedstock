@@ -27,7 +27,7 @@ requirements:
     - libkml
     - eigen
     - sqlite
-    - laz-perf
+    - laz-perf=2.0
     - nitro
     - laszip
     - curl
@@ -42,7 +42,7 @@ requirements:
     - numpy
     - jsoncpp
     - postgresql
-    - laz-perf
+    - laz-perf=2.0
     - geotiff
     - laszip
     - hdf5
