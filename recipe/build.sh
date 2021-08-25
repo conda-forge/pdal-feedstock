@@ -27,7 +27,6 @@ cmake -G "Unix Makefiles" \
   -DWITH_TESTS=OFF \
   -DWITH_ZLIB=ON \
   -DWITH_ZSTD=ON \
-  -DWITH_LAZPERF=ON \
   -DWITH_LASZIP=ON
 
 # CircleCI offers two cores.

@@ -9,7 +9,7 @@ source:
   sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
 
 build:
-  number: 4
+  number: 5
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
@@ -27,7 +27,6 @@ requirements:
     - libkml
     - eigen
     - sqlite
-    - laz-perf =2.0
     - nitro
     - laszip
     - curl
@@ -42,7 +41,6 @@ requirements:
     - numpy
     - jsoncpp
     - postgresql
-    - laz-perf =2.0
     - geotiff
     - laszip
     - hdf5
