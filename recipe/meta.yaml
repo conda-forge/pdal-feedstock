@@ -9,7 +9,7 @@ source:
   sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
 
 build:
-  number: 5
+  number: 6
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
@@ -29,6 +29,7 @@ requirements:
     - sqlite
     - nitro
     - laszip
+    - laz-perf
     - curl
     - zlib
     - hdf5
@@ -49,6 +50,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - nitro
     - curl
+    - laz-perf
     - zlib
     - tiledb
     - zstd
