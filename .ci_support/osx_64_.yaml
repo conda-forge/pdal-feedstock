@@ -17,7 +17,7 @@ cxx_compiler_version:
 geos:
 - 3.9.1
 geotiff:
-- '1.6'
+- '1.7'
 hdf5:
 - 1.12.1
 jsoncpp:
