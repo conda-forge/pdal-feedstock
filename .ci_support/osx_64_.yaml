@@ -5,7 +5,7 @@ c_compiler:
 c_compiler_version:
 - '11'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 curl:
@@ -19,7 +19,7 @@ geos:
 geotiff:
 - '1.6'
 hdf5:
-- 1.10.6
+- 1.12.1
 jsoncpp:
 - 1.9.4
 libgdal:
