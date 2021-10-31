@@ -17,7 +17,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
 geos:
-- 3.9.1
+- 3.10.0
 geotiff:
 - '1.7'
 hdf5:
