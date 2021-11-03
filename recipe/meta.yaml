@@ -9,7 +9,7 @@ source:
   sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
 
 build:
-  number: 9
+  number: 10
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
@@ -20,13 +20,11 @@ requirements:
     - pkgconfig
   host:
     - libgdal
-    - geos
     - geotiff
     - postgresql
     - jsoncpp
     - libkml
     - eigen
-    - sqlite
     - nitro
     - laszip
     - laz-perf
@@ -39,24 +37,22 @@ requirements:
     - draco
     - pkgconfig
   run:
-    - numpy
-    - jsoncpp
-    - postgresql
-    - geotiff
-    - laszip
-    - hdf5
-    - geos
     - libgdal
-    - {{ pin_compatible('numpy') }}
+    - geotiff
+    - postgresql
+    - jsoncpp
+    - libkml
+    - eigen
     - nitro
-    - curl
+    - laszip
     - laz-perf
+    - curl
     - zlib
+    - hdf5
     - tiledb
     - zstd
     - libxml2
     - draco
-    - pkgconfig
 
 test:
   commands:
