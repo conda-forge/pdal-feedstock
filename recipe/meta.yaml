@@ -18,7 +18,7 @@ requirements:
     - {{ compiler('c') }}
     - cmake
     - make
-    - pkgconfig
+    - pkg-config
   host:
     - libgdal
     - geotiff
@@ -36,7 +36,6 @@ requirements:
     - zstd
     - libxml2
     - draco
-    - pkgconfig
   run:
     - libgdal
     - geotiff
@@ -54,7 +53,6 @@ requirements:
     - zstd
     - libxml2
     - draco
-    - pkgconfig
 
 test:
   commands:
