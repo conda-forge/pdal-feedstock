@@ -19,6 +19,22 @@ requirements:
     - cmake
     - make
     - pkg-config
+    - libgdal
+    - geotiff
+    - postgresql
+    - jsoncpp
+    - libkml
+    - eigen
+    - nitro
+    - laszip
+    - laz-perf
+    - curl
+    - zlib
+    - hdf5
+    - tiledb
+    - zstd
+    - libxml2
+    - draco
   host:
     - libgdal
     - geotiff
