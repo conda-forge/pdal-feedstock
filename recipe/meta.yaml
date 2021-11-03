@@ -54,6 +54,7 @@ requirements:
     - zstd
     - libxml2
     - draco
+    - pkgconfig
 
 test:
   commands:
