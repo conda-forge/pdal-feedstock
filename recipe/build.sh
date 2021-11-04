@@ -10,8 +10,6 @@ if [ "$(uname)" == "Linux" ]; then
    export PKG_CONFIG_PATH="$PKG_CONFIG_PATH;${PREFIX}/lib64/pkgconfig"
 fi
 
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
-
   mkdir native; cd native;
   cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
@@ -19,7 +17,8 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
     ..
 
   make dimbuilder
-fi
+  cd ..
+
 
 cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
   -DCMAKE_BUILD_TYPE=Release \
