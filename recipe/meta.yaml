@@ -21,7 +21,7 @@ requirements:
     - pkg-config
     - libgdal
     - geotiff
-    - postgresql
+    - libpq
     - jsoncpp
     - libkml
     - eigen
@@ -38,7 +38,7 @@ requirements:
   host:
     - libgdal
     - geotiff
-    - postgresql
+    - libpq
     - jsoncpp
     - libkml
     - eigen
@@ -55,7 +55,7 @@ requirements:
   run:
     - libgdal
     - geotiff
-    - postgresql
+    - libpq
     - jsoncpp
     - libkml
     - eigen
