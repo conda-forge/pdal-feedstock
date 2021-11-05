@@ -13,7 +13,7 @@ fi
 
 if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   mkdir native; cd native;
-  cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
+  cmake -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" \
     ..
