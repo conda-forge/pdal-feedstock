@@ -12,7 +12,7 @@ index 8dd8845f3..c4b7e3754 100644
  #------------------------------------------------------------------------------
  # Configure build targets
 diff --git a/cmake/dimension.cmake b/cmake/dimension.cmake
-index ebb7222d4..69f2a7a20 100644
+index ebb7222d4..97163d139 100644
 --- a/cmake/dimension.cmake
 +++ b/cmake/dimension.cmake
 @@ -4,7 +4,13 @@
@@ -27,7 +27,7 @@ index ebb7222d4..69f2a7a20 100644
 +ENDIF (CMAKE_CROSSCOMPILING)
  add_custom_command(OUTPUT ${DIMENSION_OUTFILE}
 -    COMMAND dimbuilder ${DIMENSION_INFILE} ${DIMENSION_OUTFILE}
-+    COMMAND $DIMBUILDER ${DIMENSION_INFILE} ${DIMENSION_OUTFILE}
++    COMMAND ${DIMBUILDER} ${DIMENSION_INFILE} ${DIMENSION_OUTFILE}
          DEPENDS ${DIMENSION_INFILE} dimbuilder)
  add_custom_target(generate_dimension_hpp DEPENDS ${DIMENSION_OUTFILE})
 diff --git a/dimbuilder/CMakeLists.txt b/dimbuilder/CMakeLists.txt
