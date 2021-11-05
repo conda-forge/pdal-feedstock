@@ -24,7 +24,7 @@ if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
 
   cmake -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" \
+    -DCMAKE_OSX_ARCHITECTURES="x86_64" \
     ..
 
   export DIMBUILDER=`pwd`/bin/dimbuilder
@@ -33,6 +33,7 @@ if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
 fi
 
 
+rm -rf build && mkdir build &&  cd build
 cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
@@ -51,9 +52,10 @@ cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
   -DWITH_TESTS=OFF \
   -DWITH_ZLIB=ON \
   -DWITH_ZSTD=ON \
-  -DWITH_LASZIP=ON
+  -DWITH_LASZIP=OFF \
+  -DWITH_LASPERF=ON \
+  ..
 
-# CircleCI offers two cores.
 make -j $CPU_COUNT
 make install
 
