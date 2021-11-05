@@ -53,7 +53,7 @@ cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
   -DWITH_ZLIB=ON \
   -DWITH_ZSTD=ON \
   -DWITH_LASZIP=OFF \
-  -DWITH_LASPERF=ON \
+  -DWITH_LAZPERF=ON \
   ..
 
 make -j $CPU_COUNT
