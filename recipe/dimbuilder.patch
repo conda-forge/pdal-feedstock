@@ -12,10 +12,10 @@ index 8dd8845f3..c4b7e3754 100644
  #------------------------------------------------------------------------------
  # Configure build targets
 diff --git a/cmake/dimension.cmake b/cmake/dimension.cmake
-index ebb7222d4..97163d139 100644
+index ebb7222d4..7ac446839 100644
 --- a/cmake/dimension.cmake
 +++ b/cmake/dimension.cmake
-@@ -4,7 +4,13 @@
+@@ -4,7 +4,16 @@
  
  set(DIMENSION_INFILE ${PDAL_SRC_DIR}/Dimension.json)
  set(DIMENSION_OUTFILE ${CMAKE_CURRENT_BINARY_DIR}/include/pdal/Dimension.hpp)
@@ -25,6 +25,9 @@ index ebb7222d4..97163d139 100644
 +ELSE (CMAKE_CROSSCOMPILING)
 +    SET(DIMBUILDER dimbuilder)
 +ENDIF (CMAKE_CROSSCOMPILING)
++
++MESSAGE(INFO "DIMBUILDER location: ${DIMBUILDER}" )
++
  add_custom_command(OUTPUT ${DIMENSION_OUTFILE}
 -    COMMAND dimbuilder ${DIMENSION_INFILE} ${DIMENSION_OUTFILE}
 +    COMMAND ${DIMBUILDER} ${DIMENSION_INFILE} ${DIMENSION_OUTFILE}
