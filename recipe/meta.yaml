@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
   sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
+  patches:
+    - dimbuilder.patch
 
 build:
   number: 10

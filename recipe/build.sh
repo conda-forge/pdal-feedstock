@@ -10,14 +10,17 @@ if [ "$(uname)" == "Linux" ]; then
    export PKG_CONFIG_PATH="$PKG_CONFIG_PATH;${PREFIX}/lib64/pkgconfig"
 fi
 
+
+if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   mkdir native; cd native;
   cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
     ..
 
+  export DIMBUILDER=`pwd`/bin/dimbuilder
   make dimbuilder
   cd ..
+fi
 
 
 cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
@@ -25,6 +28,7 @@ cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_LIBRARY_PATH=$PREFIX/lib \
   -DCMAKE_INCLUDE_PATH=$PREFIX/include \
+  -DDIMBUILDER_EXECUTABLE=$DIMBUILDER \
   -DBUILD_PLUGIN_I3S=ON \
   -DBUILD_PLUGIN_E57=ON \
   -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
