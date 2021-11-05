@@ -13,6 +13,15 @@ fi
 
 if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   mkdir native; cd native;
+
+  export CC=$CC_FOR_BUILD
+  export CXX=$CXX_FOR_BUILD
+  export LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX}
+
+  # Unset them as we're ok with builds that are either slow or non-portable
+  unset CFLAGS
+  unset CXXFLAGS
+
   cmake -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" \
