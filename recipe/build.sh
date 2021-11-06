@@ -14,15 +14,11 @@ fi
 if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   mkdir native; cd native;
 
-  export CC=$CC_FOR_BUILD
-  export CXX=$CXX_FOR_BUILD
-  export LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX}
-
   # Unset them as we're ok with builds that are either slow or non-portable
   unset CFLAGS
   unset CXXFLAGS
 
-  cmake -G "Unix Makefiles" \
+  CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX} cmake -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_OSX_ARCHITECTURES="x86_64" \
     ..
@@ -30,15 +26,16 @@ if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   export DIMBUILDER=`pwd`/bin/dimbuilder
   make dimbuilder
   cd ..
+
+
 fi
 
 
 rm -rf build && mkdir build &&  cd build
-cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
+cmake ${CMAKE_ARGS} \
+  -DUILD_SHARED_LIBS=ON \
   -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX=$BUILD_PREFIX \
-  -DCMAKE_LIBRARY_PATH=$BUILD_PREFIX/lib \
-  -DCMAKE_INCLUDE_PATH=$BUILD_PREFIX/include \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DDIMBUILDER_EXECUTABLE=$DIMBUILDER \
   -DBUILD_PLUGIN_I3S=ON \
   -DBUILD_PLUGIN_E57=ON \
@@ -56,7 +53,7 @@ cmake ${CMAKE_ARGS} -G "Unix Makefiles" \
   -DWITH_LAZPERF=ON \
   ..
 
-make -j $CPU_COUNT
+make -j $CPU_COUNT ${VERBOSE_CM}
 make install
 
 # This will not be needed once we fix upstream.
