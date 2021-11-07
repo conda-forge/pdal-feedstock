@@ -34,7 +34,7 @@ index ebb7222d4..7ac446839 100644
          DEPENDS ${DIMENSION_INFILE} dimbuilder)
  add_custom_target(generate_dimension_hpp DEPENDS ${DIMENSION_OUTFILE})
 diff --git a/cmake/modules/FindPostgreSQL.cmake b/cmake/modules/FindPostgreSQL.cmake
-index 8178418cc..5b518a871 100644
+index 8178418cc..0dd5c18c3 100644
 --- a/cmake/modules/FindPostgreSQL.cmake
 +++ b/cmake/modules/FindPostgreSQL.cmake
 @@ -31,13 +31,16 @@ if(PG_CONFIG)
@@ -52,7 +52,7 @@ index 8178418cc..5b518a871 100644
 +
 +    set(PG_CONFIG_LIBDIR "${PREFIX}/lib")
 +    set(PG_CONFIG_INCLUDEDIR "${PREFIX}/include")
-+    set(POSTGRESQL_VERSION "11.3")
++    set(POSTGRESQL_VERSION "13.3")
  endif()
  
  find_path(POSTGRESQL_INCLUDE_DIR libpq-fe.h
@@ -65,6 +65,23 @@ index 8178418cc..5b518a871 100644
    /usr/lib
    /usr/local/lib
    /usr/lib/postgresql
+@@ -73,6 +76,16 @@ endif()
+ 
+ # Handle the QUIETLY and REQUIRED arguments and set POSTGRESQL_FOUND to TRUE
+ # if all listed variables are TRUE
++
++
++if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
++
++    set(PG_CONFIG_LIBDIR "${PREFIX}/lib")
++    set(PG_CONFIG_INCLUDEDIR "${PREFIX}/include")
++    set(POSTGRESQL_VERSION "13.3")
++fi
++
++
+ include(FindPackageHandleStandardArgs)
+ find_package_handle_standard_args(PostgreSQL
+   DEFAULT_MSG
 diff --git a/dimbuilder/CMakeLists.txt b/dimbuilder/CMakeLists.txt
 index 09d334f1f..9aa9742f6 100644
 --- a/dimbuilder/CMakeLists.txt
