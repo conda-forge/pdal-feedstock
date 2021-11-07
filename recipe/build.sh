@@ -33,14 +33,14 @@ fi
 
 rm -rf build && mkdir build &&  cd build
 cmake ${CMAKE_ARGS} \
-  -DUILD_SHARED_LIBS=ON \
+  -DBUILD_SHARED_LIBS=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DDIMBUILDER_EXECUTABLE=$DIMBUILDER \
   -DBUILD_PLUGIN_I3S=ON \
   -DBUILD_PLUGIN_E57=ON \
-  -DBUILD_PLUGIN_PGPOINTCLOUD=OFF \
+  -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
   -DBUILD_PLUGIN_ICEBRIDGE=ON \
   -DBUILD_PLUGIN_NITF=ON \
   -DBUILD_PLUGIN_TILEDB=ON \
@@ -58,10 +58,10 @@ make -j $CPU_COUNT ${VERBOSE_CM}
 make install
 
 # This will not be needed once we fix upstream.
-chmod 755 $BUILD_PREFIX/bin/pdal-config
+chmod 755 $PREFIX/bin/pdal-config
 
-ACTIVATE_DIR=$BUILD_PREFIX/etc/conda/activate.d
-DEACTIVATE_DIR=$BUILD_PREFIX/etc/conda/deactivate.d
+ACTIVATE_DIR=$PREFIX/etc/conda/activate.d
+DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d
 mkdir -p $ACTIVATE_DIR
 mkdir -p $DEACTIVATE_DIR
 
