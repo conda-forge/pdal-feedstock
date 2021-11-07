@@ -34,7 +34,7 @@ index ebb7222d4..7ac446839 100644
          DEPENDS ${DIMENSION_INFILE} dimbuilder)
  add_custom_target(generate_dimension_hpp DEPENDS ${DIMENSION_OUTFILE})
 diff --git a/cmake/modules/FindPostgreSQL.cmake b/cmake/modules/FindPostgreSQL.cmake
-index 8178418cc..0dd5c18c3 100644
+index 8178418cc..ee7b2fd3c 100644
 --- a/cmake/modules/FindPostgreSQL.cmake
 +++ b/cmake/modules/FindPostgreSQL.cmake
 @@ -31,13 +31,16 @@ if(PG_CONFIG)
@@ -65,19 +65,18 @@ index 8178418cc..0dd5c18c3 100644
    /usr/lib
    /usr/local/lib
    /usr/lib/postgresql
-@@ -73,6 +76,16 @@ endif()
+@@ -73,6 +76,15 @@ endif()
  
  # Handle the QUIETLY and REQUIRED arguments and set POSTGRESQL_FOUND to TRUE
  # if all listed variables are TRUE
 +
 +
-+if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
++if ("$ENV{CONDA_BUILD_CROSS_COMPILATION}" EQUAL "1")
 +
 +    set(PG_CONFIG_LIBDIR "${PREFIX}/lib")
 +    set(PG_CONFIG_INCLUDEDIR "${PREFIX}/include")
 +    set(POSTGRESQL_VERSION "13.3")
-+fi
-+
++endif()
 +
  include(FindPackageHandleStandardArgs)
  find_package_handle_standard_args(PostgreSQL
