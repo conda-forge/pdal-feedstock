@@ -7,9 +7,11 @@ package:
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
   sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
+  patches:
+    - dimbuilder.patch
 
 build:
-  number: 9
+  number: 10
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
@@ -17,16 +19,14 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - cmake
-    - pkgconfig
-  host:
+    - make
+    - pkg-config
     - libgdal
-    - geos
     - geotiff
-    - postgresql
+    - libpq
     - jsoncpp
     - libkml
     - eigen
-    - sqlite
     - nitro
     - laszip
     - laz-perf
@@ -37,26 +37,40 @@ requirements:
     - zstd
     - libxml2
     - draco
-    - pkgconfig
-  run:
-    - numpy
-    - jsoncpp
-    - postgresql
-    - geotiff
-    - laszip
-    - hdf5
-    - geos
+  host:
     - libgdal
-    - {{ pin_compatible('numpy') }}
+    - geotiff
+    - libpq
+    - jsoncpp
+    - libkml
+    - eigen
     - nitro
-    - curl
+    - laszip
     - laz-perf
+    - curl
     - zlib
+    - hdf5
     - tiledb
     - zstd
     - libxml2
     - draco
-    - pkgconfig
+  run:
+    - libgdal
+    - geotiff
+    - libpq
+    - jsoncpp
+    - libkml
+    - eigen
+    - nitro
+    - laszip
+    - laz-perf
+    - curl
+    - zlib
+    - hdf5
+    - tiledb
+    - zstd
+    - libxml2
+    - draco
 
 test:
   commands:

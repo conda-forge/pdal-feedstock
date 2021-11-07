@@ -8,8 +8,6 @@ curl:
 - '7'
 cxx_compiler:
 - vs2017
-geos:
-- 3.10.0
 geotiff:
 - '1.7'
 hdf5:
@@ -35,14 +33,10 @@ pin_run_as_build:
     max_pin: x.x
   libxml2:
     max_pin: x.x
-  sqlite:
-    max_pin: x
   tiledb:
     max_pin: x.x
   zlib:
     max_pin: x.x
-sqlite:
-- '3'
 target_platform:
 - win-64
 tiledb:
