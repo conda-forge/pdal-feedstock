@@ -11,7 +11,7 @@ source:
     - dimbuilder.patch
 
 build:
-  number: 10
+  number: 11
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
