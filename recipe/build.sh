@@ -26,7 +26,8 @@ if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   export DIMBUILDER=`pwd`/bin/dimbuilder
   make dimbuilder
   cd ..
-
+else
+  export DIMBUILDER=dimbuilder
 
 fi
 
