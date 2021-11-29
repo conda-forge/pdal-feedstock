@@ -1,0 +1,14 @@
+diff --git a/pdal/util/FileUtils.cpp b/pdal/util/FileUtils.cpp
+index ee47b557e..caf5d068a 100644
+--- a/pdal/util/FileUtils.cpp
++++ b/pdal/util/FileUtils.cpp
+@@ -536,7 +536,9 @@ MapContext unmapFile(MapContext ctx)
+         ctx.m_error = "";
+     }
+     ::close(ctx.m_fd);
++
+ #else
++    if (!ctx.m_addr) return ctx;
+     if (UnmapViewOfFile(ctx.m_addr) == 0)
+         ctx.m_error = "Couldn't unmap file.";
+     else
