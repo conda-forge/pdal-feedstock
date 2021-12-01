@@ -1,14 +1,26 @@
 diff --git a/pdal/util/FileUtils.cpp b/pdal/util/FileUtils.cpp
-index ee47b557e..caf5d068a 100644
+index ee47b557e..9fec26f67 100644
 --- a/pdal/util/FileUtils.cpp
 +++ b/pdal/util/FileUtils.cpp
-@@ -536,7 +536,9 @@ MapContext unmapFile(MapContext ctx)
-         ctx.m_error = "";
-     }
-     ::close(ctx.m_fd);
-+
- #else
-+    if (!ctx.m_addr) return ctx;
-     if (UnmapViewOfFile(ctx.m_addr) == 0)
+@@ -526,6 +526,7 @@ MapContext mapFile(const std::string& filename, bool readOnly, uintmax_t pos, ui
+ 
+ MapContext unmapFile(MapContext ctx)
+ {
++    if (!ctx.addr()) return ctx;
+ #ifndef _WIN32
+     if (::munmap(ctx.m_addr, ctx.m_size) == -1)
          ctx.m_error = "Couldn't unmap file.";
-     else
+diff --git a/plugins/i3s/io/SlpkReader.cpp b/plugins/i3s/io/SlpkReader.cpp
+index 3df0c2840..e13e27d35 100644
+--- a/plugins/i3s/io/SlpkReader.cpp
++++ b/plugins/i3s/io/SlpkReader.cpp
+@@ -54,7 +54,8 @@ std::string SlpkReader::getName() const { return slpkInfo.name; }
+ 
+ SlpkReader::~SlpkReader()
+ {
+-    FileUtils::unmapFile(m_ctx);
++    if (m_ctx.addr())
++        FileUtils::unmapFile(m_ctx);
+ }
+ 
+ 
