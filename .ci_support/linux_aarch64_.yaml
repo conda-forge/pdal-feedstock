@@ -32,6 +32,8 @@ libkml:
 - '1.3'
 libxml2:
 - '2.9'
+openssl:
+- 1.1.1
 pin_run_as_build:
   curl:
     max_pin: x
