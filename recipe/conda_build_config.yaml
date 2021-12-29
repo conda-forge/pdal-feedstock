@@ -1,2 +1,2 @@
-MACOSX_DEPLOYMENT_TARGET:  # [osx and [build_platform != target_platform]]
-  - '10.15'                # [osx and [build_platform != target_platform]]
+MACOSX_DEPLOYMENT_TARGET:  # [osx and (build_platform != target_platform)]
+  - '10.15'                # [osx and (build_platform != target_platform)]
