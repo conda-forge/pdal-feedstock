@@ -24,8 +24,6 @@ geotiff:
 - '1.7'
 hdf5:
 - 1.12.1
-jsoncpp:
-- 1.9.4
 libgdal:
 - '3.4'
 libkml:
@@ -38,8 +36,6 @@ pin_run_as_build:
   curl:
     max_pin: x
   geotiff:
-    max_pin: x.x.x
-  jsoncpp:
     max_pin: x.x.x
   libgdal:
     max_pin: x.x
