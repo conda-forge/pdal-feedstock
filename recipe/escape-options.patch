@@ -1,0 +1,33 @@
+From 9045d8597ecc8f6c44adf3e16db35f47491c7774 Mon Sep 17 00:00:00 2001
+From: Andrew Bell <andrew.bell.ia@gmail.com>
+Date: Thu, 2 Dec 2021 13:55:45 -0500
+Subject: [PATCH] Escape quotes in JSON.
+
+---
+ pdal/util/ProgramArgs.hpp | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/pdal/util/ProgramArgs.hpp b/pdal/util/ProgramArgs.hpp
+index 0fdb50784..4e17fed54 100644
+--- a/pdal/util/ProgramArgs.hpp
++++ b/pdal/util/ProgramArgs.hpp
+@@ -1334,13 +1334,11 @@ public:
+             out << "{\"name\":\"" << a->longname() << "\"";
+ 
+             if (a->defaultProvided())
+-                out << ",\"default\":\"" << a->defaultVal() << "\"";
+-
+-            out << ",\"description\":\"" << a->description() << "\"}";
+-
+-            if (bFirst) bFirst = false;
++                out << ",\"default\":\"" << Utils::escapeJSON(a->defaultVal()) << "\"";
+ 
++            out << ",\"description\":\"" << Utils::escapeJSON(a->description()) << "\"}";
+ 
++            bFirst = false;
+         }
+         out << "]";
+     }
+-- 
+2.32.0 (Apple Git-132)
+
