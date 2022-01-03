@@ -28,7 +28,6 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - jsoncpp
     - libkml
     - eigen
     - nitro
@@ -46,7 +45,6 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - jsoncpp
     - libkml
     - eigen
     - nitro
@@ -64,7 +62,6 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - jsoncpp
     - libkml
     - eigen
     - nitro
