@@ -10,9 +10,10 @@ source:
   patches:
     - dimbuilder.patch
     - unmap.patch
+    - escape-options.patch
 
 build:
-  number: 22
+  number: 23
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
@@ -27,7 +28,6 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - jsoncpp
     - libkml
     - eigen
     - nitro
@@ -45,7 +45,6 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - jsoncpp
     - libkml
     - eigen
     - nitro
@@ -63,7 +62,6 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - jsoncpp
     - libkml
     - eigen
     - nitro
