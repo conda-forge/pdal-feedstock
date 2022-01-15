@@ -13,7 +13,7 @@ source:
     - escape-options.patch
 
 build:
-  number: 23
+  number: 24
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
