@@ -13,7 +13,7 @@ source:
     - escape-options.patch
 
 build:
-  number: 24
+  number: 26
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
@@ -22,6 +22,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - libcxxabi  # [ osx and unix ]
     - cmake
     - make
     - pkg-config
