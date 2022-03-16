@@ -1,19 +1,16 @@
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: pdal
   version: {{ version }}
 
 source:
-  url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
-  patches:
-    - dimbuilder.patch
-    - unmap.patch
-    - escape-options.patch
+  git_url: https://github.com/PDAL/PDAL.git
+  git_rev: master
+  git_depth: 1 # (Defaults to -1/not shallow)
 
 build:
-  number: 27
+  number: 0
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
@@ -33,7 +30,6 @@ requirements:
     - eigen
     - nitro
     - laszip
-    - laz-perf
     - curl
     - zlib
     - hdf5
@@ -50,7 +46,6 @@ requirements:
     - eigen
     - nitro
     - laszip
-    - laz-perf
     - curl
     - zlib
     - hdf5
@@ -66,8 +61,6 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - laszip
-    - laz-perf
     - curl
     - zlib
     - hdf5
