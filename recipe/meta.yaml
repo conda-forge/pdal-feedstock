@@ -29,7 +29,6 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - laszip
     - curl
     - zlib
     - hdf5
@@ -45,7 +44,6 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - laszip
     - curl
     - zlib
     - hdf5
