@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: pdal
@@ -6,19 +6,17 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
-  patches:
-    - dimbuilder.patch
-    - unmap.patch
-    - escape-options.patch
+  sha256: 8dda872ae6c08973125757be8ba5591b7cf7304c58943447fc3df9c9ac2cdc42
 
 build:
-  number: 27
-  skip: true  # [(win and vc<14) or py<35]
+  number: 0
+  skip: true  # [(win and vc<14) or py<37]
+  run_exports:
+    - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
 requirements:
   run_constrained:  # [osx]
-        - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
@@ -26,22 +24,6 @@ requirements:
     - cmake
     - make
     - pkg-config
-    - libgdal
-    - geotiff
-    - libpq
-    - libkml
-    - eigen
-    - nitro
-    - laszip
-    - laz-perf
-    - curl
-    - zlib
-    - hdf5
-    - tiledb
-    - zstd
-    - libxml2
-    - draco
-    - openssl
   host:
     - libgdal
     - geotiff
@@ -49,8 +31,6 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - laszip
-    - laz-perf
     - curl
     - zlib
     - hdf5
@@ -66,8 +46,6 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - laszip
-    - laz-perf
     - curl
     - zlib
     - hdf5

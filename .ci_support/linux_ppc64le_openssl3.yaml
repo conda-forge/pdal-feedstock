@@ -46,7 +46,7 @@ pin_run_as_build:
 target_platform:
 - linux-ppc64le
 tiledb:
-- '2.6'
+- '2.7'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
