@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: pdal
@@ -6,19 +6,19 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: 63d8d4fee491675f0fa3dca58c26d57fb2afcaa37c24b10f595b3fbff174996e
+  sha256: 8dda872ae6c08973125757be8ba5591b7cf7304c58943447fc3df9c9ac2cdc42
   patches:
     - dimbuilder.patch
     - unmap.patch
     - escape-options.patch
 
 build:
-  number: 27
+  number: 0
   skip: true  # [(win and vc<14) or py<35]
 
 requirements:
-  run_constrained:  # [osx]
-        - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
+  run_constrained:   # [osx]
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}      # [osx]
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
