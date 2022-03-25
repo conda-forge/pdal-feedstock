@@ -15,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '12'
 geotiff:
-- '1.7'
+- 1.7.0
 hdf5:
 - 1.12.1
 libgdal:
@@ -46,7 +46,7 @@ pin_run_as_build:
 target_platform:
 - osx-64
 tiledb:
-- '2.6'
+- '2.7'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
