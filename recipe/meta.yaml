@@ -5,19 +5,18 @@ package:
   version: {{ version }}
 
 source:
-  #url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  url: https://github.com/PDAL/PDAL/releases/download/2.4.0RC1/PDAL-2.4.0RC1-src.tar.bz2
-  sha256: 0f8e841c0f82dfda1e71896e264b5087889508771cf6c87ec6e9c4c85076c886
+  url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
+  sha256: 8dda872ae6c08973125757be8ba5591b7cf7304c58943447fc3df9c9ac2cdc42
 
 build:
   number: 0
-  skip: true  # [(win and vc<14) or py<35]
+  skip: true  # [(win and vc<14) or py<37]
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
 requirements:
   run_constrained:  # [osx]
-        - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
