@@ -15,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '12'
 geotiff:
-- '1.7'
+- 1.7.0
 hdf5:
 - 1.12.1
 libgdal:

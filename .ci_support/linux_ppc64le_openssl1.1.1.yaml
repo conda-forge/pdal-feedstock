@@ -17,7 +17,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 geotiff:
-- '1.7'
+- 1.7.0
 hdf5:
 - 1.12.1
 libgdal:

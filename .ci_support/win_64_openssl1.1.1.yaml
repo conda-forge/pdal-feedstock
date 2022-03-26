@@ -9,7 +9,7 @@ curl:
 cxx_compiler:
 - vs2017
 geotiff:
-- '1.7'
+- 1.7.0
 hdf5:
 - 1.12.1
 libgdal:

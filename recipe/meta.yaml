@@ -9,7 +9,7 @@ source:
   sha256: 8dda872ae6c08973125757be8ba5591b7cf7304c58943447fc3df9c9ac2cdc42
 
 build:
-  number: 0
+  number: 1
   skip: true  # [(win and vc<14) or py<37]
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
