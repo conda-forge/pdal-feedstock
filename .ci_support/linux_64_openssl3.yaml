@@ -22,8 +22,6 @@ hdf5:
 - 1.12.1
 libgdal:
 - '3.4'
-libkml:
-- '1.3'
 libxml2:
 - '2.9'
 openssl:
@@ -35,13 +33,9 @@ pin_run_as_build:
     max_pin: x.x.x
   libgdal:
     max_pin: x.x
-  libkml:
-    max_pin: x.x
   libxml2:
     max_pin: x.x
   tiledb:
-    max_pin: x.x
-  zlib:
     max_pin: x.x
 target_platform:
 - linux-64
@@ -50,7 +44,5 @@ tiledb:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-zlib:
-- '1.2'
 zstd:
 - '1.5'
