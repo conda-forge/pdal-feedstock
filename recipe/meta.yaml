@@ -11,8 +11,6 @@ source:
 build:
   number: 2
   skip: true  # [(win and vc<14) or py<37]
-  run_exports:
-    - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
 requirements:
   run_constrained:  # [osx]
@@ -28,11 +26,9 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - libkml
     - eigen
     - nitro
     - curl
-    - zlib
     - hdf5
     - tiledb
     - zstd
@@ -43,11 +39,9 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - libkml
     - eigen
     - nitro
     - curl
-    - zlib
     - hdf5
     - tiledb
     - zstd
