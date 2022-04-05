@@ -15,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '12'
 geotiff:
-- 1.7.0
+- 1.7.1
 hdf5:
 - 1.12.1
 libgdal:
@@ -29,8 +29,6 @@ openssl:
 pin_run_as_build:
   curl:
     max_pin: x
-  geotiff:
-    max_pin: x.x.x
   libgdal:
     max_pin: x.x
   libxml2:
