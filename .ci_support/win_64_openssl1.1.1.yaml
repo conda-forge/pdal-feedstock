@@ -36,9 +36,7 @@ pin_run_as_build:
 target_platform:
 - win-64
 tiledb:
-- '2.7'
-vc:
-- '14'
+- '2.8'
 zlib:
 - '1.2'
 zstd:
