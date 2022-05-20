@@ -1,4 +1,4 @@
-{% set version = "2.4.0" %}
+{% set version = "2.4.1" %}
 
 package:
   name: pdal
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: 8dda872ae6c08973125757be8ba5591b7cf7304c58943447fc3df9c9ac2cdc42
+  sha256: 2428fb05814b753e918f70bb933b58aa21ccfaa358aedbbcb3e4662112c9a51f
 
 build:
-  number: 4
+  number: 0
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
@@ -51,7 +51,7 @@ requirements:
     - libxml2
     - draco
     - openssl
-  run_constrained:  # [osx and x86_64]
+  run_constrained:   # [osx and x86_64]
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
