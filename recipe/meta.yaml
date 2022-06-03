@@ -9,7 +9,7 @@ source:
   sha256: 2428fb05814b753e918f70bb933b58aa21ccfaa358aedbbcb3e4662112c9a51f
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
