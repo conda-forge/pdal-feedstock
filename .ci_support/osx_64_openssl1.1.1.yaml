@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '13'
+- '14'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -13,7 +13,7 @@ curl:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '13'
+- '14'
 geotiff:
 - 1.7.1
 hdf5:
@@ -44,7 +44,7 @@ pin_run_as_build:
 target_platform:
 - osx-64
 tiledb:
-- '2.9'
+- '2.11'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
