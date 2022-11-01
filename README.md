@@ -1,5 +1,5 @@
-About pdal
-==========
+About pdal-split
+================
 
 Home: https://www.pdal.io
 
@@ -33,87 +33,255 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_openssl1.1.1</td>
+              <td>linux_64_numpy1.20openssl1.1.1python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux_64_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.20openssl1.1.1python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_openssl3</td>
+              <td>linux_64_numpy1.20openssl1.1.1python3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux_64_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.20openssl1.1.1python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_openssl1.1.1</td>
+              <td>linux_64_numpy1.20openssl3python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.20openssl3python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_openssl3</td>
+              <td>linux_64_numpy1.20openssl3python3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.20openssl3python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_openssl1.1.1</td>
+              <td>linux_64_numpy1.21openssl1.1.1python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.21openssl1.1.1python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_openssl3</td>
+              <td>linux_64_numpy1.21openssl3python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.21openssl3python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_openssl1.1.1</td>
+              <td>linux_aarch64_numpy1.20openssl1.1.1python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx_64_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_numpy1.20openssl1.1.1python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_openssl3</td>
+              <td>linux_aarch64_numpy1.20openssl1.1.1python3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx_64_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_numpy1.20openssl1.1.1python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_openssl1.1.1</td>
+              <td>linux_aarch64_numpy1.20openssl3python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_numpy1.20openssl3python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_openssl3</td>
+              <td>linux_aarch64_numpy1.20openssl3python3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_numpy1.20openssl3python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_openssl1.1.1</td>
+              <td>linux_aarch64_numpy1.21openssl1.1.1python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win_64_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_numpy1.21openssl1.1.1python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_openssl3</td>
+              <td>linux_aarch64_numpy1.21openssl3python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win_64_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_numpy1.21openssl3python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_numpy1.20openssl1.1.1python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.20openssl1.1.1python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_numpy1.20openssl1.1.1python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.20openssl1.1.1python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_numpy1.20openssl3python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.20openssl3python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_numpy1.20openssl3python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.20openssl3python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_numpy1.21openssl1.1.1python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.21openssl1.1.1python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_numpy1.21openssl3python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.21openssl3python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_numpy1.20openssl1.1.1python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.20openssl1.1.1python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_numpy1.20openssl1.1.1python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.20openssl1.1.1python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_numpy1.20openssl3python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.20openssl3python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_numpy1.20openssl3python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.20openssl3python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_numpy1.21openssl1.1.1python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.21openssl1.1.1python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_numpy1.21openssl3python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.21openssl3python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_numpy1.20openssl1.1.1python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.20openssl1.1.1python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_numpy1.20openssl1.1.1python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.20openssl1.1.1python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_numpy1.20openssl3python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.20openssl3python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_numpy1.20openssl3python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.20openssl3python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_numpy1.21openssl1.1.1python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.21openssl1.1.1python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_numpy1.21openssl3python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.21openssl3python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.20openssl1.1.1python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.20openssl1.1.1python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.20openssl1.1.1python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.20openssl1.1.1python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.20openssl3python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.20openssl3python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.20openssl3python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.20openssl3python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.21openssl1.1.1python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.21openssl1.1.1python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.21openssl3python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.21openssl3python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -129,53 +297,53 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal-green.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal--split-green.svg)](https://anaconda.org/conda-forge/pdal-split) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal-split.svg)](https://anaconda.org/conda-forge/pdal-split) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal-split.svg)](https://anaconda.org/conda-forge/pdal-split) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal-split.svg)](https://anaconda.org/conda-forge/pdal-split) |
 
-Installing pdal
-===============
+Installing pdal-split
+=====================
 
-Installing `pdal` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `pdal-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pdal` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pdal-split` can be installed with `conda`:
 
 ```
-conda install pdal
-```
-
-or with `mamba`:
-
-```
-mamba install pdal
-```
-
-It is possible to list all of the versions of `pdal` available on your platform with `conda`:
-
-```
-conda search pdal --channel conda-forge
+conda install pdal-split
 ```
 
 or with `mamba`:
 
 ```
-mamba search pdal --channel conda-forge
+mamba install pdal-split
+```
+
+It is possible to list all of the versions of `pdal-split` available on your platform with `conda`:
+
+```
+conda search pdal-split --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search pdal-split --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search pdal --channel conda-forge
+mamba repoquery search pdal-split --channel conda-forge
 
-# List packages depending on `pdal`:
-mamba repoquery whoneeds pdal --channel conda-forge
+# List packages depending on `pdal-split`:
+mamba repoquery whoneeds pdal-split --channel conda-forge
 
-# List dependencies of `pdal`:
-mamba repoquery depends pdal --channel conda-forge
+# List dependencies of `pdal-split`:
+mamba repoquery depends pdal-split --channel conda-forge
 ```
 
 
@@ -220,17 +388,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating pdal-feedstock
-=======================
+Updating pdal-split-feedstock
+=============================
 
-If you would like to improve the pdal recipe or build a new
+If you would like to improve the pdal-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/pdal-feedstock are
+Note that all branches in the conda-forge/pdal-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.

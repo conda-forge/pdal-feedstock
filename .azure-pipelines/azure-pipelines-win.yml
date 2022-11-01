@@ -8,11 +8,23 @@ jobs:
     vmImage: windows-2019
   strategy:
     matrix:
-      win_64_openssl1.1.1:
-        CONFIG: win_64_openssl1.1.1
+      win_64_numpy1.20openssl1.1.1python3.8.____cpython:
+        CONFIG: win_64_numpy1.20openssl1.1.1python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_openssl3:
-        CONFIG: win_64_openssl3
+      win_64_numpy1.20openssl1.1.1python3.9.____cpython:
+        CONFIG: win_64_numpy1.20openssl1.1.1python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_numpy1.20openssl3python3.8.____cpython:
+        CONFIG: win_64_numpy1.20openssl3python3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_numpy1.20openssl3python3.9.____cpython:
+        CONFIG: win_64_numpy1.20openssl3python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_numpy1.21openssl1.1.1python3.10.____cpython:
+        CONFIG: win_64_numpy1.21openssl1.1.1python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_numpy1.21openssl3python3.10.____cpython:
+        CONFIG: win_64_numpy1.21openssl3python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
@@ -38,7 +50,7 @@ jobs:
 
     - script: |
         call activate base
-        mamba.exe install 'python=3.9' conda-build conda pip boa 'conda-forge-ci-setup=3' -c conda-forge --strict-channel-priority --yes
+        mamba.exe install "python=3.9" conda-build conda pip boa conda-forge-ci-setup=3 "py-lief<0.12" -c conda-forge --strict-channel-priority --yes
       displayName: Install conda-build
 
     - script: set PYTHONUNBUFFERED=1
