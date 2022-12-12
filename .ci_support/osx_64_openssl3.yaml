@@ -33,7 +33,7 @@ openssl:
 target_platform:
 - osx-64
 tiledb:
-- '2.11'
+- '2.13'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
