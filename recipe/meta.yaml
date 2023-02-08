@@ -9,7 +9,7 @@ source:
   sha256: 9315f01aa7fb98e0bb4c67848c9debc6fae51a50258869830c127b5ed3c062d2
 
 build:
-  number: 1
+  number: 2
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
@@ -35,6 +35,7 @@ requirements:
     - libxml2
     - draco
     - openssl
+    - ceres-solver
   run:
     - libgdal
     - geotiff
@@ -50,6 +51,8 @@ requirements:
     - libxml2
     - draco
     - openssl
+    - ceres-solver
+
   run_constrained:   # [osx and x86_64]
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
