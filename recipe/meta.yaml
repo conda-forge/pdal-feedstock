@@ -36,6 +36,8 @@ requirements:
     - draco
     - openssl
     - ceres-solver
+    - mkl  # [win]
+
   run:
     - libgdal
     - geotiff
@@ -52,6 +54,7 @@ requirements:
     - draco
     - openssl
     - ceres-solver
+    - mkl  # [win]
 
   run_constrained:   # [osx and x86_64]
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
