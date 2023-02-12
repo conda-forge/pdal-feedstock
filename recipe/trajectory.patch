@@ -1,0 +1,35 @@
+diff --git a/plugins/trajectory/filters/PulseCollection.cpp b/plugins/trajectory/filters/PulseCollection.cpp
+index 427100e87..902b5c464 100644
+--- a/plugins/trajectory/filters/PulseCollection.cpp
++++ b/plugins/trajectory/filters/PulseCollection.cpp
+@@ -43,7 +43,7 @@ void PulseCollection::Add(double time, const Eigen::Vector3d& r, int nr, int rn,
+     if (nr == 1)
+     {
+         addPoint(adjTime, r - m_rOrigin, r - m_rOrigin, angle);
+-        m_lowhigh = 0;     // In case we didn't get a good multi-return pulse. 
++        m_lowhigh = 0;     // In case we didn't get a good multi-return pulse.
+     }
+     else
+     {
+@@ -126,7 +126,7 @@ void PulseCollection::registerSingle(const std::vector<Pulse>& buf)
+ 
+     // Look for midpoint of a run of pulses with the same angle (on the
+     // theory that this will have the smallest quantization error).
+-    if (buf.size() > std::numeric_limits<int>::max())
++    if (buf.size() > (std::numeric_limits<int>::max)())
+         throw pdal_error("Attempting to register an oversized vector.");
+ 
+     int mid = buf.size() / 2;
+diff --git a/plugins/trajectory/filters/SplineFit.hpp b/plugins/trajectory/filters/SplineFit.hpp
+index c239334b4..5e1d65f76 100644
+--- a/plugins/trajectory/filters/SplineFit.hpp
++++ b/plugins/trajectory/filters/SplineFit.hpp
+@@ -62,7 +62,7 @@ public:
+     // convert time to index + fractional time
+     std::pair<int, double> tconvert(double t) const
+     {
+-        int i = (std::min)(num-1, std::max(0, int(std::floor((t - tstart) / tblock))));
++        int i = (std::min)(num-1, (std::max)(0, int(std::floor((t - tstart) / tblock))));
+         double tf = (t - tstart) / tblock - (i + 0.5);
+         return std::make_pair(i, tf);
+     }

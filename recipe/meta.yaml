@@ -7,9 +7,11 @@ package:
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
   sha256: 4b9921ead19112eb58a7fa94b1758ebc06ea99c0efc9abf4edd6b0378e500b1d
+  patches:
+    - trajectory.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
@@ -37,6 +39,7 @@ requirements:
     - openssl
     - ceres-solver
     - mkl  # [win]
+    - blas  # [win]
 
   run:
     - libgdal
@@ -55,6 +58,7 @@ requirements:
     - openssl
     - ceres-solver
     - mkl  # [win]
+    - blas  # [win]
 
   run_constrained:   # [osx and x86_64]
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
