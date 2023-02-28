@@ -1,4 +1,4 @@
-{% set version = "2.5.1" %}
+{% set version = "2.5.2" %}
 
 package:
   name: pdal
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: 4b9921ead19112eb58a7fa94b1758ebc06ea99c0efc9abf4edd6b0378e500b1d
+  sha256: 6609c2a30842a24370c7f08cc3285f4224244dbd2e1d8035fd48e3dd393676a7
   patches:
     - trajectory.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
