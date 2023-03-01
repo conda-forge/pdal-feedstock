@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
   sha256: 6609c2a30842a24370c7f08cc3285f4224244dbd2e1d8035fd48e3dd393676a7
-  patches:
-    - trajectory.patch
 
 build:
   number: 0
