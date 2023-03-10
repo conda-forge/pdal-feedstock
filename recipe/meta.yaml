@@ -20,7 +20,7 @@ requirements:
     - cmake
     - make
     - pkg-config
-    - libcxx=14  # [osx]
+    - libcxx =14  # [osx]
 
   host:
     - libgdal
