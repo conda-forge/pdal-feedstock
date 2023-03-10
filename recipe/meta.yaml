@@ -9,7 +9,7 @@ source:
   sha256: 6609c2a30842a24370c7f08cc3285f4224244dbd2e1d8035fd48e3dd393676a7
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
@@ -20,6 +20,8 @@ requirements:
     - cmake
     - make
     - pkg-config
+    - libcxx =14  # [osx]
+
   host:
     - libgdal
     - geotiff
