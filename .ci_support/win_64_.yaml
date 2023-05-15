@@ -5,13 +5,13 @@ channel_sources:
 channel_targets:
 - conda-forge main
 curl:
-- '7'
+- '8'
 cxx_compiler:
 - vs2019
 geotiff:
 - 1.7.1
 hdf5:
-- 1.12.2
+- 1.14.0
 libgdal:
 - '3.6'
 libkml:
