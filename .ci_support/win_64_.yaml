@@ -27,7 +27,7 @@ openssl:
 target_platform:
 - win-64
 tiledb:
-- '2.13'
+- '2.16'
 zlib:
 - '1.2'
 zstd:
