@@ -23,7 +23,7 @@ docker_image:
 geotiff:
 - 1.7.1
 hdf5:
-- 1.14.1
+- 1.14.2
 libgdal:
 - '3.7'
 libkml:
