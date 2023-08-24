@@ -13,14 +13,12 @@ cmake -G "NMake Makefiles" ^
       -DBUILD_PLUGIN_NITF=OFF ^
       -DBUILD_PLUGIN_TILEDB=OFF ^
       -DBUILD_PLUGIN_HDF=ON ^
-      -DBUILD_PLUGIN_TRAJECTORY=ON ^
       -DBUILD_PLUGIN_DRACO=ON ^
       -DENABLE_CTEST=OFF ^
       -DWITH_TESTS=OFF ^
       -DWITH_ZLIB=ON ^
       -DWITH_ZSTD=ON ^
       -DZSTD_LIBRARY="%LIBRARY_LIB%\libzstd.lib" ^
-      -DWITH_LAZPERF=ON ^
       %SRC_DIR%
 if errorlevel 1 exit 1
 
