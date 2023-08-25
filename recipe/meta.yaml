@@ -26,12 +26,10 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - libkml
     - eigen
     - nitro
     - curl
     - zlib
-    - hdf5
     - tiledb
     - zstd
     - libxml2
@@ -43,12 +41,10 @@ requirements:
     - libgdal
     - geotiff
     - libpq
-    - libkml
     - eigen
     - nitro
     - curl
     - zlib
-    - hdf5
     - tiledb
     - zstd
     - libxml2
@@ -74,8 +70,6 @@ outputs:
         - libgdal
         - geotiff
         - libpq
-        - libkml
-        - eigen
         - nitro
         - curl
         - zlib
@@ -89,8 +83,6 @@ outputs:
         - libgdal
         - geotiff
         - libpq
-        - libkml
-        - eigen
         - nitro
         - curl
         - zlib
@@ -142,7 +134,56 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE.txt
 
+  - name: pdal-hdf
+    script: build_hdf.sh  # [unix]
+    script: build_hdf.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - hdf5
+      run:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - hdf5
+    test:
+      files:
+        - test_hdf.sh  # [unix]
+      commands:
+        - sh test_hdf.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
 
+
+  - name: pdal-draco
+    script: build_draco.sh  # [unix]
+    script: build_draco.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - draco
+      run:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - draco
+    test:
+      files:
+        - test_draco.sh  # [unix]
+      commands:
+        - sh test_draco.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
 
 
 about:
