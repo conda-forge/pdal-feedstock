@@ -25,30 +25,20 @@ requirements:
   host:
     - libgdal
     - geotiff
-    - libpq
-    - eigen
-    - nitro
     - curl
     - zlib
-    - tiledb
     - zstd
     - libxml2
-    - draco
     - openssl
 
 
   run:
     - libgdal
     - geotiff
-    - libpq
-    - eigen
-    - nitro
     - curl
     - zlib
-    - tiledb
     - zstd
     - libxml2
-    - draco
     - openssl
 
 outputs:
@@ -69,28 +59,18 @@ outputs:
       host:
         - libgdal
         - geotiff
-        - libpq
-        - nitro
         - curl
         - zlib
-        - hdf5
-        - tiledb
         - zstd
         - libxml2
-        - draco
         - openssl
       run:
         - libgdal
         - geotiff
-        - libpq
-        - nitro
         - curl
         - zlib
-        - hdf5
-        - tiledb
         - zstd
         - libxml2
-        - draco
         - openssl
       run_constrained:   # [osx and x86_64]
         - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
@@ -180,6 +160,56 @@ outputs:
         - test_draco.sh  # [unix]
       commands:
         - sh test_draco.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: pdal-tiledb
+    script: build_tiledb.sh  # [unix]
+    script: build_tiledb.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+        - tiledb
+      host:
+        - {{ pin_subpackage('libpdal') }}
+      run:
+        - {{ pin_subpackage('libpdal') }}
+        - {{ pin_compatible('tiledb', max_pin='x.x') }}
+    test:
+      files:
+        - test_tiledb.sh  # [unix]
+      commands:
+        - sh test_tiledb.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: pdal-pgpointcloud
+    script: build_pgpointcloud.sh  # [unix]
+    script: build_pgpointcloud.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - libpq
+      run:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - libpq
+    test:
+      files:
+        - test_pgpointcloud.sh  # [unix]
+      commands:
+        - sh test_pgpointcloud.sh  # [unix]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause
