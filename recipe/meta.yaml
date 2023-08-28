@@ -31,7 +31,6 @@ requirements:
     - libxml2
     - openssl
 
-
   run:
     - libgdal
     - geotiff
@@ -57,7 +56,7 @@ outputs:
         - make
         - pkg-config
       host:
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - libgdal
         - geotiff
         - curl
         - zlib
@@ -99,10 +98,8 @@ outputs:
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
@@ -152,11 +149,11 @@ outputs:
         - cmake
         - make
       host:
-        - {{ pin_subpackage('libpdal', exact=True) }}
         - draco
+        - {{ pin_subpackage('libpdal') }}
       run:
-        - {{ pin_subpackage('libpdal', exact=True) }}
         - draco
+        - {{ pin_subpackage('libpdal') }}
     test:
       files:
         - test_draco.sh  # [unix]
