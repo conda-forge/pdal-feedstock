@@ -56,7 +56,7 @@ outputs:
         - make
         - pkg-config
       host:
-        - libgdal
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - geotiff
         - curl
         - zlib
@@ -98,11 +98,13 @@ outputs:
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
+        - pdal 
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
+        - pdal 
     test:
       files:
         - test_trajectory.sh  # [unix]
@@ -123,11 +125,11 @@ outputs:
         - cmake
         - make
       host:
-        - {{ pin_subpackage('libpdal', exact=True) }}
         - hdf5
+        - pdal 
       run:
-        - {{ pin_subpackage('libpdal', exact=True) }}
         - hdf5
+        - pdal 
     test:
       files:
         - test_hdf.sh  # [unix]
@@ -150,10 +152,10 @@ outputs:
         - make
       host:
         - draco
-        - {{ pin_subpackage('libpdal') }}
+        - pdal
       run:
         - draco
-        - {{ pin_subpackage('libpdal') }}
+        - pdal
     test:
       files:
         - test_draco.sh  # [unix]
@@ -173,14 +175,12 @@ outputs:
         - {{ compiler('c') }}
         - cmake
         - make
-        - tiledb
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
       host:
-        - {{ pin_subpackage('libpdal') }}
+        - tiledb
+        - pdal 
       run:
-        - {{ pin_subpackage('libpdal') }}
-        - {{ pin_compatible('tiledb', max_pin='x.x') }}
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - tiledb
+        - pdal 
     test:
       files:
         - test_tiledb.sh  # [unix]
@@ -201,11 +201,11 @@ outputs:
         - cmake
         - make
       host:
-        - {{ pin_subpackage('libpdal', exact=True) }}
         - libpq
+        - pdal 
       run:
-        - {{ pin_subpackage('libpdal', exact=True) }}
         - libpq
+        - pdal 
     test:
       files:
         - test_pgpointcloud.sh  # [unix]
