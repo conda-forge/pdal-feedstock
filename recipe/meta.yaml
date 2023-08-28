@@ -57,7 +57,7 @@ outputs:
         - make
         - pkg-config
       host:
-        - libgdal
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - geotiff
         - curl
         - zlib
@@ -65,7 +65,7 @@ outputs:
         - libxml2
         - openssl
       run:
-        - libgdal
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - geotiff
         - curl
         - zlib
@@ -99,8 +99,10 @@ outputs:
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
@@ -175,11 +177,13 @@ outputs:
         - cmake
         - make
         - tiledb
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
       host:
         - {{ pin_subpackage('libpdal') }}
       run:
         - {{ pin_subpackage('libpdal') }}
         - {{ pin_compatible('tiledb', max_pin='x.x') }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
     test:
       files:
         - test_tiledb.sh  # [unix]
