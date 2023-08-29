@@ -98,13 +98,13 @@ outputs:
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
-        - pdal 
+        - libpdal 
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
-        - pdal 
+        - libpdal 
     test:
       files:
         - test_trajectory.sh  # [unix]
@@ -126,10 +126,10 @@ outputs:
         - make
       host:
         - hdf5
-        - pdal 
+        - libpdal
       run:
         - hdf5
-        - pdal 
+        - libpdal 
     test:
       files:
         - test_hdf.sh  # [unix]
@@ -152,10 +152,10 @@ outputs:
         - make
       host:
         - draco
-        - pdal
+        - libpdal
       run:
         - draco
-        - pdal
+        - libpdal
     test:
       files:
         - test_draco.sh  # [unix]
@@ -177,10 +177,10 @@ outputs:
         - make
       host:
         - tiledb
-        - pdal 
+        - libpdal 
       run:
         - tiledb
-        - pdal 
+        - libpdal 
     test:
       files:
         - test_tiledb.sh  # [unix]
@@ -202,10 +202,10 @@ outputs:
         - make
       host:
         - libpq
-        - pdal 
+        - libpdal 
       run:
         - libpq
-        - pdal 
+        - libpdal 
     test:
       files:
         - test_pgpointcloud.sh  # [unix]
