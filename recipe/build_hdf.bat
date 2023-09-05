@@ -8,7 +8,7 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
       -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
-      -DPDAL_DIR:PATH="%PREFIX%" ^
+      -DPDAL_DIR:PATH="%LIBRARY_PREFIX%" ^
       -DBUILD_PLUGIN_HDF=ON ^
       -DSTANDALONE=ON ^
       %SRC_DIR%
@@ -30,7 +30,7 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
       -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
-      -DPDAL_DIR:PATH="%PREFIX%" ^
+      -DPDAL_DIR:PATH="%LIBRARY_PREFIX%" ^
       -DSTANDALONE=ON ^
       -DBUILD_PLUGIN_ICEBRIDGE=ON ^
       %SRC_DIR%

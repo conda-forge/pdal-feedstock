@@ -9,7 +9,7 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
       -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
       -DBUILD_PLUGIN_TRAJECTORY=ON ^
-      -DPDAL_DIR:PATH="%PREFIX%" ^
+      -DPDAL_DIR:PATH="%LIBRARY_PREFIX%" ^
       %SRC_DIR%
 if errorlevel 1 exit 1
 
