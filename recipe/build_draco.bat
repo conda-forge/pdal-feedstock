@@ -11,6 +11,7 @@ cmake -G "NMake Makefiles" ^
       -DPDAL_DIR:PATH="%LIBRARY_PREFIX%" ^
       -DBUILD_PLUGIN_DRACO=ON ^
       -DSTANDALONE=ON ^
+      -DWITH_TESTS=OFF ^
       %SRC_DIR%
 if errorlevel 1 exit 1
 

@@ -9,6 +9,7 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
       -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
       -DPDAL_DIR:PATH="%LIBRARY_PREFIX%" ^
+      -DWITH_TESTS=OFF ^
       -DBUILD_PLUGIN_NITF=ON ^
       -DSTANDALONE=ON ^
       %SRC_DIR%
