@@ -12,7 +12,7 @@ cmake -G "NMake Makefiles" ^
       -DWITH_TESTS=OFF ^
       -DBUILD_PLUGIN_NITF=ON ^
       -DSTANDALONE=ON ^
-      %SRC_DIR%
+      ..
 if errorlevel 1 exit 1
 
 nmake

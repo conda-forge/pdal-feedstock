@@ -12,7 +12,7 @@ cmake -G "NMake Makefiles" ^
       -DBUILD_PLUGIN_HDF=ON ^
       -DSTANDALONE=ON ^
       -DWITH_TESTS=OFF ^
-      %SRC_DIR%
+      ..
 if errorlevel 1 exit 1
 
 nmake
@@ -35,7 +35,7 @@ cmake -G "NMake Makefiles" ^
       -DSTANDALONE=ON ^
       -DWITH_TESTS=OFF ^
       -DBUILD_PLUGIN_ICEBRIDGE=ON ^
-      %SRC_DIR%
+      ..
 if errorlevel 1 exit 1
 
 nmake

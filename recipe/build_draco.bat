@@ -12,7 +12,7 @@ cmake -G "NMake Makefiles" ^
       -DBUILD_PLUGIN_DRACO=ON ^
       -DSTANDALONE=ON ^
       -DWITH_TESTS=OFF ^
-      %SRC_DIR%
+      ..
 if errorlevel 1 exit 1
 
 nmake
