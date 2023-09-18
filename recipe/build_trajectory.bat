@@ -11,6 +11,7 @@ cmake -G "NMake Makefiles" ^
       -DBUILD_PLUGIN_TRAJECTORY=ON ^
       -DPDAL_DIR:PATH="%LIBRARY_PREFIX%" ^
       -DWITH_TESTS=OFF ^
+      -DSTANDALONE=ON ^
       ..
 if errorlevel 1 exit 1
 
