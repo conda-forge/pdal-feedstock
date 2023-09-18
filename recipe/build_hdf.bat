@@ -21,7 +21,7 @@ if errorlevel 1 exit 1
 nmake install
 if errorlevel 1 exit 1
 
-cd ../../plugins/icebridge
+cd ../../../plugins/icebridge
 
 mkdir build
 cd build
