@@ -1,4 +1,4 @@
-cd plugins/tiledb
+cd plugins/arrow
 
 mkdir build
 cd build
