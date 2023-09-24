@@ -17,7 +17,7 @@ libgdal:
 libkml:
 - '1.3'
 libpq:
-- '15'
+- '16'
 libxml2:
 - '2.11'
 mkl:
