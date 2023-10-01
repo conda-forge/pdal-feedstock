@@ -1,10 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.15'
-arrow_cpp:
-- 10.0.1
-- 11.0.0
-- '12'
-- '13'
 c_compiler:
 - clang
 c_compiler_version:
@@ -23,6 +18,13 @@ geotiff:
 - 1.7.1
 hdf5:
 - 1.14.2
+libarrow:
+- 10.0.1
+- 11.0.0
+- '12'
+- '13'
+libcurl:
+- '8'
 libgdal:
 - '3.7'
 libpq:
@@ -33,10 +35,14 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 openssl:
 - '3'
+proj:
+- 9.2.1
 target_platform:
 - osx-64
 tiledb:
 - '2.16'
+xerces_c:
+- '3.2'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
