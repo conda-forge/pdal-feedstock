@@ -57,7 +57,7 @@ outputs:
       host:
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - geotiff
-        - curl
+        - libcurl
         - zlib
         - zstd
         - libxml2
@@ -65,11 +65,13 @@ outputs:
       run:
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - geotiff
-        - curl
+        - libcurl
+        - proj
         - zlib
         - zstd
         - libxml2
         - openssl
+        - xerces-c
       run_constrained:   # [osx and x86_64]
         - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
     test:
