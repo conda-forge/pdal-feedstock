@@ -9,7 +9,9 @@ source:
   git_rev: master
 
 build:
-  number: 2
+  number: 3
+  run_exports:
+    - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
 requirements:
   build:

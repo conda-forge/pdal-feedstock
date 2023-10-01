@@ -20,7 +20,7 @@ hdf5:
 libgdal:
 - '3.7'
 libpq:
-- '15'
+- '16'
 libxml2:
 - '2.11'
 mkl:
