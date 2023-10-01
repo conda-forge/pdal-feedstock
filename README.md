@@ -1,7 +1,11 @@
-About pdal-feedstock
-====================
+About pdal-split-feedstock
+==========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pdal-feedstock/blob/main/LICENSE.txt)
+
+
+About pdal-split
+----------------
 
 Home: https://www.pdal.io
 
@@ -14,6 +18,69 @@ Development: https://github.com/pdal/pdal
 Documentation: https://pdal.io
 
 Point cloud data processing.
+
+About libpdal
+-------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About pdal-arrow
+----------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About pdal-draco
+----------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About pdal-hdf
+--------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About pdal-pgpointcloud
+-----------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About pdal-tiledb
+-----------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About pdal-trajectory
+---------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
 
 Current build status
 ====================
@@ -87,53 +154,59 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal-green.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal-green.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal--arrow-green.svg)](https://anaconda.org/conda-forge/pdal-arrow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal-arrow.svg)](https://anaconda.org/conda-forge/pdal-arrow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal-arrow.svg)](https://anaconda.org/conda-forge/pdal-arrow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal-arrow.svg)](https://anaconda.org/conda-forge/pdal-arrow) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal--draco-green.svg)](https://anaconda.org/conda-forge/pdal-draco) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal-draco.svg)](https://anaconda.org/conda-forge/pdal-draco) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal-draco.svg)](https://anaconda.org/conda-forge/pdal-draco) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal-draco.svg)](https://anaconda.org/conda-forge/pdal-draco) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal--hdf-green.svg)](https://anaconda.org/conda-forge/pdal-hdf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal-hdf.svg)](https://anaconda.org/conda-forge/pdal-hdf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal-hdf.svg)](https://anaconda.org/conda-forge/pdal-hdf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal-hdf.svg)](https://anaconda.org/conda-forge/pdal-hdf) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal--pgpointcloud-green.svg)](https://anaconda.org/conda-forge/pdal-pgpointcloud) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal-pgpointcloud.svg)](https://anaconda.org/conda-forge/pdal-pgpointcloud) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal-pgpointcloud.svg)](https://anaconda.org/conda-forge/pdal-pgpointcloud) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal-pgpointcloud.svg)](https://anaconda.org/conda-forge/pdal-pgpointcloud) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal--tiledb-green.svg)](https://anaconda.org/conda-forge/pdal-tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal-tiledb.svg)](https://anaconda.org/conda-forge/pdal-tiledb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal-tiledb.svg)](https://anaconda.org/conda-forge/pdal-tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal-tiledb.svg)](https://anaconda.org/conda-forge/pdal-tiledb) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal--trajectory-green.svg)](https://anaconda.org/conda-forge/pdal-trajectory) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal-trajectory.svg)](https://anaconda.org/conda-forge/pdal-trajectory) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal-trajectory.svg)](https://anaconda.org/conda-forge/pdal-trajectory) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal-trajectory.svg)](https://anaconda.org/conda-forge/pdal-trajectory) |
 
-Installing pdal
-===============
+Installing pdal-split
+=====================
 
-Installing `pdal` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `pdal-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pdal` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libpdal, pdal-arrow, pdal-draco, pdal-hdf, pdal-pgpointcloud, pdal-tiledb, pdal-trajectory` can be installed with `conda`:
 
 ```
-conda install pdal
-```
-
-or with `mamba`:
-
-```
-mamba install pdal
-```
-
-It is possible to list all of the versions of `pdal` available on your platform with `conda`:
-
-```
-conda search pdal --channel conda-forge
+conda install libpdal pdal-arrow pdal-draco pdal-hdf pdal-pgpointcloud pdal-tiledb pdal-trajectory
 ```
 
 or with `mamba`:
 
 ```
-mamba search pdal --channel conda-forge
+mamba install libpdal pdal-arrow pdal-draco pdal-hdf pdal-pgpointcloud pdal-tiledb pdal-trajectory
+```
+
+It is possible to list all of the versions of `libpdal` available on your platform with `conda`:
+
+```
+conda search libpdal --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search libpdal --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search pdal --channel conda-forge
+mamba repoquery search libpdal --channel conda-forge
 
-# List packages depending on `pdal`:
-mamba repoquery whoneeds pdal --channel conda-forge
+# List packages depending on `libpdal`:
+mamba repoquery whoneeds libpdal --channel conda-forge
 
-# List dependencies of `pdal`:
-mamba repoquery depends pdal --channel conda-forge
+# List dependencies of `libpdal`:
+mamba repoquery depends libpdal --channel conda-forge
 ```
 
 
@@ -178,17 +251,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating pdal-feedstock
-=======================
+Updating pdal-split-feedstock
+=============================
 
-If you would like to improve the pdal recipe or build a new
+If you would like to improve the pdal-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/pdal-feedstock are
+Note that all branches in the conda-forge/pdal-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
