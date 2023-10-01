@@ -11,7 +11,7 @@ source:
 build:
   number: 3
   run_exports:
-    - {{ pin_subpackage('pdal', max_pin='x.x') }}
+    - {{ pin_subpackage('libpdal', max_pin='x.x') }}
 
 requirements:
   build:
@@ -227,10 +227,10 @@ outputs:
         - cmake
         - make
       host:
-        - arrow-cpp
+        - libarrow
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        - arrow-cpp
+        - libarrow
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       files:
