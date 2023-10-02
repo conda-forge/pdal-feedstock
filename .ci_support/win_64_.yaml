@@ -21,7 +21,7 @@ libpq:
 libxml2:
 - '2.11'
 mkl:
-- '2022'
+- '2023'
 openssl:
 - '3'
 target_platform:
