@@ -34,7 +34,6 @@ requirements:
     - libgdal
     - geotiff
     - curl
-    - zlib
     - zstd
     - libxml2
     - openssl
