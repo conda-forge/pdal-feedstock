@@ -97,6 +97,8 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - ceres-solver
+        - glog
+        - gflags
         - mkl  # [win]
         - blas  # [win]
       run:
@@ -105,6 +107,8 @@ outputs:
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
+        - glog
+        - gflags
     test:
       files:
         - test_trajectory.sh  # [unix]
@@ -230,16 +234,41 @@ outputs:
         - cmake
         - make
       host:
-        - arrow-cpp
+        - libarrow
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        - arrow-cpp
+        - libarrow
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       files:
         - test_arrow.sh  # [unix]
       commands:
         - sh test_arrow.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: pdal-nitf
+    script: build_nitf.sh  # [unix]
+    script: build_nitf.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - nitro
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - nitro
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      files:
+        - test_nitf.sh  # [unix]
+      commands:
+        - sh test_nitf.sh  # [unix]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause
