@@ -204,9 +204,11 @@ outputs:
         - make
       host:
         - libpq
+        - libxml2
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - libpq
+        - libxml2
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       files:
