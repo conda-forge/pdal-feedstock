@@ -228,10 +228,10 @@ outputs:
         - cmake
         - make
       host:
-        - libarrow
+        - arrow-cpp
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        - libarrow
+        - arrow-cpp
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       files:
