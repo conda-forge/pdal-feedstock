@@ -1,10 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.15'
-arrow_cpp:
-- 10.0.1
-- 11.0.0
-- '12'
-- '13'
 c_compiler:
 - clang
 c_compiler_version:
@@ -21,8 +16,17 @@ cxx_compiler_version:
 - '15'
 geotiff:
 - 1.7.1
+gflags:
+- '2.2'
+glog:
+- '0.6'
 hdf5:
 - 1.14.2
+libarrow:
+- 10.0.1
+- 11.0.0
+- '12'
+- '13'
 libcurl:
 - '8'
 libgdal:
