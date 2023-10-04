@@ -260,9 +260,11 @@ outputs:
         - make
       host:
         - nitro
+        - libcurl
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - nitro
+        - libcurl
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       files:
