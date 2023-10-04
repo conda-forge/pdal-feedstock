@@ -1,3 +1,8 @@
+arrow_cpp:
+- 10.0.1
+- 11.0.0
+- '12'
+- '13'
 c_compiler:
 - gcc
 c_compiler_version:
@@ -20,11 +25,6 @@ geotiff:
 - 1.7.1
 hdf5:
 - 1.14.2
-libarrow:
-- 10.0.1
-- 11.0.0
-- '12'
-- '13'
 libcurl:
 - '8'
 libgdal:
