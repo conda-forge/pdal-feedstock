@@ -1,4 +1,4 @@
-cd plugins/tiledb
+cd plugins/nitf
 
 mkdir build
 cd build
