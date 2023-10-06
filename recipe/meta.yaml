@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/PDAL/PDAL.git
-  git_rev: master
+  url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
+  sha256: 7c7c4570ef518942299479cc4077e0c657ec5b5174daf465415de947a1d3eb99
 
 build:
-  number: 3
+  number: 0
   run_exports:
     - {{ pin_subpackage('libpdal', max_pin='x.x') }}
 
