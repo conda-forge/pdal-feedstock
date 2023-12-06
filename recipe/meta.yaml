@@ -1,4 +1,4 @@
-{% set version = "2.5.6" %}
+{% set version = "2.6.1" %}
 
 package:
   name: pdal-split
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: 7c7c4570ef518942299479cc4077e0c657ec5b5174daf465415de947a1d3eb99
+  sha256: e421361fe5e1ea63204a3b5c8b654388edbb0fb15c09d24469741e84211ef9d2
 
 build:
   number: 0
@@ -40,6 +40,7 @@ requirements:
 
 outputs:
   - name: libpdal
+    version: {{ version }}
     script: install_lib.sh  # [unix]
     script: install_lib.bat  # [win]
     build:
@@ -85,6 +86,7 @@ outputs:
 
 
   - name: pdal-trajectory
+    version: {{ version }}
     script: build_trajectory.sh  # [unix]
     script: build_trajectory.bat  # [win]
     requirements:
@@ -120,6 +122,7 @@ outputs:
       license_file: LICENSE.txt
 
   - name: pdal-hdf
+    version: {{ version }}
     script: build_hdf.sh  # [unix]
     script: build_hdf.bat  # [win]
     requirements:
@@ -131,9 +134,11 @@ outputs:
       host:
         - hdf5
         - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
         - hdf5
         - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
     test:
       files:
         - test_hdf.sh  # [unix]
@@ -146,6 +151,7 @@ outputs:
 
 
   - name: pdal-draco
+    version: {{ version }}
     script: build_draco.sh  # [unix]
     script: build_draco.bat  # [win]
     requirements:
@@ -171,6 +177,7 @@ outputs:
       license_file: LICENSE.txt
 
   - name: pdal-tiledb
+    version: {{ version }}
     script: build_tiledb.sh  # [unix]
     script: build_tiledb.bat  # [win]
     requirements:
@@ -198,6 +205,7 @@ outputs:
       license_file: LICENSE.txt
 
   - name: pdal-pgpointcloud
+    version: {{ version }}
     script: build_pgpointcloud.sh  # [unix]
     script: build_pgpointcloud.bat  # [win]
     requirements:
@@ -210,9 +218,11 @@ outputs:
         - libpq
         - libxml2
         - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
         - libpq
         - libxml2
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       files:
@@ -225,6 +235,7 @@ outputs:
       license_file: LICENSE.txt
 
   - name: pdal-arrow
+    version: {{ version }}
     script: build_arrow.sh  # [unix]
     script: build_arrow.bat  # [win]
     requirements:
@@ -235,9 +246,11 @@ outputs:
         - make
       host:
         - libarrow
+        - libparquet
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - libarrow
+        - libparquet
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       files:

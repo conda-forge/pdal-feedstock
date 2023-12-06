@@ -15,7 +15,7 @@ cmake -G "NMake Makefiles" ^
       -DWITH_ZLIB=ON ^
       -DWITH_ZSTD=ON ^
       -DZSTD_LIBRARY="%LIBRARY_LIB%\libzstd.lib" ^
-      %SRC_DIR%
+      ..
 if errorlevel 1 exit 1
 
 nmake
