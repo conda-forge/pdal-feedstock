@@ -25,10 +25,10 @@ glog:
 hdf5:
 - 1.14.2
 libarrow:
-- 10.0.1
 - 11.0.0
 - '12'
 - '13'
+- '14'
 libcurl:
 - '8'
 libgdal:
@@ -40,7 +40,7 @@ libxml2:
 openssl:
 - '3'
 proj:
-- 9.2.1
+- 9.3.0
 target_platform:
 - linux-64
 tiledb:
