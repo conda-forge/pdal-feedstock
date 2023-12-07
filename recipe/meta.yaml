@@ -292,8 +292,8 @@ outputs:
       license_file: LICENSE.txt
 
   - name: libpdal-all
-    script: install-libpdal.sh   # [unix]
-    script: install-libpdal.bat  # [win]
+    #   script: install-libpdal.sh   # [unix]
+    #script: install-libpdal.bat  # [win]
     version: {{ version }}
     build:
       run_exports:
