@@ -44,32 +44,14 @@ cmake ${CMAKE_ARGS} \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DDIMBUILDER_EXECUTABLE=$DIMBUILDER \
   -DBUILD_PLUGIN_I3S=ON \
-  -DBUILD_PLUGIN_TRAJECTORY=ON \
   -DBUILD_PLUGIN_E57=ON \
-  -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
-  -DBUILD_PLUGIN_ICEBRIDGE=ON \
-  -DBUILD_PLUGIN_NITF=ON \
-  -DBUILD_PLUGIN_TILEDB=ON \
-  -DBUILD_PLUGIN_HDF=ON \
-  -DBUILD_PLUGIN_DRACO=ON \
+  -DBUILD_PLUGIN_PGPOINTCLOUD=OFF \
+  -DBUILD_PLUGIN_ARROW=OFF \
   -DENABLE_CTEST=OFF \
   -DWITH_TESTS=OFF \
   -DWITH_ZLIB=ON \
   -DWITH_ZSTD=ON \
-  -DWITH_LASZIP=ON \
-  -DWITH_LAZPERF=ON \
   ..
 
 make -j $CPU_COUNT ${VERBOSE_CM}
-make install
 
-# This will not be needed once we fix upstream.
-chmod 755 $PREFIX/bin/pdal-config
-
-ACTIVATE_DIR=$PREFIX/etc/conda/activate.d
-DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d
-mkdir -p $ACTIVATE_DIR
-mkdir -p $DEACTIVATE_DIR
-
-cp $RECIPE_DIR/scripts/activate.sh $ACTIVATE_DIR/pdal-activate.sh
-cp $RECIPE_DIR/scripts/deactivate.sh $DEACTIVATE_DIR/pdal-deactivate.sh

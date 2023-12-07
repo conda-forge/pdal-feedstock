@@ -1,7 +1,7 @@
 {% set version = "2.6.1" %}
 
 package:
-  name: pdal
+  name: pdal-split
   version: {{ version }}
 
 source:
@@ -9,9 +9,9 @@ source:
   sha256: e421361fe5e1ea63204a3b5c8b654388edbb0fb15c09d24469741e84211ef9d2
 
 build:
-  number: 2
+  number: 0
   run_exports:
-    - {{ pin_subpackage('pdal', max_pin='x.x') }}
+    - {{ pin_subpackage('libpdal', max_pin='x.x') }}
 
 requirements:
   build:
@@ -24,48 +24,312 @@ requirements:
   host:
     - libgdal
     - geotiff
-    - libpq
-    - libkml
-    - eigen
-    - nitro
     - curl
     - zlib
-    - hdf5
-    - tiledb
     - zstd
     - libxml2
-    - draco
     - openssl
-    - ceres-solver
-    - mkl  # [win]
-    - blas  # [win]
 
   run:
     - libgdal
     - geotiff
-    - libpq
-    - libkml
-    - eigen
-    - nitro
     - curl
-    - zlib
-    - hdf5
-    - tiledb
     - zstd
     - libxml2
-    - draco
     - openssl
-    - ceres-solver
-    - mkl  # [win]
-    - blas  # [win]
 
-  run_constrained:   # [osx and x86_64]
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
+outputs:
+  - name: libpdal
+    version: {{ version }}
+    script: install_lib.sh  # [unix]
+    script: install_lib.bat  # [win]
+    build:
+      run_exports:
+        # no idea, going with minor pin
+        - {{ pin_subpackage('libpdal', max_pin='x.x') }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+        - pkg-config
+      host:
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - geotiff
+        - libcurl
+        - zlib
+        - zstd
+        - libxml2
+        - openssl
+      run:
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - geotiff
+        - libcurl
+        - proj
+        - zlib
+        - zstd
+        - libxml2
+        - openssl
+        - xerces-c
+      run_constrained:   # [osx and x86_64]
+        - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
+    test:
+      files:
+        - test_libpdal.sh  # [unix]
+      commands:
+        - sh test_libpdal.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
 
-test:
-  commands:
-    - pdal --version
-    - pdal --drivers --debug
+
+  - name: pdal-trajectory
+    version: {{ version }}
+    script: build_trajectory.sh  # [unix]
+    script: build_trajectory.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - ceres-solver
+        - glog
+        - gflags
+        - mkl  # [win]
+        - blas  # [win]
+      run:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - ceres-solver
+        - mkl  # [win]
+        - blas  # [win]
+        - glog
+        - gflags
+    test:
+      files:
+        - test_trajectory.sh  # [unix]
+      commands:
+        - sh test_trajectory.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: pdal-hdf
+    version: {{ version }}
+    script: build_hdf.sh  # [unix]
+    script: build_hdf.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - hdf5
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+      run:
+        - hdf5
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+    test:
+      files:
+        - test_hdf.sh  # [unix]
+      commands:
+        - sh test_hdf.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+
+  - name: pdal-draco
+    version: {{ version }}
+    script: build_draco.sh  # [unix]
+    script: build_draco.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - draco
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - draco
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      files:
+        - test_draco.sh  # [unix]
+      commands:
+        - sh test_draco.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: pdal-tiledb
+    version: {{ version }}
+    script: build_tiledb.sh  # [unix]
+    script: build_tiledb.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - tiledb
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - tiledb
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      files:
+        - test_tiledb.sh  # [unix]
+      commands:
+        - sh test_tiledb.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: pdal-pgpointcloud
+    version: {{ version }}
+    script: build_pgpointcloud.sh  # [unix]
+    script: build_pgpointcloud.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - libpq
+        - libxml2
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+      run:
+        - libpq
+        - libxml2
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      files:
+        - test_pgpointcloud.sh  # [unix]
+      commands:
+        - sh test_pgpointcloud.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: pdal-arrow
+    version: {{ version }}
+    script: build_arrow.sh  # [unix]
+    script: build_arrow.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - libarrow
+        - libparquet
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - libarrow
+        - libparquet
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      files:
+        - test_arrow.sh  # [unix]
+      commands:
+        - sh test_arrow.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: pdal-nitf
+    script: build_nitf.sh  # [unix]
+    script: build_nitf.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - nitro
+        - libcurl
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - nitro
+        - libcurl
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      files:
+        - test_nitf.sh  # [unix]
+      commands:
+        - sh test_nitf.sh  # [unix]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: libpdal-all
+    #   script: install-libpdal.sh   # [unix]
+    #script: install-libpdal.bat  # [win]
+    version: {{ version }}
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-trajectory", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-hdf", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
+    requirements:
+      build:
+        - cmake
+        - ninja
+      host:
+        - {{ pin_subpackage("libpdal", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-trajectory", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-hdf", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
+      run:
+        - {{ pin_subpackage("libpdal", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-trajectory", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-hdf", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
+    test:
+      commands:
+        - echo "tested in other outputs"
 
 about:
   home: https://www.pdal.io

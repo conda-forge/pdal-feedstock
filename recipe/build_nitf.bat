@@ -1,3 +1,5 @@
+cd plugins/nitf
+
 mkdir build
 cd build
 
@@ -6,17 +8,15 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
       -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
-      -DBUILD_PLUGIN_E57=ON ^
-      -DBUILD_PLUGIN_PGPOINTCLOUD=OFF ^
-      -DBUILD_PLUGIN_ARROW=OFF ^
-      -DBUILD_PLUGIN_DRACO=OFF ^
-      -DENABLE_CTEST=OFF ^
+      -DPDAL_DIR:PATH="%LIBRARY_PREFIX%" ^
       -DWITH_TESTS=OFF ^
-      -DWITH_ZLIB=ON ^
-      -DWITH_ZSTD=ON ^
-      -DZSTD_LIBRARY="%LIBRARY_LIB%\libzstd.lib" ^
+      -DBUILD_PLUGIN_NITF=ON ^
+      -DSTANDALONE=ON ^
       ..
 if errorlevel 1 exit 1
 
 nmake
+if errorlevel 1 exit 1
+
+nmake install
 if errorlevel 1 exit 1
