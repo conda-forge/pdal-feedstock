@@ -11,7 +11,7 @@ cxx_compiler:
 geotiff:
 - 1.7.1
 hdf5:
-- 1.14.2
+- 1.14.3
 libgdal:
 - '3.8'
 libkml:
@@ -27,7 +27,7 @@ openssl:
 target_platform:
 - win-64
 tiledb:
-- '2.16'
+- '2.18'
 zlib:
 - '1.2'
 zstd:
