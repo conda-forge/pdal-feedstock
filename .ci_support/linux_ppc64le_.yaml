@@ -19,7 +19,7 @@ docker_image:
 geotiff:
 - 1.7.1
 hdf5:
-- 1.14.2
+- 1.14.3
 libgdal:
 - '3.8'
 libkml:
@@ -33,7 +33,7 @@ openssl:
 target_platform:
 - linux-ppc64le
 tiledb:
-- '2.16'
+- '2.18'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
