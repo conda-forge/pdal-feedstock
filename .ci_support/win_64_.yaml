@@ -19,7 +19,7 @@ libkml:
 libpq:
 - '16'
 libxml2:
-- '2.12'
+- '2'
 mkl:
 - '2023'
 openssl:
