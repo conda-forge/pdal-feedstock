@@ -25,7 +25,7 @@ libkml:
 libpq:
 - '16'
 libxml2:
-- '2.11'
+- '2.12'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 openssl:
@@ -33,7 +33,7 @@ openssl:
 target_platform:
 - osx-64
 tiledb:
-- '2.18'
+- '2.19'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

@@ -19,7 +19,7 @@ libkml:
 libpq:
 - '16'
 libxml2:
-- '2.11'
+- '2.12'
 mkl:
 - '2023'
 openssl:
@@ -27,7 +27,7 @@ openssl:
 target_platform:
 - win-64
 tiledb:
-- '2.18'
+- '2.19'
 zlib:
 - '1.2'
 zstd:
