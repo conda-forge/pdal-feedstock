@@ -20,6 +20,7 @@ requirements:
     - cmake
     - make
     - pkg-config
+    - openssl
 
   host:
     - libgdal
