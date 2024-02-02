@@ -22,8 +22,6 @@ libxml2:
 - '2'
 mkl:
 - '2023'
-openssl:
-- '3'
 target_platform:
 - win-64
 tiledb:
