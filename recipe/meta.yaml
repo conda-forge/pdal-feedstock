@@ -9,7 +9,7 @@ source:
   sha256: 4ec3d128af4d15924ddac91ddac56335cf32897c743349460cfa41d51f0f9e4e
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x.x') }}
 
@@ -20,7 +20,6 @@ requirements:
     - cmake
     - make
     - pkg-config
-    - openssl
 
   host:
     - libgdal
@@ -36,7 +35,6 @@ requirements:
     - zstd
     - libxml2
     - draco
-    - openssl
     - ceres-solver
     - mkl  # [win]
     - blas  # [win]
@@ -55,7 +53,6 @@ requirements:
     - zstd
     - libxml2
     - draco
-    - openssl
     - ceres-solver
     - mkl  # [win]
     - blas  # [win]
