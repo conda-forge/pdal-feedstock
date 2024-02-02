@@ -28,8 +28,6 @@ libpq:
 - '16'
 libxml2:
 - '2'
-openssl:
-- '3'
 target_platform:
 - linux-64
 tiledb:
