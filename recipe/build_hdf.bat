@@ -1,9 +1,10 @@
-cd plugins/hdf
+pushd plugins/hdf
 
-mkdir build
-cd build
+rm -rf build
+mkdir -p build
+pushd build
 
-cmake -G "NMake Makefiles" ^
+cmake -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
@@ -15,18 +16,21 @@ cmake -G "NMake Makefiles" ^
       ..
 if errorlevel 1 exit 1
 
-nmake
-if errorlevel 1 exit 1
+cmake --build . --config Release --target pdal_plugin_reader_hdf
+if %ERRORLEVEL% neq 0 exit 1
 
-nmake install
-if errorlevel 1 exit 1
+popd
+popd
 
-cd ../../../plugins/icebridge
 
-mkdir build
-cd build
+pushd plugins/icebridge
 
-cmake -G "NMake Makefiles" ^
+rm -rf build
+mkdir -p build
+pushd build
+
+
+cmake -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
@@ -38,8 +42,8 @@ cmake -G "NMake Makefiles" ^
       ..
 if errorlevel 1 exit 1
 
-nmake
-if errorlevel 1 exit 1
+cmake --build . --config Release  --target pdal_plugin_reader_icebridge
+if %ERRORLEVEL% neq 0 exit 1
 
-nmake install
-if errorlevel 1 exit 1
+popd
+popd

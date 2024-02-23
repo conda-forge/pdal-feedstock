@@ -1,9 +1,10 @@
-cd plugins/trajectory
+pushd plugins/trajectory
 
-mkdir build
-cd build
+rm -rf build
+mkdir -p build
+pushd build
 
-cmake -G "NMake Makefiles" ^
+cmake -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
@@ -15,8 +16,8 @@ cmake -G "NMake Makefiles" ^
       ..
 if errorlevel 1 exit 1
 
-nmake
-if errorlevel 1 exit 1
+cmake --build . --config Release --target pdal_plugin_filter_trajectory
+if %ERRORLEVEL% neq 0 exit 1
 
-nmake install
-if errorlevel 1 exit 1
+popd
+popd

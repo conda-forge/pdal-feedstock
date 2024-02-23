@@ -35,9 +35,12 @@ else
 
 fi
 
+rm -rf build
+mkdir -p build
+pushd build
 
-rm -rf build && mkdir build &&  cd build
-cmake ${CMAKE_ARGS} \
+cmake -G Ninja \
+  ${CMAKE_ARGS} \
   -DBUILD_SHARED_LIBS=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
@@ -53,5 +56,186 @@ cmake ${CMAKE_ARGS} \
   -DWITH_ZSTD=ON \
   ..
 
-make -j $CPU_COUNT ${VERBOSE_CM}
+cmake --build . --config Release
+cmake --install . --config Release
+
+popd
+
+
+# Arrow
+pushd plugins/arrow
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH="$PREFIX" \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_writer_arrow pdal_plugin_reader_arrow
+ls -al .
+
+popd
+popd
+
+# Trajectory
+
+pushd plugins/trajectory
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja \
+  ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_PLUGIN_TRAJECTORY=ON \
+  -DPDAL_DIR:PATH="$PREFIX" \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_filter_trajectory
+
+popd
+popd
+
+# TileDB
+
+pushd plugins/tiledb
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_PLUGIN_TILEDB=ON \
+  -DPDAL_DIR:PATH="$PREFIX" \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_tiledb pdal_plugin_writer_tiledb
+
+popd
+popd
+
+
+# pgpointcloud
+
+pushd plugins/pgpointcloud
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH="$PREFIX" \
+  -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_pgpointcloud
+
+popd
+popd
+
+# NITF
+
+pushd plugins/nitf
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_PLUGIN_NITF=ON \
+  -DPDAL_DIR:PATH="$PREFIX" \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_nitf
+
+popd
+popd
+
+#HDF
+pushd plugins/hdf
+
+rm -rf build
+mkdir -p build
+pushd build
+
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH="." \
+  -DBUILD_PLUGIN_HDF=ON \
+  -DSTANDALONE=ON \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_hdf
+
+popd
+popd
+
+
+pushd plugins/icebridge
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH="$PREFIX" \
+  -DSTANDALONE=ON \
+  -DBUILD_PLUGIN_ICEBRIDGE=ON \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_icebridge
+
+popd
+popd
+
+# Draco
+
+pushd plugins/draco
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_PLUGIN_DRACO=ON \
+  -DPDAL_DIR:PATH="$PREFIX" \
+  ..
+
+cmake --build . --config Release  --target pdal_plugin_writer_draco pdal_plugin_reader_draco
+
+popd
+popd
+
 

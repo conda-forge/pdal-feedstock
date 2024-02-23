@@ -3,18 +3,23 @@
 set -ex
 
 
-cd plugins/trajectory
+pushd plugins/trajectory
 
-rm -rf build && mkdir build &&  cd build
-cmake ${CMAKE_ARGS} \
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja \
+  ${CMAKE_ARGS} \
   -DSTANDALONE=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DBUILD_PLUGIN_TRAJECTORY=ON \
   -DPDAL_DIR:PATH="$PREFIX" \
-  -DSTANDALONE=ON \
   ..
 
-make -j $CPU_COUNT ${VERBOSE_CM}
-make install
+cmake --build . --config Release --target pdal_plugin_filter_trajectory
+
+popd
+popd

@@ -3,11 +3,14 @@
 set -ex
 
 
-cd plugins/hdf
+pushd plugins/hdf
 
-rm -rf build && mkdir build &&  cd build
-cmake ${CMAKE_ARGS} \
-  -DSTANDALONE=ON \
+rm -rf build
+mkdir -p build
+pushd build
+
+
+cmake -G Ninja ${CMAKE_ARGS} \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
@@ -16,15 +19,19 @@ cmake ${CMAKE_ARGS} \
   -DSTANDALONE=ON \
   ..
 
-make -j $CPU_COUNT ${VERBOSE_CM}
-make install
+cmake --build . --config Release --target pdal_plugin_reader_hdf
+
+popd
+popd
 
 
-cd ../../icebridge
+pushd plugins/icebridge
 
-rm -rf build && mkdir build &&  cd build
-cmake ${CMAKE_ARGS} \
-  -DSTANDALONE=ON \
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
@@ -33,5 +40,7 @@ cmake ${CMAKE_ARGS} \
   -DBUILD_PLUGIN_ICEBRIDGE=ON \
   ..
 
-make -j $CPU_COUNT ${VERBOSE_CM}
-make install
+cmake --build . --config Release --target pdal_plugin_reader_icebridge
+
+popd
+popd

@@ -2,18 +2,22 @@
 
 set -ex
 
+pushd plugins/arrow
 
-cd plugins/arrow
+rm -rf build
+mkdir -p build
+pushd build
 
-rm -rf build && mkdir build &&  cd build
 cmake ${CMAKE_ARGS} \
   -DSTANDALONE=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DPDAL_DIR:PATH="$PREFIX" \
-  -DSTANDALONE=ON \
   ..
 
-make -j $CPU_COUNT ${VERBOSE_CM}
-make install
+cmake --build . --config Release --target pdal_plugin_writer_arrow pdal_plugin_reader_arrow
+ls -al .
+
+popd
+popd

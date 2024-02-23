@@ -1,7 +1,7 @@
 mkdir build
-cd build
+pushd build
 
-cmake -G "NMake Makefiles" ^
+cmake -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
@@ -18,5 +18,8 @@ cmake -G "NMake Makefiles" ^
       ..
 if errorlevel 1 exit 1
 
-nmake
-if errorlevel 1 exit 1
+cmake --build . --config Release
+if %ERRORLEVEL% neq 0 exit 1
+
+
+popd
