@@ -58,6 +58,7 @@ cmake -G Ninja \
 
 cmake --build . --config Release
 cmake --install . --config Release
+    echo "i installed to $PREFIX"
 
 popd
 
@@ -74,7 +75,7 @@ cmake ${CMAKE_ARGS} \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
-  -DPDAL_DIR:PATH="$PREFIX" \
+  -DPDAL_DIR:PATH=$PREFIX \
   ..
 
 cmake --build . --config Release --target pdal_plugin_writer_arrow pdal_plugin_reader_arrow
@@ -98,7 +99,7 @@ cmake -G Ninja \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DBUILD_PLUGIN_TRAJECTORY=ON \
-  -DPDAL_DIR:PATH="$PREFIX" \
+  -DPDAL_DIR:PATH=$PREFIX \
   ..
 
 cmake --build . --config Release --target pdal_plugin_filter_trajectory
@@ -120,7 +121,7 @@ cmake -G Ninja ${CMAKE_ARGS} \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DBUILD_PLUGIN_TILEDB=ON \
-  -DPDAL_DIR:PATH="$PREFIX" \
+  -DPDAL_DIR:PATH=$PREFIX \
   ..
 
 cmake --build . --config Release --target pdal_plugin_reader_tiledb pdal_plugin_writer_tiledb
@@ -142,7 +143,7 @@ cmake -G Ninja ${CMAKE_ARGS} \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
-  -DPDAL_DIR:PATH="$PREFIX" \
+  -DPDAL_DIR:PATH=$PREFIX \
   -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
   ..
 
@@ -165,7 +166,7 @@ cmake -G Ninja ${CMAKE_ARGS} \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DBUILD_PLUGIN_NITF=ON \
-  -DPDAL_DIR:PATH="$PREFIX" \
+  -DPDAL_DIR:PATH=$PREFIX \
   ..
 
 cmake --build . --config Release --target pdal_plugin_reader_nitf
@@ -185,7 +186,7 @@ cmake -G Ninja ${CMAKE_ARGS} \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
-  -DPDAL_DIR:PATH="." \
+  -DPDAL_DIR:PATH=$PREFIX \
   -DBUILD_PLUGIN_HDF=ON \
   -DSTANDALONE=ON \
   ..
@@ -206,7 +207,7 @@ cmake -G Ninja ${CMAKE_ARGS} \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
-  -DPDAL_DIR:PATH="$PREFIX" \
+  -DPDAL_DIR:PATH=$PREFIX \
   -DSTANDALONE=ON \
   -DBUILD_PLUGIN_ICEBRIDGE=ON \
   ..
@@ -230,7 +231,7 @@ cmake -G Ninja ${CMAKE_ARGS} \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DBUILD_PLUGIN_DRACO=ON \
-  -DPDAL_DIR:PATH="$PREFIX" \
+  -DPDAL_DIR:PATH=$PREFIX \
   ..
 
 cmake --build . --config Release  --target pdal_plugin_writer_draco pdal_plugin_reader_draco

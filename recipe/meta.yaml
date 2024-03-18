@@ -54,6 +54,46 @@ requirements:
 
 outputs:
 
+  - name: libpdal-all
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    version: {{ version }}
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-trajectory", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-hdf", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
+    requirements:
+      build:
+        - cmake
+        - ninja
+      host:
+        - {{ pin_subpackage("libpdal", exact=True ) }}
+        - {{ pin_subpackage("libpdal-trajectory", exact=True ) }}
+        - {{ pin_subpackage("libpdal-hdf", exact=True ) }}
+        - {{ pin_subpackage("libpdal-tiledb", exact=True ) }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", exact=True ) }}
+        - {{ pin_subpackage("libpdal-draco", exact=True ) }}
+        - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
+        - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
+      run:
+        - {{ pin_subpackage("libpdal", exact=True ) }}
+        - {{ pin_subpackage("libpdal-trajectory", exact=True ) }}
+        - {{ pin_subpackage("libpdal-hdf", exact=True ) }}
+        - {{ pin_subpackage("libpdal-tiledb", exact=True ) }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", exact=True ) }}
+        - {{ pin_subpackage("libpdal-draco", exact=True ) }}
+        - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
+        - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
+    test:
+      commands:
+        - echo "tested in other outputs"
+
   - name: libpdal
     version: {{ version }}
     script: install_libpdal.sh  # [unix]
@@ -223,6 +263,8 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
+      ignore_run_exports:
+        - libgdal
     requirements:
       build:
         - {{ compiler('cxx') }}
@@ -254,7 +296,8 @@ outputs:
 
   - name: libpdal-pgpointcloud
     version: {{ version }}
-    script: build_pgpointcloud.sh  # [unix]
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
     build:
       run_exports:
         - {{ pin_subpackage("libpdal-pgpointcloud", max_pin="x") }}
@@ -268,11 +311,13 @@ outputs:
       host:
         - libpq
         - libxml2
+        - zstd
         - {{ pin_subpackage('libpdal', exact=True) }}
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
         - libpq
         - libxml2
+        - zstd
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
@@ -353,46 +398,7 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE.txt
 
-  - name: libpdal-all
-    script: install_libpdal.sh  # [unix]
-    script: install_libpdal.bat  # [win]
-    version: {{ version }}
-    build:
-      run_exports:
-        - {{ pin_subpackage("libpdal", max_pin="x") }}
-        - {{ pin_subpackage("libpdal-trajectory", max_pin="x") }}
-        - {{ pin_subpackage("libpdal-hdf", max_pin="x") }}
-        - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
-        - {{ pin_subpackage("libpdal-pgpointcloud", max_pin="x") }}
-        - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
-        - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
-        - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
-    requirements:
-      build:
-        - cmake
-        - ninja
-      host:
-        - {{ pin_subpackage("libpdal", exact=True ) }}
-        - {{ pin_subpackage("libpdal-trajectory", exact=True ) }}
-        - {{ pin_subpackage("libpdal-hdf", exact=True ) }}
-        - {{ pin_subpackage("libpdal-tiledb", exact=True ) }}
-        - {{ pin_subpackage("libpdal-pgpointcloud", exact=True ) }}
-        - {{ pin_subpackage("libpdal-draco", exact=True ) }}
-        - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
-        - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
-      run:
-        - {{ pin_subpackage("libpdal", exact=True ) }}
-        - {{ pin_subpackage("libpdal-trajectory", exact=True ) }}
-        - {{ pin_subpackage("libpdal-hdf", exact=True ) }}
-        - {{ pin_subpackage("libpdal-tiledb", exact=True ) }}
-        # - {{ pin_subpackage("libpdal-pgpointcloud", exact=True ) }}
-        - {{ pin_subpackage("libpdal-draco", exact=True ) }}
-        - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
-        - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
-    test:
-      commands:
-        - sh test_libpdal.sh  # [unix]
-        - echo "tested in other outputs"
+
 
 about:
   home: https://www.pdal.io
