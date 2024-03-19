@@ -8,8 +8,17 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_:
-        CONFIG: win_64_
+      win_64_libarrow12:
+        CONFIG: win_64_libarrow12
+        UPLOAD_PACKAGES: 'True'
+      win_64_libarrow13:
+        CONFIG: win_64_libarrow13
+        UPLOAD_PACKAGES: 'True'
+      win_64_libarrow14:
+        CONFIG: win_64_libarrow14
+        UPLOAD_PACKAGES: 'True'
+      win_64_libarrow15:
+        CONFIG: win_64_libarrow15
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
