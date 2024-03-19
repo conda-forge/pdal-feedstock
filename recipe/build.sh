@@ -73,7 +73,8 @@ rm -rf build
 mkdir -p build
 pushd build
 
-cmake ${CMAKE_ARGS} \
+cmake -G Ninja
+  ${CMAKE_ARGS} \
   -DSTANDALONE=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
