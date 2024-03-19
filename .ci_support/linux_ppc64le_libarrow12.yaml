@@ -42,8 +42,11 @@ target_platform:
 - linux-ppc64le
 tiledb:
 - '2.20'
+<<<<<<< HEAD:.ci_support/linux_ppc64le_libarrow12.yaml
 xerces_c:
 - '3.2'
+=======
+>>>>>>> a6edc68 (Rebuild for tiledb 2.20 (#230)):.ci_support/linux_ppc64le_.yaml
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

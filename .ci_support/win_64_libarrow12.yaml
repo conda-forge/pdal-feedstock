@@ -36,8 +36,11 @@ target_platform:
 - win-64
 tiledb:
 - '2.20'
+<<<<<<< HEAD:.ci_support/win_64_libarrow12.yaml
 xerces_c:
 - '3.2'
+=======
+>>>>>>> a6edc68 (Rebuild for tiledb 2.20 (#230)):.ci_support/win_64_.yaml
 zlib:
 - '1.2'
 zstd:
