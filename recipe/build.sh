@@ -35,41 +35,211 @@ else
 
 fi
 
+rm -rf build
+mkdir -p build
+pushd build
 
-rm -rf build && mkdir build &&  cd build
-cmake ${CMAKE_ARGS} \
+export PDAL_BUILD_DIR=`pwd`/install
+mkdir $PDAL_BUILD_DIR
+
+cmake -G Ninja \
+  ${CMAKE_ARGS} \
   -DBUILD_SHARED_LIBS=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DDIMBUILDER_EXECUTABLE=$DIMBUILDER \
   -DBUILD_PLUGIN_I3S=ON \
-  -DBUILD_PLUGIN_TRAJECTORY=ON \
   -DBUILD_PLUGIN_E57=ON \
-  -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
-  -DBUILD_PLUGIN_ICEBRIDGE=ON \
-  -DBUILD_PLUGIN_NITF=ON \
-  -DBUILD_PLUGIN_TILEDB=ON \
-  -DBUILD_PLUGIN_HDF=ON \
-  -DBUILD_PLUGIN_DRACO=ON \
+  -DBUILD_PLUGIN_PGPOINTCLOUD=OFF \
+  -DBUILD_PLUGIN_ARROW=OFF \
   -DENABLE_CTEST=OFF \
   -DWITH_TESTS=OFF \
   -DWITH_ZLIB=ON \
   -DWITH_ZSTD=ON \
-  -DWITH_LASZIP=ON \
-  -DWITH_LAZPERF=ON \
   ..
 
-make -j $CPU_COUNT ${VERBOSE_CM}
-make install
+cmake --build . --config Release
+cmake --install . --prefix=$PDAL_BUILD_DIR
+    echo "i installed to $PDAL_BUILD_DIR"
 
-# This will not be needed once we fix upstream.
-chmod 755 $PREFIX/bin/pdal-config
+popd
 
-ACTIVATE_DIR=$PREFIX/etc/conda/activate.d
-DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d
-mkdir -p $ACTIVATE_DIR
-mkdir -p $DEACTIVATE_DIR
 
-cp $RECIPE_DIR/scripts/activate.sh $ACTIVATE_DIR/pdal-activate.sh
-cp $RECIPE_DIR/scripts/deactivate.sh $DEACTIVATE_DIR/pdal-deactivate.sh
+# ArrowV
+pushd plugins/arrow
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_writer_arrow pdal_plugin_reader_arrow
+ls -al .
+
+popd
+popd
+
+# Trajectory
+
+pushd plugins/trajectory
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja \
+  ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_PLUGIN_TRAJECTORY=ON \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_filter_trajectory
+
+popd
+popd
+
+# TileDB
+
+pushd plugins/tiledb
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_PLUGIN_TILEDB=ON \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_tiledb pdal_plugin_writer_tiledb
+
+popd
+popd
+
+
+# pgpointcloud
+
+pushd plugins/pgpointcloud
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_pgpointcloud pdal_plugin_writer_pgpointcloud
+
+popd
+popd
+
+# NITF
+
+pushd plugins/nitf
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_PLUGIN_NITF=ON \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_nitf pdal_plugin_writer_nitf
+
+popd
+popd
+
+#HDF
+pushd plugins/hdf
+
+rm -rf build
+mkdir -p build
+pushd build
+
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  -DBUILD_PLUGIN_HDF=ON \
+  -DSTANDALONE=ON \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_hdf
+
+popd
+popd
+
+
+pushd plugins/icebridge
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  -DSTANDALONE=ON \
+  -DBUILD_PLUGIN_ICEBRIDGE=ON \
+  ..
+
+cmake --build . --config Release --target pdal_plugin_reader_icebridge
+
+popd
+popd
+
+# Draco
+
+pushd plugins/draco
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_PLUGIN_DRACO=ON \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  ..
+
+cmake --build . --config Release  --target pdal_plugin_writer_draco pdal_plugin_reader_draco
+
+popd
+popd
+
+

@@ -9,61 +9,396 @@ source:
   sha256: a4e480b6a3a1967a65cad68ac02cf156029d67fcf3764def6ed235639826c1a5
 
 build:
-  number: 0
+  number: 1
   run_exports:
-    - {{ pin_subpackage('pdal', max_pin='x.x.x') }}
+    - {{ pin_subpackage('libpdal', max_pin='x.x') }}
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - cmake
-    - make
+    - ninja
     - pkg-config
+    - libarrow
+    - libparquet
+    - ceres-solver
+    - glog
+    - gflags
+    - mkl  # [win]
+    - blas  # [win]
+    - hdf5
+    - tiledb
+    - libpq
+    - libxml2
+    - nitro
+    - libcurl
+    - draco
 
   host:
     - libgdal
     - geotiff
-    - libpq
-    - libkml
-    - eigen
-    - nitro
     - curl
     - zlib
-    - hdf5
-    - tiledb
     - zstd
     - libxml2
-    - draco
-    - ceres-solver
-    - mkl  # [win]
-    - blas  # [win]
+    - openssl
 
   run:
     - libgdal
     - geotiff
-    - libpq
-    - libkml
-    - eigen
-    - nitro
     - curl
-    - zlib
-    - hdf5
-    - tiledb
     - zstd
     - libxml2
-    - draco
-    - ceres-solver
-    - mkl  # [win]
-    - blas  # [win]
+    - openssl
 
-  run_constrained:   # [osx and x86_64]
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
+outputs:
 
-test:
-  commands:
-    - pdal --version
-    - pdal --drivers --debug
+  - name: libpdal-all
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    version: {{ version }}
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-trajectory", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-hdf", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
+    requirements:
+      build:
+        - cmake
+        - ninja
+      host:
+        - {{ pin_subpackage("libpdal", exact=True ) }}
+        - {{ pin_subpackage("libpdal-trajectory", exact=True ) }}
+        - {{ pin_subpackage("libpdal-hdf", exact=True ) }}
+        - {{ pin_subpackage("libpdal-tiledb", exact=True ) }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", exact=True ) }}
+        - {{ pin_subpackage("libpdal-draco", exact=True ) }}
+        - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
+        - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
+      run:
+        - {{ pin_subpackage("libpdal", exact=True ) }}
+        - {{ pin_subpackage("libpdal-trajectory", exact=True ) }}
+        - {{ pin_subpackage("libpdal-hdf", exact=True ) }}
+        - {{ pin_subpackage("libpdal-tiledb", exact=True ) }}
+        - {{ pin_subpackage("libpdal-pgpointcloud", exact=True ) }}
+        - {{ pin_subpackage("libpdal-draco", exact=True ) }}
+        - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
+        - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
+    test:
+      commands:
+        - echo "tested in other outputs"
+
+  - name: libpdal
+    version: {{ version }}
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage('libpdal', max_pin='x.x.x') }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+        - pkg-config
+      host:
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - geotiff
+        - libcurl
+        - zlib
+        - zstd
+        - libxml2
+        - openssl
+      run:
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - geotiff
+        - libcurl
+        - proj
+        - zlib
+        - zstd
+        - libxml2
+        - openssl
+        - xerces-c
+      run_constrained:   # [osx and x86_64]
+        - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
+    test:
+      commands:
+        - test -f $PREFIX/include/pdal/pdal.hpp  # [unix]
+        - if not exist %LIBRARY_INCL%\pdal\pdal.hpp exit 1  # [win]
+
+        - test -f $PREFIX/lib/libpdalcpp.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdalcpp.so  # [linux]
+        - if not exist %LIBRARY_BIN%\libpdalcpp.dll exit 1  # [win]
+
+        - test -f $PREFIX/bin/pdal  # [unix]
+        - if not exist %LIBRARY_BIN%\pdal exit 1  # [win]
+
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+
+  - name: libpdal-trajectory
+    version: {{ version }}
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      string: h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
+      run_exports:
+        - {{ pin_subpackage("libpdal-trajectory", max_pin="x") }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+      host:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - ceres-solver
+        - glog
+        - gflags
+        - mkl  # [win]
+        - blas  # [win]
+      run:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - ceres-solver
+        - mkl  # [win]
+        - blas  # [win]
+        - glog
+        - gflags
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_filter_trajectory.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_filter_trajectory.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_filter_trajectory.dll exit 1 # [win]
+    about:
+      summary: PDAL trajectory filter
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+
+  - name: libpdal-hdf
+    version: {{ version }}
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal-hdf", max_pin="x") }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+      host:
+        - hdf5
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+      run:
+        - hdf5
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_reader_hdf.dll exit 1 # [win]
+
+        - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_reader_icebridge.dll exit 1 # [win]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+
+  - name: libpdal-draco
+    version: {{ version }}
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+      host:
+        - draco
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - draco
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_writer_draco.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_writer_draco.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_writer_draco.dll exit 1 # [win]
+
+        - test -f $PREFIX/lib/libpdal_plugin_reader_draco.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_draco.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_reader_draco.dll exit 1 # [win]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: libpdal-tiledb
+    version: {{ version }}
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
+      ignore_run_exports:
+        - libgdal
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+      host:
+        - tiledb
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - tiledb
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_writer_tiledb.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_writer_tiledb.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_writer_tiledb.dll exit 1 # [win]
+
+        - test -f $PREFIX/lib/libpdal_plugin_reader_tiledb.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_tiledb.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_reader_tiledb.dll exit 1 # [win]
+
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: libpdal-pgpointcloud
+    version: {{ version }}
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal-pgpointcloud", max_pin="x") }}
+    script: build_pgpointcloud.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+      host:
+        - libpq
+        - libxml2
+        - zstd
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+      run:
+        - libpq
+        - libxml2
+        - zstd
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_reader_pgpointcloud.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_pgpointcloud.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_reader_pgpointcloud.dll exit 1 # [win]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: libpdal-arrow
+    version: {{ version }}
+    script: install_libpdal.sh   # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+      host:
+        - libarrow
+        - libparquet
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - libarrow
+        - libparquet
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_writer_arrow.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_writer_arrow.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_writer_arrow.dll exit 1 # [win]
+
+        - test -f $PREFIX/lib/libpdal_plugin_reader_arrow.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_arrow.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_reader_arrow.dll exit 1 # [win]
+
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: libpdal-nitf
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+      host:
+        - nitro
+        - libcurl
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+      run:
+        - nitro
+        - libcurl
+        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_reader_nitf.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_nitf.so  # [linux]
+        - if not exist %LIBRARY_BIN\libpdal_plugin_reader_nitf.dll exit 1 # [win]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+
 
 about:
   home: https://www.pdal.io

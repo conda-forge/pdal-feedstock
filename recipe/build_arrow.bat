@@ -1,4 +1,7 @@
-mkdir build
+pushd plugins/arrow
+
+rm -rf build
+mkdir -p build
 pushd build
 
 cmake -G "Ninja" ^
@@ -6,20 +9,14 @@ cmake -G "Ninja" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
       -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
-      -DBUILD_PLUGIN_E57=ON ^
-      -DBUILD_PLUGIN_PGPOINTCLOUD=OFF ^
-      -DBUILD_PLUGIN_ARROW=OFF ^
-      -DBUILD_PLUGIN_DRACO=OFF ^
-      -DENABLE_CTEST=OFF ^
+      -DPDAL_DIR:PATH="%LIBRARY_PREFIX%" ^
       -DWITH_TESTS=OFF ^
-      -DWITH_ZLIB=ON ^
-      -DWITH_ZSTD=ON ^
-      -DZSTD_LIBRARY="%LIBRARY_LIB%\libzstd.lib" ^
+      -DSTANDALONE=ON ^
       ..
 if errorlevel 1 exit 1
 
-cmake --build . --config Release
+cmake --build . --config Release --target pdal_plugin_writer_arrow pdal_plugin_reader_arrow
 if %ERRORLEVEL% neq 0 exit 1
 
-
+popd
 popd
