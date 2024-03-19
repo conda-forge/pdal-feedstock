@@ -3,6 +3,17 @@ set -ex
 
 # temporary prefix to be able to install files more granularly
 
+mkdir temp_prefix
+
+install_plugin () {
+    dir="$1"
+    pushd "$dir"
+    mkdir temp_prefix
+    cmake --install ./build --prefix=./temp_prefix
+    cp ./temp_prefix/lib/libpdal_plugin*.* $PREFIX/lib
+    rm -rf temp_prefix
+    popd
+}
 
 if [[ "${PKG_NAME}" == "libpdal" ]]; then
 
@@ -10,12 +21,13 @@ if [[ "${PKG_NAME}" == "libpdal" ]]; then
     echo "im located at `pwd`"
     echo "im installing to $PREFIX"
 
-#cmake --install ./build --prefix=$PREFIX
-cp ./build/lib/libpdalcpp.* $PREFIX/lib
-cp -R ./build/include/pdal/. $PREFIX/include/pdal
-cp ./build/apps/pdal.pc $PREFIX/lib/pkgconfig
-cp -R ./build/*.cmake $PREFIX/lib/cmake/PDAL
-cp ./build/bin/pdal $PREFIX/bin
+cmake --install ./build --prefix=./temp_prefix
+cp ./temp_prefix/lib/libpdalcpp.* $PREFIX/lib
+cp -R ./temp_prefix/include/pdal/. $PREFIX/include/pdal
+cp ./temp_prefix/lib/pkgconfig/pdal.pc $PREFIX/lib/pkgconfig
+mkdir $PREFIX/lib/cmake/PDAL
+cp -R ./temp_prefix/lib/cmake/PDAL/. $PREFIX/lib/cmake/PDAL
+cp ./temp_prefix/bin/pdal $PREFIX/bin
 
 ls -al $PREFIX/lib/libpdalcpp*
 
@@ -29,25 +41,26 @@ done
 
 
 elif [[ "${PKG_NAME}" == "libpdal-arrow" ]]; then
-    cp ./plugins/arrow/build/libpdal_plugin*.* $PREFIX/lib
+    install_plugin "plugins/arrow"
 elif [[ "${PKG_NAME}" == "libpdal-hdf" ]]; then
-    cp ./plugins/hdf/build/libpdal_plugin*.* $PREFIX/lib
-    cp ./plugins/icebridge/build/libpdal_plugin*.* $PREFIX/lib
+    install_plugin "plugins/hdf"
+    install_plugin "plugins/icebridge"
 elif [[ "${PKG_NAME}" == "libpdal-draco" ]]; then
-    cp ./plugins/draco/build/libpdal_plugin*.* $PREFIX/lib
+    install_plugin "plugins/draco"
 elif [[ "${PKG_NAME}" == "libpdal-pgpointcloud" ]]; then
-    cp ./plugins/pgpointcloud/build/libpdal_plugin*.* $PREFIX/lib
+    install_plugin "plugins/pgpointcloud"
 elif [[ "${PKG_NAME}" == "libpdal-nitf" ]]; then
-    cp ./plugins/nitf/build/libpdal_plugin*.* $PREFIX/lib
+    install_plugin "plugins/nitf"
 elif [[ "${PKG_NAME}" == "libpdal-trajectory" ]]; then
-    cp ./plugins/trajectory/build/libpdal_plugin*.* $PREFIX/lib
+    install_plugin "plugins/trajectory"
 elif [[ "${PKG_NAME}" == "libpdal-tiledb" ]]; then
-    cp ./plugins/tiledb/build/libpdal_plugin*.* $PREFIX/lib
+    install_plugin "plugins/tiledb"
 elif [[ "${PKG_NAME}" == "libpdal-all" ]]; then
-#    cmake --install ./build --prefix=$PREFIX
     echo "libpdal-all already installed"
 else
 echo "got unexpected package name: ${PKG_NAME}"
 exit 1
 fi
 
+# Clean up temp_prefix
+rm -rf temp_prefix
