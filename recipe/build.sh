@@ -96,7 +96,7 @@ rm -rf build
 mkdir -p build
 pushd build
 
-cmake -G Ninja ${CMAKE_ARGS} \
+cmake -G Ninja \
   -DSTANDALONE=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
@@ -163,7 +163,7 @@ rm -rf build
 mkdir -p build
 pushd build
 
-cmake -G Ninja ${CMAKE_ARGS} \
+cmake -G Ninja \
   -DSTANDALONE=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
