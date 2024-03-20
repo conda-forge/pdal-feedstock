@@ -30,7 +30,7 @@ requirements:
     - libparquet
     {% endif %}
     - ceres-solver
-    - glog
+    - glog 0.7  # [linux]
     - gflags
     - mkl  # [win]
     - blas  # [win]

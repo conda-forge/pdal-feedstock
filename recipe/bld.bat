@@ -31,10 +31,10 @@ if %ERRORLEVEL% neq 0 exit 1
 popd
 
 
-# ArrowV
+REM ArrowV
 pushd plugins\arrow
 
-rm -rf build
+rmdir /s /q build
 mkdir -p build
 pushd build
 
@@ -52,11 +52,11 @@ cmake --build . --config Release --target pdal_plugin_writer_arrow pdal_plugin_r
 popd
 popd
 
-# Trajectory
+REM Trajectory
 
 pushd plugins/trajectory
 
-rm -rf build
+rmdir /s /q build
 mkdir -p build
 pushd build
 
@@ -74,11 +74,11 @@ cmake --build . --config Release --target pdal_plugin_filter_trajectory
 popd
 popd
 
-# TileDB
+REM TileDB
 
 pushd plugins/tiledb
 
-rm -rf build
+rmdir /s /q build
 mkdir -p build
 pushd build
 
@@ -97,11 +97,11 @@ popd
 popd
 
 
-# pgpointcloud
+REM pgpointcloud
 
 pushd plugins/pgpointcloud
 
-rm -rf build
+rmdir /s /q build
 mkdir -p build
 pushd build
 
@@ -119,11 +119,11 @@ cmake --build . --config Release --target pdal_plugin_reader_pgpointcloud pdal_p
 popd
 popd
 
-# NITF
+REM NITF
 
 pushd plugins/nitf
 
-rm -rf build
+rmdir /s /q build
 mkdir -p build
 pushd build
 
@@ -141,10 +141,10 @@ cmake --build . --config Release --target pdal_plugin_reader_nitf pdal_plugin_wr
 popd
 popd
 
-#HDF
+REM HDF
 pushd plugins/hdf
 
-rm -rf build
+rmdir /s /q build
 mkdir -p build
 pushd build
 
@@ -166,7 +166,7 @@ popd
 
 pushd plugins/icebridge
 
-rm -rf build
+rmdir /s /q build
 mkdir -p build
 pushd build
 
@@ -184,11 +184,11 @@ cmake --build . --config Release --target pdal_plugin_reader_icebridge
 popd
 popd
 
-# Draco
+REM Draco
 
 pushd plugins/draco
 
-rm -rf build
+rmdir /s /q build
 mkdir -p build
 pushd build
 
