@@ -4,6 +4,7 @@
 mkdir temp_prefix
 
 cmake --install ./build --prefix=./temp_prefix
+if [%PKG_NAME%] == [libpdal] (
 
 move .\temp_prefix\lib\libpdalcpp.lib %LIBRARY_LIB%
 move .\temp_prefix\bin\libpdalcpp.dll %LIBRARY_BIN%
@@ -39,6 +40,65 @@ if errorlevel 1 exit 1
 copy %RECIPE_DIR%\scripts\deactivate.ps1 %DEACTIVATE_DIR%\pdal-deactivate.ps1
 if errorlevel 1 exit 1
 
+) else if [%PKG_NAME%] == [libpdal-hdf] (
+    pushd plugins\hdf
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+    pushd plugins\icebridge
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+
+) else if [%PKG_NAME%] == [libpdal-tiledb] (
+    pushd plugins\tiledb
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+
+) else if [%PKG_NAME%] == [libpdal-draco] (
+    pushd plugins\draco
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+
+) else if [%PKG_NAME%] == [libpdal-pgpointcloud] (
+    pushd plugins\pgpointcloud
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+
+
+) else if [%PKG_NAME%] == [libpdal-arrow] (
+    pushd plugins\arrow
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+
+) else if [%PKG_NAME%] == [libpdal-nitf] (
+    pushd plugins\nitf
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+
+) else if [%PKG_NAME%] == [libpdal-trajectory] (
+    pushd plugins\trajectory
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+
+) else if [%PKG_NAME%] == [libpdal-nitf] (
+    pushd plugins\nitf
+    cmake --install ./build --prefix=./temp_prefix
+    move .\temp_prefix\lib\libpdal*.dll %LIBRARY_BIN%
+    popd
+
+) else if [%PKG_NAME%] == [libpdal-all] (
+
+    ) else (
+    REM shouldn't happen
+    exit 1
+)
 
 
 :: clean up temp_prefix between builds
