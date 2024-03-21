@@ -21,8 +21,14 @@ requirements:
     - ninja
     - pkg-config
     - libarrow
+    # appease linter
+    {% if libarrow is undefined %}
+    {% set libarrow = "14" %}
+    {% endif %}
+    {% if libarrow.split(".")[0] | int >= 14 %}
     - libarrow-dataset
     - libparquet
+    {% endif %}
     - ceres-solver
     - gflags
     - mkl  # [win]
@@ -343,9 +349,14 @@ outputs:
         - ninja
       host:
         - libarrow
+        # appease linter
+        {% if libarrow is undefined %}
+        {% set libarrow = "14" %}
+        {% endif %}
+        {% if libarrow.split(".")[0] | int >= 14 %}
         - libarrow-dataset
         - libparquet
-        - {{ pin_subpackage('libpdal', exact=True) }}
+        {% endif %}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
