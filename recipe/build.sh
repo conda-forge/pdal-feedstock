@@ -79,6 +79,8 @@ cmake -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DArrow_DIR=$PREFIX/lib/cmake/Arrow \
+  -DParquet_DIR=$PREFIX/lib/cmake/Arrow \
   -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
   ..
 

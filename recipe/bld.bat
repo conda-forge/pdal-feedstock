@@ -30,6 +30,13 @@ if %ERRORLEVEL% neq 0 exit 1
 
 popd
 
+ls %PDAL_BUILD_DIR%
+echo "ls lib"
+ls %PDAL_BUILD_DIR%/lib/
+echo "ls lib/cmake"
+ls %PDAL_BUILD_DIR%/lib/cmake
+echo "ls lib/cmake/pdal"
+ls %PDAL_BUILD_DIR%/lib/cmake/PDAL
 
 REM ArrowV
 pushd plugins\arrow
@@ -47,7 +54,7 @@ cmake -G Ninja ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
-cmake --build . --config Release --target pdal_plugin_writer_arrow pdal_plugin_reader_arrow
+cmake --build . --config Release --target libpdal_plugin_writer_arrow libpdal_plugin_reader_arrow
 
 popd
 popd
@@ -69,7 +76,7 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
-cmake --build . --config Release --target pdal_plugin_filter_trajectory
+cmake --build . --config Release --target libpdal_plugin_filter_trajectory
 
 popd
 popd
@@ -91,7 +98,7 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
-cmake --build . --config Release --target pdal_plugin_reader_tiledb pdal_plugin_writer_tiledb
+cmake --build . --config Release --target libpdal_plugin_reader_tiledb libpdal_plugin_writer_tiledb
 
 popd
 popd
@@ -114,7 +121,7 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DBUILD_PLUGIN_PGPOINTCLOUD=ON ^
   ..
 
-cmake --build . --config Release --target pdal_plugin_reader_pgpointcloud pdal_plugin_writer_pgpointcloud
+cmake --build . --config Release --target libpdal_plugin_reader_pgpointcloud libpdal_plugin_writer_pgpointcloud
 
 popd
 popd
@@ -136,7 +143,7 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
-cmake --build . --config Release --target pdal_plugin_reader_nitf pdal_plugin_writer_nitf
+cmake --build . --config Release --target libpdal_plugin_reader_nitf libpdal_plugin_writer_nitf
 
 popd
 popd
@@ -158,7 +165,7 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DSTANDALONE=ON ^
   ..
 
-cmake --build . --config Release --target pdal_plugin_reader_hdf
+cmake --build . --config Release --target libpdal_plugin_reader_hdf
 
 popd
 popd
@@ -179,7 +186,7 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DBUILD_PLUGIN_ICEBRIDGE=ON ^
   ..
 
-cmake --build . --config Release --target pdal_plugin_reader_icebridge
+cmake --build . --config Release --target libpdal_plugin_reader_icebridge
 
 popd
 popd
@@ -201,7 +208,7 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
-cmake --build . --config Release  --target pdal_plugin_writer_draco pdal_plugin_reader_draco
+cmake --build . --config Release  --target libpdal_plugin_writer_draco libpdal_plugin_reader_draco
 
 popd
 popd
