@@ -23,7 +23,6 @@ requirements:
     - libarrow
     - libarrow-dataset
     - libparquet
-    {% endif %}
     - ceres-solver
     - gflags
     - mkl  # [win]
@@ -346,7 +345,6 @@ outputs:
         - libarrow
         - libarrow-dataset
         - libparquet
-        {% endif %}
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
