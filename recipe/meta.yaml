@@ -30,7 +30,6 @@ requirements:
     - libparquet
     {% endif %}
     - ceres-solver
-    - glog 0.7  # [linux]
     - gflags
     - mkl  # [win]
     - blas  # [win]
@@ -171,18 +170,16 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - ceres-solver
-        - glog
-        - gflags
+        - glog 0.7  # [linux]
         - mkl  # [win]
         - blas  # [win]
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - ceres-solver
+        - glog 0.7  # [linux]
         - mkl  # [win]
         - blas  # [win]
-        - glog
-        - gflags
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_filter_trajectory.dylib  # [osx]
@@ -351,7 +348,7 @@ outputs:
         - cmake
         - ninja
       host:
-        - libarrow
+        - libarrow 15
         # appease linter
         {% if libarrow is undefined %}
         {% set libarrow = "14" %}

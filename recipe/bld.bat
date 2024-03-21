@@ -38,8 +38,8 @@ rmdir /s /q build
 mkdir -p build
 pushd build
 
-cmake -G Ninja \
-  ${CMAKE_ARGS} %CMAKE_ARGS% ^
+cmake -G Ninja ^
+  %CMAKE_ARGS% ^
   -DSTANDALONE=ON ^
   -DCMAKE_BUILD_TYPE=Release ^
   -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
