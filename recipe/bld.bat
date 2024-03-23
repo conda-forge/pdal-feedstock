@@ -1,9 +1,11 @@
-mkdir build
-pushd build
 
+echo ON
 
 set PDAL_BUILD_DIR="%cd%/install"
 mkdir %PDAL_BUILD_DIR%
+
+mkdir build
+pushd build
 
 cmake -G "Ninja" ^
       %CMAKE_ARGS% ^
@@ -27,16 +29,8 @@ cmake --build . --config Release
 cmake --install . --prefix=%PDAL_BUILD_DIR%
 if %ERRORLEVEL% neq 0 exit 1
 
-
 popd
 
-ls %PDAL_BUILD_DIR%
-echo "ls lib"
-ls %PDAL_BUILD_DIR%/lib/
-echo "ls lib/cmake"
-ls %PDAL_BUILD_DIR%/lib/cmake
-echo "ls lib/cmake/pdal"
-ls %PDAL_BUILD_DIR%/lib/cmake/PDAL
 
 REM ArrowV
 pushd plugins\arrow
@@ -59,20 +53,20 @@ cmake --build . --config Release --target libpdal_plugin_writer_arrow libpdal_pl
 popd
 popd
 
-REM Trajectory
+REM Trajectory 
 
-pushd plugins/trajectory
+pushd plugins\trajectory
 
 rmdir /s /q build
 mkdir -p build
 pushd build
 
-cmake -G Ninja %CMAKE_ARGS% ^
+cmake -G Ninja ^
+  %CMAKE_ARGS% ^
   -DSTANDALONE=ON ^
   -DCMAKE_BUILD_TYPE=Release ^
   -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
   -DCMAKE_PREFIX_PATH=%PREFIX% ^
-  -DBUILD_PLUGIN_TRAJECTORY=ON ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
@@ -83,7 +77,7 @@ popd
 
 REM TileDB
 
-pushd plugins/tiledb
+pushd plugins\tiledb
 
 rmdir /s /q build
 mkdir -p build
@@ -94,7 +88,6 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DCMAKE_BUILD_TYPE=Release ^
   -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
   -DCMAKE_PREFIX_PATH=%PREFIX% ^
-  -DBUILD_PLUGIN_TILEDB=ON ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
@@ -106,7 +99,7 @@ popd
 
 REM pgpointcloud
 
-pushd plugins/pgpointcloud
+pushd plugins\pgpointcloud
 
 rmdir /s /q build
 mkdir -p build
@@ -118,7 +111,6 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
   -DCMAKE_PREFIX_PATH=%PREFIX% ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
-  -DBUILD_PLUGIN_PGPOINTCLOUD=ON ^
   ..
 
 cmake --build . --config Release --target libpdal_plugin_reader_pgpointcloud libpdal_plugin_writer_pgpointcloud
@@ -128,7 +120,7 @@ popd
 
 REM NITF
 
-pushd plugins/nitf
+pushd plugins\nitf
 
 rmdir /s /q build
 mkdir -p build
@@ -139,7 +131,6 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DCMAKE_BUILD_TYPE=Release ^
   -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
   -DCMAKE_PREFIX_PATH=%PREFIX% ^
-  -DBUILD_PLUGIN_NITF=ON ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
@@ -149,7 +140,7 @@ popd
 popd
 
 REM HDF
-pushd plugins/hdf
+pushd plugins\hdf
 
 rmdir /s /q build
 mkdir -p build
@@ -161,7 +152,6 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
   -DCMAKE_PREFIX_PATH=%PREFIX% ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
-  -DBUILD_PLUGIN_HDF=ON ^
   -DSTANDALONE=ON ^
   ..
 
@@ -171,7 +161,7 @@ popd
 popd
 
 
-pushd plugins/icebridge
+pushd plugins\icebridge
 
 rmdir /s /q build
 mkdir -p build
@@ -183,7 +173,6 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DCMAKE_PREFIX_PATH=%PREFIX% ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   -DSTANDALONE=ON ^
-  -DBUILD_PLUGIN_ICEBRIDGE=ON ^
   ..
 
 cmake --build . --config Release --target libpdal_plugin_reader_icebridge
@@ -193,7 +182,7 @@ popd
 
 REM Draco
 
-pushd plugins/draco
+pushd plugins\draco
 
 rmdir /s /q build
 mkdir -p build
@@ -204,7 +193,6 @@ cmake -G Ninja %CMAKE_ARGS% ^
   -DCMAKE_BUILD_TYPE=Release ^
   -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
   -DCMAKE_PREFIX_PATH=%PREFIX% ^
-  -DBUILD_PLUGIN_DRACO=ON ^
   -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
   ..
 
