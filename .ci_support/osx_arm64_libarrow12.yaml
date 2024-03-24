@@ -1,13 +1,9 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
 c_compiler:
-- gcc
+- clang
 c_compiler_version:
-- '12'
-cdt_arch:
-- aarch64
-cdt_name:
-- cos7
+- '16'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -15,27 +11,37 @@ channel_targets:
 curl:
 - '8'
 cxx_compiler:
-- gxx
+- clangxx
 cxx_compiler_version:
-- '12'
-docker_image:
-- quay.io/condaforge/linux-anvil-aarch64
+- '16'
 geotiff:
 - 1.7.1
+gflags:
+- '2.2'
 hdf5:
 - 1.14.3
+libarrow:
+- '12'
+libcurl:
+- '8'
 libgdal:
 - '3.8'
-libkml:
-- '1.3'
 libpq:
 - '16'
 libxml2:
 - '2'
+macos_machine:
+- arm64-apple-darwin20.0.0
+openssl:
+- '3'
+proj:
+- 9.3.1
 target_platform:
-- linux-aarch64
+- osx-arm64
 tiledb:
 - '2.21'
+xerces_c:
+- '3.2'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
