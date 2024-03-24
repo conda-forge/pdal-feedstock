@@ -22,9 +22,12 @@ if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   unset CFLAGS
   unset CXXFLAGS
 
+if [ "$target_platform" = "osx-arm64" ]; then
+  export CMAKE_OSX_ARCHITECTURES="x86_64"
+fi
+
   CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX} cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_OSX_ARCHITECTURES="x86_64" \
     ..
 
   export DIMBUILDER=`pwd`/bin/dimbuilder
@@ -49,7 +52,6 @@ cmake -G Ninja \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DDIMBUILDER_EXECUTABLE=$DIMBUILDER \
-  -DBUILD_PLUGIN_I3S=ON \
   -DBUILD_PLUGIN_E57=ON \
   -DBUILD_PLUGIN_PGPOINTCLOUD=OFF \
   -DBUILD_PLUGIN_ARROW=OFF \
@@ -75,6 +77,7 @@ pushd build
 
 cmake -G Ninja \
   ${CMAKE_ARGS} \
+  --debug-find \
   -DSTANDALONE=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
