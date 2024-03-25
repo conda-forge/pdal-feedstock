@@ -1,5 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
+- '10.15'
 c_compiler:
 - clang
 c_compiler_version:
@@ -20,6 +20,8 @@ gflags:
 - '2.2'
 hdf5:
 - 1.14.3
+libarrow:
+- '14'
 libcurl:
 - '8'
 libgdal:

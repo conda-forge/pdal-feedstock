@@ -26,6 +26,8 @@ gflags:
 - '2.2'
 hdf5:
 - 1.14.3
+libarrow:
+- '12'
 libcurl:
 - '8'
 libgdal:
