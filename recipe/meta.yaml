@@ -20,18 +20,15 @@ requirements:
     - cmake
     - ninja
     - pkg-config
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - libarrow
+    # appease linter
+    {% if libarrow is undefined %}
+    {% set libarrow = "14" %}
+    {% endif %}
+    {% if libarrow.split(".")[0] | int >= 14 %}
     - libarrow-dataset
     - libparquet
-    # # appease linter
-    # {% if libarrow is undefined %}
-    # {% set libarrow = "14" %}
-    # {% endif %}
-    # {% if libarrow.split(".")[0] | int >= 14 %}
-    # - libarrow-dataset
-    # - libparquet
-    # {% endif %}
+    {% endif %}
     - ceres-solver
     - gflags
     - mkl  # [win]
@@ -354,8 +351,14 @@ outputs:
         - ninja
       host:
         - libarrow
+        # appease linter
+        {% if libarrow is undefined %}
+        {% set libarrow = "14" %}
+        {% endif %}
+        {% if libarrow.split(".")[0] | int >= 14 %}
         - libarrow-dataset
         - libparquet
+        {% endif %}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
