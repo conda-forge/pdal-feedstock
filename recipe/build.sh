@@ -80,11 +80,6 @@ cmake -G Ninja \
   --debug-find \
   -DSTANDALONE=ON \
   -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX=$PREFIX \
-  -DCMAKE_PREFIX_PATH=$PREFIX \
-  -DArrow_DIR=$PREFIX/lib/cmake/Arrow \
-  -DParquet_DIR=$PREFIX/lib/cmake/Parquet \
-  -DCMAKE_FIND_ROOT_PATH=$PREFIX \
   -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
   ..
 
