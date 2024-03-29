@@ -45,6 +45,12 @@ pushd build
 export PDAL_BUILD_DIR=`pwd`/install
 mkdir $PDAL_BUILD_DIR
 
+export BUILD_PREFIX_ARROW=$(ls $BUILD_PREFIX/lib/cmake/Arrow)
+export PREFIX_ARROW=$(ls $PREFIX/lib/cmake/Arrow)
+
+echo "listing BUILD_PREFIX cmake: $BUILD_PREFIX_ARROW"
+echo "listing PREFIX cmake: PREFIX_ARROW"
+
 cmake -G Ninja \
   ${CMAKE_ARGS} \
   -DBUILD_SHARED_LIBS=ON \
