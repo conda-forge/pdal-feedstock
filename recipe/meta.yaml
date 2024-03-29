@@ -369,6 +369,16 @@ outputs:
         - {{ compiler('c') }}
         - cmake
         - ninja
+        - libarrow
+        # appease linter
+        {% if libarrow is undefined %}
+        {% set libarrow = "14" %}
+        {% endif %}
+        {% if libarrow.split(".")[0] | int >= 14 %}
+        - libarrow-dataset
+        - libparquet
+        {% endif %}
+
       host:
         - libarrow
         # appease linter
