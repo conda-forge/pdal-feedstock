@@ -45,12 +45,6 @@ pushd build
 export PDAL_BUILD_DIR=`pwd`/install
 mkdir $PDAL_BUILD_DIR
 
-export BUILD_PREFIX_ARROW=$(ls $BUILD_PREFIX/lib/cmake/Arrow)
-export PREFIX_ARROW=$(ls $PREFIX/lib/cmake/Arrow)
-
-echo "listing BUILD_PREFIX cmake: $BUILD_PREFIX_ARROW"
-echo "listing PREFIX cmake: PREFIX_ARROW"
-
 cmake -G Ninja \
   ${CMAKE_ARGS} \
   -DBUILD_SHARED_LIBS=ON \
@@ -60,7 +54,7 @@ cmake -G Ninja \
   -DDIMBUILDER_EXECUTABLE=$DIMBUILDER \
   -DBUILD_PLUGIN_E57=ON \
   -DBUILD_PLUGIN_PGPOINTCLOUD=OFF \
-  -DBUILD_PLUGIN_ARROW=ON \
+  -DBUILD_PLUGIN_ARROW=OFF \
   -DENABLE_CTEST=OFF \
   -DWITH_TESTS=OFF \
   -DWITH_ZLIB=ON \
