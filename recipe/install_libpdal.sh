@@ -17,9 +17,6 @@ install_plugin () {
 
 if [[ "${PKG_NAME}" == "libpdal" ]]; then
 
-    echo "abcdefghijklmnop"
-    echo "im located at `pwd`"
-    echo "im installing to $PREFIX"
 
 cmake --install ./build --prefix=./temp_prefix
 cp ./temp_prefix/lib/libpdalcpp.* $PREFIX/lib
@@ -29,7 +26,6 @@ mkdir $PREFIX/lib/cmake/PDAL
 cp -R ./temp_prefix/lib/cmake/PDAL/. $PREFIX/lib/cmake/PDAL
 cp ./temp_prefix/bin/pdal $PREFIX/bin
 
-ls -al $PREFIX/lib/libpdalcpp*
 
 ## Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d, see
 ## https://conda-forge.org/docs/maintainer/adding_pkgs.html#activate-scripts

@@ -63,7 +63,6 @@ cmake -G Ninja \
 
 cmake --build . --config Release
 cmake --install . --prefix=$PDAL_BUILD_DIR
-    echo "i installed to $PDAL_BUILD_DIR"
 
 popd
 
@@ -77,7 +76,6 @@ pushd build
 
 cmake -G Ninja \
   ${CMAKE_ARGS} \
-  --debug-find \
   -DSTANDALONE=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
