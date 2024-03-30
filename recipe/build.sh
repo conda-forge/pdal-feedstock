@@ -24,9 +24,12 @@ if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
 
 
   CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX} \
-    -DCMAKE_OSX_ARCHITECTURES="x86_64" cmake -G Ninja \
-    -DCMAKE_BUILD_TYPE=Release \
-    ..
+    CFLAGS=${CFLAGS//$PREFIX/$BUILD_PREFIX} \
+    CXXFLAGS=${CXXFLAGS//$PREFIX/$BUILD_PREFIX} \
+    cmake -G Ninja \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_OSX_ARCHITECTURES="x86_64" \
+        ..
 
   export DIMBUILDER=`pwd`/bin/dimbuilder
   ninja dimbuilder
