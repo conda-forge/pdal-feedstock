@@ -19,14 +19,12 @@ if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   mkdir native; pushd native;
 
   # Unset them as we're ok with builds that are either slow or non-portable
-  unset CFLAGS
-  unset CXXFLAGS
+  #unset CFLAGS
+  #unset CXXFLAGS
 
-if [ "$target_platform" = "osx-arm64" ]; then
-  export CMAKE_OSX_ARCHITECTURES="x86_64"
-fi
 
-  CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX} cmake -G Ninja \
+  CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX} \
+    -DCMAKE_OSX_ARCHITECTURES="x86_64" cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     ..
 

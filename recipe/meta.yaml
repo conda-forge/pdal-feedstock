@@ -19,6 +19,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cmake
     - ninja
     - pkg-config
