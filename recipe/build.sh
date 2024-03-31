@@ -18,18 +18,25 @@ fi
 if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
   mkdir native; pushd native;
 
-  # Unset them as we're ok with builds that are either slow or non-portable
-  #unset CFLAGS
-  #unset CXXFLAGS
-
+if [ "$(uname)" == "Darwin" ]; then
+   export CXXFLAGS_NATIVE=${CXXFLAGS//$PREFIX/$BUILD_PREFIX}
+   export LDFLAGS_NATIVE=${LDFLAGS//$PREFIX/$BUILD_PREFIX} \
+   export CFLAGS_NATIVE=${CFLAGS//$PREFIX/$BUILD_PREFIX} \
+   export EXTRA_CMAKE_ARGS='-DCMAKE_OSX_ARCHITECTURES="x86_64"'
+else
+   export CXXFLAGS_NATIVE=${CXXFLAGS}
+   export CFLAGS_NATIVE=${CFLAGS}
+   export LDFLAGS_NATIVE=${LDFLAGS}
+   export EXTRA_CMAKE_ARGS=''
+fi
 
   CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD \
-    LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX} \
-    CFLAGS=${CFLAGS//$PREFIX/$BUILD_PREFIX} \
-    CXXFLAGS=${CXXFLAGS//$PREFIX/$BUILD_PREFIX} \
+    LDFLAGS=${LDFLAGS_NATIVE} \
+    CFLAGS=${CFLAGS_NATIVE} \
+    CXXFLAGS=${CXXFLAGS_NATIVE} \
     cmake -G Ninja \
         -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_OSX_ARCHITECTURES="x86_64" \
+        ${EXTRA_CMAKE_ARGS}
         ..
 
   export DIMBUILDER=`pwd`/bin/dimbuilder
@@ -47,9 +54,12 @@ pushd build
 export PDAL_BUILD_DIR=`pwd`/install
 mkdir $PDAL_BUILD_DIR
 
+if [ "$(uname)" == "Darwin" ]; then
+   export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY" \
+fi
+
 cmake -G Ninja \
   ${CMAKE_ARGS} \
-  CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY" \
   -DBUILD_SHARED_LIBS=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
