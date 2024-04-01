@@ -22,12 +22,12 @@ if [ "$(uname)" == "Darwin" ]; then
    export CXXFLAGS_NATIVE=${CXXFLAGS//$PREFIX/$BUILD_PREFIX}
    export LDFLAGS_NATIVE=${LDFLAGS//$PREFIX/$BUILD_PREFIX} \
    export CFLAGS_NATIVE=${CFLAGS//$PREFIX/$BUILD_PREFIX} \
-   export EXTRA_CMAKE_ARGS='-DCMAKE_OSX_ARCHITECTURES="x86_64"'
+   export EXTRA_CMAKE_ARGS=-DCMAKE_OSX_ARCHITECTURES="x86_64"
 else
    export CXXFLAGS_NATIVE=${CXXFLAGS}
    export CFLAGS_NATIVE=${CFLAGS}
    export LDFLAGS_NATIVE=${LDFLAGS}
-   export EXTRA_CMAKE_ARGS=''
+   export EXTRA_CMAKE_ARGS=""
 fi
 
   CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD \
@@ -55,7 +55,7 @@ export PDAL_BUILD_DIR=`pwd`/install
 mkdir $PDAL_BUILD_DIR
 
 if [ "$(uname)" == "Darwin" ]; then
-   export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY" \
+   export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
 cmake -G Ninja \
