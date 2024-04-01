@@ -170,7 +170,7 @@ outputs:
 
         - echo "Testing for CLI"
         - test -f $PREFIX/bin/pdal  # [unix]
-        - if not exist %CONDA_PREFIX%\Library\bin\pdal exit 1  # [win]
+        - if not exist %CONDA_PREFIX%\Library\bin\pdal.exe exit 1  # [win]
 
     about:
       summary: Point Data Abstraction Library (PDAL)
