@@ -36,7 +36,7 @@ fi
     CXXFLAGS=${CXXFLAGS_NATIVE} \
     cmake -G Ninja \
         -DCMAKE_BUILD_TYPE=Release \
-        ${EXTRA_CMAKE_ARGS}
+        ${EXTRA_CMAKE_ARGS} \
         ..
 
   export DIMBUILDER=`pwd`/bin/dimbuilder
