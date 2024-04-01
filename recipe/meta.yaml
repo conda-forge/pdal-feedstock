@@ -166,7 +166,7 @@ outputs:
         - echo "Testing for library"
         - test -f $PREFIX/lib/libpdalcpp.dylib  # [osx]
         - test -f $PREFIX/lib/libpdalcpp.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdalcpp.dll exit 1  # [win]
+        - if not exist %CONDA_PREFIX%\Library\bin\pdalcpp.dll exit 1  # [win]
 
         - echo "Testing for CLI"
         - test -f $PREFIX/bin/pdal  # [unix]
