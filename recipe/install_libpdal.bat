@@ -25,8 +25,8 @@ xcopy /s /y .\temp_prefix\include\pdal %LIBRARY_PREFIX%\include\pdal
 set "ACTIVATE_DIR=%PREFIX%\etc\conda\activate.d"
 set "DEACTIVATE_DIR=%PREFIX%\etc\conda\deactivate.d"
 
-REM because we set ACTIVATE_DIR in this conditional, we have to 
-REM use the ! 
+REM because we set ACTIVATE_DIR in this conditional, we have to
+REM use the !
 mkdir !ACTIVATE_DIR!
 mkdir !DEACTIVATE_DIR!
 
@@ -47,13 +47,13 @@ if errorlevel 1 exit 1
     CALL :InstallPlugin "plugins\hdf"
     CALL :InstallPlugin "plugins\icebridge"
 ) else if [%PKG_NAME%] == [libpdal-tiledb] (
-    CALL :InstallPlugin "plugins\to;edb"
+    CALL :InstallPlugin "plugins\tiledb"
 ) else if [%PKG_NAME%] == [libpdal-draco] (
-    CALL :InstallPlugin "plugins\dracp"
+    CALL :InstallPlugin "plugins\draco"
 ) else if [%PKG_NAME%] == [libpdal-pgpointcloud] (
     CALL :InstallPlugin "plugins\pgpointcloud"
 ) else if [%PKG_NAME%] == [libpdal-arrow] (
-    CALL :InstallPlugin "plugins\arrpw"
+    CALL :InstallPlugin "plugins\arrow"
 ) else if [%PKG_NAME%] == [libpdal-nitf] (
     CALL :InstallPlugin "plugins\nitf"
 ) else if [%PKG_NAME%] == [libpdal-trajectory] (
@@ -80,7 +80,7 @@ GOTO :EOF
 :InstallPlugin
 echo "Installing plugin for directory %~1 "
 set PLUGIN_DIR=%~1
-echo "Set PLUGIN_DIR to !PLUGIN_DIR!" 
+echo "Set PLUGIN_DIR to !PLUGIN_DIR!"
 pushd !PLUGIN_DIR!
 cmake --install ./build --prefix=./temp_prefix
 copy .\temp_prefix\bin\libpdal*.dll %LIBRARY_BIN%
