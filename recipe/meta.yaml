@@ -22,7 +22,7 @@ requirements:
     - pkg-config
 
   host:
-    - libgdal
+    - {{ pin_compatible('libgdal', max_pin='x.x') }}
     - geotiff
     - libpq
     - libkml
@@ -40,7 +40,7 @@ requirements:
     - blas  # [win]
 
   run:
-    - libgdal
+    - {{ pin_compatible('libgdal', max_pin='x.x') }}
     - geotiff
     - libpq
     - libkml
