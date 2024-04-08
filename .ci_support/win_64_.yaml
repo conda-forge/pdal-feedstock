@@ -14,8 +14,6 @@ geotiff:
 - 1.7.1
 hdf5:
 - 1.14.3
-libgdal:
-- '3.8'
 libkml:
 - '1.3'
 libpq:
