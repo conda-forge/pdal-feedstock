@@ -23,6 +23,7 @@ requirements:
 
   host:
     - {{ pin_compatible('libgdal', max_pin='x.x') }}
+    - {{ pin_compatible('proj', max_pin='x.x') }}
     - geotiff
     - libpq
     - libkml
@@ -41,6 +42,7 @@ requirements:
 
   run:
     - {{ pin_compatible('libgdal', max_pin='x.x') }}
+    - {{ pin_compatible('proj', max_pin='x.x') }}
     - geotiff
     - libpq
     - libkml
