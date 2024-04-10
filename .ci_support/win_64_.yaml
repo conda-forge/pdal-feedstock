@@ -1,5 +1,5 @@
 c_compiler:
-- vs2022
+- vs2019
 c_stdlib:
 - vs
 c_stdlib_version:
@@ -11,7 +11,7 @@ channel_targets:
 curl:
 - '8'
 cxx_compiler:
-- vs2022
+- vs2019
 geotiff:
 - 1.7.1
 hdf5:
