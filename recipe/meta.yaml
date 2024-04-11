@@ -9,7 +9,7 @@ source:
   sha256: 7769aaacfc26daeb559b511c73c241a5e9a2f31e26ef3a736204b83e791c5453
 
 build:
-  number: 3
+  number: 4
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x.x') }}
 
@@ -17,7 +17,6 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
     - cmake
     - make
     - pkg-config
@@ -60,7 +59,6 @@ requirements:
     - mkl  # [win]
     - blas  # [win]
 
-  run_constrained:   # [osx and x86_64]
 
 test:
   commands:
