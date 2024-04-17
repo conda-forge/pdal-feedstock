@@ -33,7 +33,7 @@ libxml2:
 target_platform:
 - linux-64
 tiledb:
-- '2.21'
+- '2.22'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
