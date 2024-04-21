@@ -3,6 +3,10 @@ About pdal-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pdal-feedstock/blob/main/LICENSE.txt)
 
+
+About pdal
+----------
+
 Home: https://www.pdal.io
 
 Package license: BSD-3-Clause
@@ -14,6 +18,87 @@ Development: https://github.com/pdal/pdal
 Documentation: https://pdal.io
 
 Point cloud data processing.
+
+About libpdal
+-------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About libpdal-arrow
+-------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About libpdal-draco
+-------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About libpdal-hdf
+-----------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About libpdal-nitf
+------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About libpdal-pgpointcloud
+--------------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About libpdal-python
+--------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About libpdal-tiledb
+--------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
+About libpdal-trajectory
+------------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: PDAL trajectory filter
 
 Current build status
 ====================
@@ -33,45 +118,675 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_libarrow12numpy1.22python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow12numpy1.22python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64</td>
+              <td>linux_64_libarrow12numpy1.22python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow12numpy1.22python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le</td>
+              <td>linux_64_libarrow12numpy1.22python3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow12numpy1.22python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_64_libarrow12numpy1.23python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow12numpy1.23python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64</td>
+              <td>linux_64_libarrow13numpy1.22python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow13numpy1.22python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64</td>
+              <td>linux_64_libarrow13numpy1.22python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow13numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow13numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow13numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow13numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow13numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow14numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow14numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow14numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow14numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow14numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow14numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow14numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow14numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow15numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow15numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow15numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow15numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow15numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow15numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libarrow15numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libarrow15numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow12numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow12numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow12numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow12numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow12numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow12numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow12numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow12numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow13numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow13numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow13numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow13numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow13numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow13numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow13numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow13numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow14numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow14numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow14numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow14numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow14numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow14numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow14numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow14numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow15numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow15numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow15numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow15numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow15numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow15numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_libarrow15numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libarrow15numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow12numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow12numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow12numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow12numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow12numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow12numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow12numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow12numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow13numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow13numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow13numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow13numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow13numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow13numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow13numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow13numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow14numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow14numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow14numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow14numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow14numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow14numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow14numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow14numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow15numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow15numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow15numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow15numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow15numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow15numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libarrow15numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libarrow15numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow12numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow12numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow12numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow12numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow12numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow12numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow12numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow12numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow13numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow13numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow13numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow13numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow13numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow13numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow13numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow13numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow14numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow14numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow14numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow14numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow14numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow14numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow14numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow14numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow15numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow15numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow15numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow15numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow15numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow15numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libarrow15numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libarrow15numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow12numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow12numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow12numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow12numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow12numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow12numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow12numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow12numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow13numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow13numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow13numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow13numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow13numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow13numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow13numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow13numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow14numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow14numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow14numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow14numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow14numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow14numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow14numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow14numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow15numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow15numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow15numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow15numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow15numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow15numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libarrow15numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libarrow15numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow12numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow12numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow12numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow12numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow12numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow12numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow12numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow12numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow13numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow13numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow13numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow13numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow13numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow13numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow13numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow13numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow14numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow14numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow14numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow14numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow14numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow14numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow14numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow14numpy1.23python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow15numpy1.22python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow15numpy1.22python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow15numpy1.22python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow15numpy1.22python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow15numpy1.22python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow15numpy1.22python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_libarrow15numpy1.23python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5283&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pdal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_libarrow15numpy1.23python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -87,7 +802,16 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pdal-green.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pdal.svg)](https://anaconda.org/conda-forge/pdal) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal-green.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--all-green.svg)](https://anaconda.org/conda-forge/libpdal-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-all.svg)](https://anaconda.org/conda-forge/libpdal-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-all.svg)](https://anaconda.org/conda-forge/libpdal-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-all.svg)](https://anaconda.org/conda-forge/libpdal-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--arrow-green.svg)](https://anaconda.org/conda-forge/libpdal-arrow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-arrow.svg)](https://anaconda.org/conda-forge/libpdal-arrow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-arrow.svg)](https://anaconda.org/conda-forge/libpdal-arrow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-arrow.svg)](https://anaconda.org/conda-forge/libpdal-arrow) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--draco-green.svg)](https://anaconda.org/conda-forge/libpdal-draco) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-draco.svg)](https://anaconda.org/conda-forge/libpdal-draco) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-draco.svg)](https://anaconda.org/conda-forge/libpdal-draco) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-draco.svg)](https://anaconda.org/conda-forge/libpdal-draco) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--hdf-green.svg)](https://anaconda.org/conda-forge/libpdal-hdf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-hdf.svg)](https://anaconda.org/conda-forge/libpdal-hdf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-hdf.svg)](https://anaconda.org/conda-forge/libpdal-hdf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-hdf.svg)](https://anaconda.org/conda-forge/libpdal-hdf) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--nitf-green.svg)](https://anaconda.org/conda-forge/libpdal-nitf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-nitf.svg)](https://anaconda.org/conda-forge/libpdal-nitf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-nitf.svg)](https://anaconda.org/conda-forge/libpdal-nitf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-nitf.svg)](https://anaconda.org/conda-forge/libpdal-nitf) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--pgpointcloud-green.svg)](https://anaconda.org/conda-forge/libpdal-pgpointcloud) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-pgpointcloud.svg)](https://anaconda.org/conda-forge/libpdal-pgpointcloud) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-pgpointcloud.svg)](https://anaconda.org/conda-forge/libpdal-pgpointcloud) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-pgpointcloud.svg)](https://anaconda.org/conda-forge/libpdal-pgpointcloud) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--python-green.svg)](https://anaconda.org/conda-forge/libpdal-python) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-python.svg)](https://anaconda.org/conda-forge/libpdal-python) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-python.svg)](https://anaconda.org/conda-forge/libpdal-python) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-python.svg)](https://anaconda.org/conda-forge/libpdal-python) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--tiledb-green.svg)](https://anaconda.org/conda-forge/libpdal-tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-tiledb.svg)](https://anaconda.org/conda-forge/libpdal-tiledb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-tiledb.svg)](https://anaconda.org/conda-forge/libpdal-tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-tiledb.svg)](https://anaconda.org/conda-forge/libpdal-tiledb) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--trajectory-green.svg)](https://anaconda.org/conda-forge/libpdal-trajectory) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-trajectory.svg)](https://anaconda.org/conda-forge/libpdal-trajectory) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-trajectory.svg)](https://anaconda.org/conda-forge/libpdal-trajectory) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-trajectory.svg)](https://anaconda.org/conda-forge/libpdal-trajectory) |
 
 Installing pdal
 ===============
@@ -99,41 +823,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pdal` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libpdal, libpdal-all, libpdal-arrow, libpdal-draco, libpdal-hdf, libpdal-nitf, libpdal-pgpointcloud, libpdal-python, libpdal-tiledb, libpdal-trajectory` can be installed with `conda`:
 
 ```
-conda install pdal
-```
-
-or with `mamba`:
-
-```
-mamba install pdal
-```
-
-It is possible to list all of the versions of `pdal` available on your platform with `conda`:
-
-```
-conda search pdal --channel conda-forge
+conda install libpdal libpdal-all libpdal-arrow libpdal-draco libpdal-hdf libpdal-nitf libpdal-pgpointcloud libpdal-python libpdal-tiledb libpdal-trajectory
 ```
 
 or with `mamba`:
 
 ```
-mamba search pdal --channel conda-forge
+mamba install libpdal libpdal-all libpdal-arrow libpdal-draco libpdal-hdf libpdal-nitf libpdal-pgpointcloud libpdal-python libpdal-tiledb libpdal-trajectory
+```
+
+It is possible to list all of the versions of `libpdal` available on your platform with `conda`:
+
+```
+conda search libpdal --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search libpdal --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search pdal --channel conda-forge
+mamba repoquery search libpdal --channel conda-forge
 
-# List packages depending on `pdal`:
-mamba repoquery whoneeds pdal --channel conda-forge
+# List packages depending on `libpdal`:
+mamba repoquery whoneeds libpdal --channel conda-forge
 
-# List dependencies of `pdal`:
-mamba repoquery depends pdal --channel conda-forge
+# List dependencies of `libpdal`:
+mamba repoquery depends libpdal --channel conda-forge
 ```
 
 

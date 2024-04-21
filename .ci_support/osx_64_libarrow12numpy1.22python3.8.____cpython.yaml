@@ -1,0 +1,65 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.15'
+c_compiler:
+- clang
+c_compiler_version:
+- '16'
+c_stdlib:
+- macosx_deployment_target
+c_stdlib_version:
+- '10.15'
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+curl:
+- '8'
+cxx_compiler:
+- clangxx
+cxx_compiler_version:
+- '16'
+geotiff:
+- 1.7.1
+gflags:
+- '2.2'
+hdf5:
+- 1.14.3
+libarrow:
+- '12'
+libcurl:
+- '8'
+libgdal:
+- '3.8'
+libpq:
+- '16'
+libxml2:
+- '2'
+macos_machine:
+- x86_64-apple-darwin13.4.0
+numpy:
+- '1.22'
+openssl:
+- '3'
+pin_run_as_build:
+  python:
+    min_pin: x.x
+    max_pin: x.x
+proj:
+- 9.4.0
+python:
+- 3.8.* *_cpython
+target_platform:
+- osx-64
+tiledb:
+- '2.22'
+xerces_c:
+- '3.2'
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+- - python
+  - numpy
+zlib:
+- '1.2'
+zstd:
+- '1.5'
