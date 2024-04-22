@@ -80,6 +80,7 @@ requirements:
     - numpy
     - pybind11
     - scikit-build
+    - pip
 
   run:
     - libgdal
