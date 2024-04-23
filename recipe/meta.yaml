@@ -512,7 +512,7 @@ outputs:
         - pip
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
-        - {{ pin_compatible('numpy') }}
+        - numpy
         - python
 
     test:
