@@ -76,6 +76,10 @@ requirements:
     - draco
     - cpd
     - fgt
+    - python
+    - numpy
+    - pybind11
+    - scikit-build
 
   run:
     - libgdal
