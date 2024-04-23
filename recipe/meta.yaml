@@ -506,6 +506,7 @@ outputs:
         - {{ pin_compatible('numpy') }}
         - pybind11
         - scikit-build-core
+        - pip
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - {{ pin_compatible('numpy') }}
