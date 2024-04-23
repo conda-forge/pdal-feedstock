@@ -28,6 +28,15 @@ Package license: BSD-3-Clause
 
 Summary: Point Data Abstraction Library (PDAL)
 
+About libpdal-cpd
+-----------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
 About libpdal-arrow
 -------------------
 
@@ -301,6 +310,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal-green.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal.svg)](https://anaconda.org/conda-forge/libpdal) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--all-green.svg)](https://anaconda.org/conda-forge/libpdal-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-all.svg)](https://anaconda.org/conda-forge/libpdal-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-all.svg)](https://anaconda.org/conda-forge/libpdal-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-all.svg)](https://anaconda.org/conda-forge/libpdal-all) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--arrow-green.svg)](https://anaconda.org/conda-forge/libpdal-arrow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-arrow.svg)](https://anaconda.org/conda-forge/libpdal-arrow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-arrow.svg)](https://anaconda.org/conda-forge/libpdal-arrow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-arrow.svg)](https://anaconda.org/conda-forge/libpdal-arrow) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--cpd-green.svg)](https://anaconda.org/conda-forge/libpdal-cpd) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-cpd.svg)](https://anaconda.org/conda-forge/libpdal-cpd) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-cpd.svg)](https://anaconda.org/conda-forge/libpdal-cpd) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-cpd.svg)](https://anaconda.org/conda-forge/libpdal-cpd) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--draco-green.svg)](https://anaconda.org/conda-forge/libpdal-draco) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-draco.svg)](https://anaconda.org/conda-forge/libpdal-draco) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-draco.svg)](https://anaconda.org/conda-forge/libpdal-draco) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-draco.svg)](https://anaconda.org/conda-forge/libpdal-draco) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--hdf-green.svg)](https://anaconda.org/conda-forge/libpdal-hdf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-hdf.svg)](https://anaconda.org/conda-forge/libpdal-hdf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-hdf.svg)](https://anaconda.org/conda-forge/libpdal-hdf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-hdf.svg)](https://anaconda.org/conda-forge/libpdal-hdf) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libpdal--nitf-green.svg)](https://anaconda.org/conda-forge/libpdal-nitf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libpdal-nitf.svg)](https://anaconda.org/conda-forge/libpdal-nitf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libpdal-nitf.svg)](https://anaconda.org/conda-forge/libpdal-nitf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libpdal-nitf.svg)](https://anaconda.org/conda-forge/libpdal-nitf) |
@@ -319,16 +329,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libpdal, libpdal-all, libpdal-arrow, libpdal-draco, libpdal-hdf, libpdal-nitf, libpdal-pgpointcloud, libpdal-python, libpdal-tiledb, libpdal-trajectory` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libpdal, libpdal-all, libpdal-arrow, libpdal-cpd, libpdal-draco, libpdal-hdf, libpdal-nitf, libpdal-pgpointcloud, libpdal-python, libpdal-tiledb, libpdal-trajectory` can be installed with `conda`:
 
 ```
-conda install libpdal libpdal-all libpdal-arrow libpdal-draco libpdal-hdf libpdal-nitf libpdal-pgpointcloud libpdal-python libpdal-tiledb libpdal-trajectory
+conda install libpdal libpdal-all libpdal-arrow libpdal-cpd libpdal-draco libpdal-hdf libpdal-nitf libpdal-pgpointcloud libpdal-python libpdal-tiledb libpdal-trajectory
 ```
 
 or with `mamba`:
 
 ```
-mamba install libpdal libpdal-all libpdal-arrow libpdal-draco libpdal-hdf libpdal-nitf libpdal-pgpointcloud libpdal-python libpdal-tiledb libpdal-trajectory
+mamba install libpdal libpdal-all libpdal-arrow libpdal-cpd libpdal-draco libpdal-hdf libpdal-nitf libpdal-pgpointcloud libpdal-python libpdal-tiledb libpdal-trajectory
 ```
 
 It is possible to list all of the versions of `libpdal` available on your platform with `conda`:

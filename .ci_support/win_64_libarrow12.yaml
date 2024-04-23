@@ -45,8 +45,6 @@ target_platform:
 - win-64
 tiledb:
 - '2.22'
-xerces_c:
-- '3.2'
 zlib:
 - '1.2'
 zstd:

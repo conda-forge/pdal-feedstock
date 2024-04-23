@@ -53,8 +53,6 @@ target_platform:
 - linux-ppc64le
 tiledb:
 - '2.22'
-xerces_c:
-- '3.2'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
