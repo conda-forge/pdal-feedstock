@@ -47,7 +47,5 @@ tiledb:
 zip_keys:
 - - python
   - numpy
-zlib:
-- '1.2'
 zstd:
 - '1.5'

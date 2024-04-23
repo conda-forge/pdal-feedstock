@@ -63,7 +63,5 @@ zip_keys:
   - cdt_name
 - - python
   - numpy
-zlib:
-- '1.2'
 zstd:
 - '1.5'
