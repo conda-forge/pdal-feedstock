@@ -9,6 +9,7 @@ source:
   sha256: 7769aaacfc26daeb559b511c73c241a5e9a2f31e26ef3a736204b83e791c5453
   patches:
     - no-arrow-gdal-link.patch
+    - cpd-find.patch
 
 build:
   number: 1
@@ -42,6 +43,9 @@ requirements:
     - nitro
     - libcurl
     - draco
+    - cpd
+    - fgt
+    - zstd
 
   host:
     - libgdal
@@ -70,6 +74,8 @@ requirements:
     - nitro
     - libcurl
     - draco
+    - cpd
+    - fgt
 
   run:
     - libgdal
@@ -95,6 +101,7 @@ outputs:
         - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
         - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
         - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-cpd", max_pin="x") }}
         - {{ pin_subpackage("libpdal-python", max_pin="x") }}
     requirements:
       build:
@@ -109,6 +116,7 @@ outputs:
         - {{ pin_subpackage("libpdal-draco", exact=True ) }}
         - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
         - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
+        - {{ pin_subpackage("libpdal-cpd", exact=True ) }}
         - {{ pin_subpackage("libpdal-python", exact=True ) }}
       run:
         - {{ pin_subpackage("libpdal", exact=True ) }}
@@ -119,6 +127,7 @@ outputs:
         - {{ pin_subpackage("libpdal-draco", exact=True ) }}
         - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
         - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
+        - {{ pin_subpackage("libpdal-cpd", exact=True ) }}
         - {{ pin_subpackage("libpdal-python", exact=True ) }}
     test:
       commands:
@@ -435,6 +444,35 @@ outputs:
         - test -f $PREFIX/lib/libpdal_plugin_reader_nitf.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_nitf.so  # [linux]
         - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_reader_nitf.dll exit 1  # [win]
+    about:
+      summary: Point Data Abstraction Library (PDAL)
+      license: BSD-3-Clause
+      license_file: LICENSE.txt
+
+  - name: libpdal-cpd
+    script: install_libpdal.sh  # [unix]
+    script: install_libpdal.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libpdal-cpd", max_pin="x") }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - ninja
+        - eigen
+      host:
+        - cpd
+        - fgt
+      run:
+        - cpd
+        - fgt
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_filter_cpd.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_filter_cpd.so  # [linux]
+        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_filter_cpd.dll exit 1  # [win]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause

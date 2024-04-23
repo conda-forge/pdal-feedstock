@@ -51,6 +51,8 @@ elif [[ "${PKG_NAME}" == "libpdal-trajectory" ]]; then
     install_plugin "plugins/trajectory"
 elif [[ "${PKG_NAME}" == "libpdal-tiledb" ]]; then
     install_plugin "plugins/tiledb"
+elif [[ "${PKG_NAME}" == "libpdal-cpd" ]]; then
+    install_plugin "plugins/cpd"
 elif [[ "${PKG_NAME}" == "libpdal-all" ]]; then
     echo "libpdal-all already installed"
 else

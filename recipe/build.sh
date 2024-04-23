@@ -259,4 +259,24 @@ cmake --build . --config Release  --target pdal_plugin_writer_draco pdal_plugin_
 popd
 popd
 
+# CPD
+
+pushd plugins/cpd
+
+rm -rf build
+mkdir -p build
+pushd build
+
+cmake -G Ninja ${CMAKE_ARGS} \
+  -DSTANDALONE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DPDAL_DIR:PATH=$PDAL_BUILD_DIR/lib/cmake/PDAL \
+  ..
+
+cmake --build . --config Release  --target pdal_plugin_filter_cpd
+
+popd
+popd
 
