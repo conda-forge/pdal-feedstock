@@ -22,30 +22,30 @@ requirements:
     - {{ compiler('c') }}
     - cmake
     - ninja
-    # - pkg-config
-    # - libarrow
-    # # appease linter
-    # {% if libarrow is undefined %}
-    # {% set libarrow = "14" %}
-    # {% endif %}
-    # {% if libarrow.split(".")[0] | int >= 14 %}
-    # - libarrow-dataset
-    # - libparquet
-    # {% endif %}
-    # - ceres-solver
-    # - gflags
-    # - mkl  # [win]
-    # - blas  # [win]
-    # - hdf5
-    # - tiledb
-    # - libpq
-    # - libxml2
-    # - nitro
-    # - libcurl
-    # - draco
-    # - cpd
-    # - fgt
-    # - zstd
+    - pkg-config
+    - libarrow
+    # appease linter
+    {% if libarrow is undefined %}
+    {% set libarrow = "14" %}
+    {% endif %}
+    {% if libarrow.split(".")[0] | int >= 14 %}
+    - libarrow-dataset
+    - libparquet
+    {% endif %}
+    - ceres-solver
+    - gflags
+    - mkl  # [win]
+    - blas  # [win]
+    - hdf5
+    - tiledb
+    - libpq
+    - libxml2
+    - nitro
+    - libcurl
+    - draco
+    - cpd
+    - fgt
+    - zstd
 
   host:
     - libgdal
