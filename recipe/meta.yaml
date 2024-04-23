@@ -464,10 +464,8 @@ outputs:
         - eigen
       host:
         - cpd
-        - fgt
       run:
         - cpd
-        - fgt
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_filter_cpd.dylib  # [osx]
