@@ -155,7 +155,6 @@ outputs:
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - geotiff
         - libcurl
-        - zlib
         - zstd
         - libxml2
         - openssl
@@ -164,7 +163,6 @@ outputs:
         - geotiff
         - libcurl
         - proj
-        - zlib
         - zstd
         - libxml2
         - openssl
@@ -466,10 +464,13 @@ outputs:
         - cmake
         - ninja
         - eigen
+        - {{ pin_subpackage('libpdal', exact=True) }}
       host:
         - cpd
+        - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - cpd
+        - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_filter_cpd.dylib  # [osx]
@@ -487,7 +488,7 @@ outputs:
     script: install_pdal_python.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage('libpdal', max_pin='x.x.x') }}
+        - {{ pin_subpackage('libpdal-python', max_pin='x.x.x') }}
     requirements:
       build:
         - {{ compiler('cxx') }}
