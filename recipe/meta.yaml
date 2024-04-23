@@ -156,7 +156,7 @@ outputs:
         - geotiff
         - libcurl
         - zstd
-        - libxml2
+    #    - libxml2
         - openssl
       run:
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
@@ -164,7 +164,7 @@ outputs:
         - libcurl
         - proj
         - zstd
-        - libxml2
+    #    - libxml2
         - openssl
     test:
       commands:
@@ -205,14 +205,14 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - ceres-solver
-        - glog 0.7  # [linux]
+        # - glog 0.7  # [linux]
         - mkl  # [win]
         - blas  # [win]
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - ceres-solver
-        - glog 0.7  # [linux]
+        # - glog 0.7  # [linux]
         - mkl  # [win]
         - blas  # [win]
     test:
@@ -244,11 +244,11 @@ outputs:
       host:
         - hdf5
         - {{ pin_subpackage('libpdal', exact=True) }}
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
         - hdf5
         - {{ pin_subpackage('libpdal', exact=True) }}
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.dylib  # [osx]
@@ -314,11 +314,11 @@ outputs:
         - ninja
       host:
         - tiledb
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - tiledb
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
@@ -434,12 +434,12 @@ outputs:
       host:
         - nitro
         - libcurl
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - nitro
         - libcurl
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
@@ -493,6 +493,7 @@ outputs:
       build:
         - {{ compiler('cxx') }}
         - cmake
+        - make
         - ninja
         - pip
         - python                                 # [build_platform != target_platform]
@@ -501,6 +502,7 @@ outputs:
         - pybind11                               # [build_platform != target_platform]
         - scikit-build-core
         - {{ pin_subpackage('libpdal', exact=True) }}
+        - curl
       host:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - python
