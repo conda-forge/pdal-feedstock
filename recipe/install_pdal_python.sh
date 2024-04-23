@@ -9,8 +9,8 @@ git checkout pyproject
 
 if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
 
-    rm $BUILD_PREFIX/lib/libpdal*
-    rm $BUILD_PREFIX/lib/libpython*
+#    rm $BUILD_PREFIX/lib/libpdal*
+#    rm $BUILD_PREFIX/lib/libpython*
 
 if [ "$(uname)" == "Darwin" ]; then
 

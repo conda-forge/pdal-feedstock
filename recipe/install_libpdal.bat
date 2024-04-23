@@ -60,6 +60,8 @@ if errorlevel 1 exit 1
     CALL :InstallPlugin "plugins\trajectory"
 ) else if [%PKG_NAME%] == [libpdal-nitf] (
     CALL :InstallPlugin "plugins\nitf"
+) else if [%PKG_NAME%] == [libpdal-cpd] (
+    CALL :InstallPlugin "plugins\cpd"
 
 ) else if [%PKG_NAME%] == [libpdal-all] (
     REM do nothing
