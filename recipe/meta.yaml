@@ -22,30 +22,30 @@ requirements:
     - {{ compiler('c') }}
     - cmake
     - ninja
-    - pkg-config
-    - libarrow
-    # appease linter
-    {% if libarrow is undefined %}
-    {% set libarrow = "14" %}
-    {% endif %}
-    {% if libarrow.split(".")[0] | int >= 14 %}
-    - libarrow-dataset
-    - libparquet
-    {% endif %}
-    - ceres-solver
-    - gflags
-    - mkl  # [win]
-    - blas  # [win]
-    - hdf5
-    - tiledb
-    - libpq
-    - libxml2
-    - nitro
-    - libcurl
-    - draco
-    - cpd
-    - fgt
-    - zstd
+    # - pkg-config
+    # - libarrow
+    # # appease linter
+    # {% if libarrow is undefined %}
+    # {% set libarrow = "14" %}
+    # {% endif %}
+    # {% if libarrow.split(".")[0] | int >= 14 %}
+    # - libarrow-dataset
+    # - libparquet
+    # {% endif %}
+    # - ceres-solver
+    # - gflags
+    # - mkl  # [win]
+    # - blas  # [win]
+    # - hdf5
+    # - tiledb
+    # - libpq
+    # - libxml2
+    # - nitro
+    # - libcurl
+    # - draco
+    # - cpd
+    # - fgt
+    # - zstd
 
   host:
     - libgdal
@@ -379,15 +379,15 @@ outputs:
         - {{ compiler('c') }}
         - cmake
         - ninja
-        - libarrow
-        # appease linter
-        {% if libarrow is undefined %}
-        {% set libarrow = "14" %}
-        {% endif %}
-        {% if libarrow.split(".")[0] | int >= 14 %}
-        - libarrow-dataset
-        - libparquet
-        {% endif %}
+        # - libarrow
+        # # appease linter
+        # {% if libarrow is undefined %}
+        # {% set libarrow = "14" %}
+        # {% endif %}
+        # {% if libarrow.split(".")[0] | int >= 14 %}
+        # - libarrow-dataset
+        # - libparquet
+        # {% endif %}
 
       host:
         - libarrow
@@ -399,6 +399,7 @@ outputs:
         - libarrow-dataset
         - libparquet
         {% endif %}
+        - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
@@ -506,7 +507,7 @@ outputs:
       host:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - python
-        - {{ pin_compatible('numpy') }}
+        - numpy
         - pybind11
         - scikit-build-core
         - pip
