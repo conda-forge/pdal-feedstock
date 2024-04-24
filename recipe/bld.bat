@@ -212,9 +212,9 @@ pushd build
 cmake -G Ninja %CMAKE_ARGS% ^
   -DSTANDALONE=ON ^
   -DCMAKE_BUILD_TYPE=Release ^
-  -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
-  -DCMAKE_PREFIX_PATH=%PREFIX% ^
-  -DPDAL_DIR:PATH=%PDAL_BUILD_DIR%/lib/cmake/PDAL ^
+  -DCMAKE_INSTALL_PREFIX="%PREFIX%" ^
+  -DCMAKE_PREFIX_PATH="%PREFIX%" ^
+  -DPDAL_DIR:PATH="%PDAL_BUILD_DIR%/lib/cmake/PDAL" ^
   ..
 
 cmake --build . --config Release  --target libpdal_plugin_filter_cpd
