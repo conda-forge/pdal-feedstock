@@ -455,8 +455,10 @@ outputs:
 
   - name: libpdal-cpd
     script: install_libpdal.sh  # [unix]
-    script: install_libpdal.bat  # [win]
+    # script: install_libpdal.bat  # [win]
     build:
+      skip:
+        True  # [win]
       run_exports:
         - {{ pin_subpackage("libpdal-cpd", max_pin="x") }}
     requirements:

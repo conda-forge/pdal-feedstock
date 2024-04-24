@@ -201,23 +201,23 @@ cmake --build . --config Release  --target libpdal_plugin_writer_draco libpdal_p
 popd
 popd
 
-REM cpd
+@REM REM cpd
 
-pushd plugins\cpd
+@REM pushd plugins\cpd
 
-rmdir /s /q build
-mkdir -p build
-pushd build
+@REM rmdir /s /q build
+@REM mkdir -p build
+@REM pushd build
 
-cmake -G Ninja %CMAKE_ARGS% ^
-  -DSTANDALONE=ON ^
-  -DCMAKE_BUILD_TYPE=Release ^
-  -DCMAKE_INSTALL_PREFIX="%PREFIX%" ^
-  -DCMAKE_PREFIX_PATH="%PREFIX%" ^
-  -DPDAL_DIR:PATH="%PDAL_BUILD_DIR%/lib/cmake/PDAL" ^
-  ..
+@REM cmake -G Ninja %CMAKE_ARGS% ^
+@REM   -DSTANDALONE=ON ^
+@REM   -DCMAKE_BUILD_TYPE=Release ^
+@REM   -DCMAKE_INSTALL_PREFIX="%PREFIX%" ^
+@REM   -DCMAKE_PREFIX_PATH="%PREFIX%" ^
+@REM   -DPDAL_DIR:PATH="%PDAL_BUILD_DIR%/lib/cmake/PDAL" ^
+@REM   ..
 
-cmake --build . --config Release  --target libpdal_plugin_filter_cpd
+@REM cmake --build . --config Release  --target libpdal_plugin_filter_cpd
 
-popd
-popd
+@REM popd
+@REM popd
