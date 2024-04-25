@@ -4,7 +4,6 @@ set -ex
 
 git clone https://github.com/PDAL/python.git pdal-python
 pushd pdal-python
-git checkout pyproject
 
 
 if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
