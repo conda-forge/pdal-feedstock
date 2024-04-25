@@ -658,14 +658,14 @@ Current release info
 Installing pdal
 ===============
 
-Installing `pdal` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `pdal` from the `conda-forge/label/pdal_rc` channel can be achieved by adding `conda-forge/label/pdal_rc` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/pdal_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libpdal, libpdal-all, libpdal-arrow, libpdal-cpd, libpdal-draco, libpdal-hdf, libpdal-nitf, libpdal-pgpointcloud, libpdal-python, libpdal-tiledb, libpdal-trajectory` can be installed with `conda`:
+Once the `conda-forge/label/pdal_rc` channel has been enabled, `libpdal, libpdal-all, libpdal-arrow, libpdal-cpd, libpdal-draco, libpdal-hdf, libpdal-nitf, libpdal-pgpointcloud, libpdal-python, libpdal-tiledb, libpdal-trajectory` can be installed with `conda`:
 
 ```
 conda install libpdal libpdal-all libpdal-arrow libpdal-cpd libpdal-draco libpdal-hdf libpdal-nitf libpdal-pgpointcloud libpdal-python libpdal-tiledb libpdal-trajectory
@@ -680,26 +680,26 @@ mamba install libpdal libpdal-all libpdal-arrow libpdal-cpd libpdal-draco libpda
 It is possible to list all of the versions of `libpdal` available on your platform with `conda`:
 
 ```
-conda search libpdal --channel conda-forge
+conda search libpdal --channel conda-forge/label/pdal_rc
 ```
 
 or with `mamba`:
 
 ```
-mamba search libpdal --channel conda-forge
+mamba search libpdal --channel conda-forge/label/pdal_rc
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libpdal --channel conda-forge
+mamba repoquery search libpdal --channel conda-forge/label/pdal_rc
 
 # List packages depending on `libpdal`:
-mamba repoquery whoneeds libpdal --channel conda-forge
+mamba repoquery whoneeds libpdal --channel conda-forge/label/pdal_rc
 
 # List dependencies of `libpdal`:
-mamba repoquery depends libpdal --channel conda-forge
+mamba repoquery depends libpdal --channel conda-forge/label/pdal_rc
 ```
 
 
