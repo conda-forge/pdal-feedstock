@@ -44,8 +44,8 @@ requirements:
     - nitro
     - libcurl
     - draco
-    - cpd
-    - fgt
+    - cpd  # [not win]
+    - fgt  # [not win]
     - zstd
 
   host:
@@ -75,8 +75,8 @@ requirements:
     - nitro
     - libcurl
     - draco
-    - cpd
-    - fgt
+    - cpd  # [not win]
+    - fgt  # [not win]
     - python
     - numpy
     - pybind11
@@ -106,7 +106,7 @@ outputs:
         - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
         - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
         - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
-        - {{ pin_subpackage("libpdal-cpd", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-cpd", max_pin="x") }}  # [not win]
         - {{ pin_subpackage("libpdal-python", max_pin="x") }}
     requirements:
       build:
@@ -121,7 +121,7 @@ outputs:
         - {{ pin_subpackage("libpdal-draco", exact=True ) }}
         - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
         - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
-        - {{ pin_subpackage("libpdal-cpd", exact=True ) }}
+        - {{ pin_subpackage("libpdal-cpd", exact=True ) }}  # [not win]
         - {{ pin_subpackage("libpdal-python", exact=True ) }}
       run:
         - {{ pin_subpackage("libpdal", exact=True ) }}
@@ -132,7 +132,7 @@ outputs:
         - {{ pin_subpackage("libpdal-draco", exact=True ) }}
         - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
         - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
-        - {{ pin_subpackage("libpdal-cpd", exact=True ) }}
+        - {{ pin_subpackage("libpdal-cpd", exact=True ) }}  # [not win]
         - {{ pin_subpackage("libpdal-python", exact=True ) }}
     test:
       commands:
