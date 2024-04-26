@@ -1,2 +1,5 @@
 c_stdlib_version:          # [osx]
   - '10.15'                # [osx]
+
+channel_targets:
+  - conda-forge pdal_rc
