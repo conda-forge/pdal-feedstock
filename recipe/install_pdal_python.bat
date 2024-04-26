@@ -2,14 +2,10 @@
 setlocal ENABLEDELAYEDEXPANSION
 
 
-set CMAKE_GENERATOR=Ninja
-
 git clone https://github.com/PDAL/python.git pdal-python
 pushd pdal-python
 
 
-:: %PYTHON% setup.py install -vv -- -DPython3_EXECUTABLE="%PYTHON%"
-:: scikit-build only passes PYTHON_EXECUTABLE and doesn't pass Python3_EXECUTABLE
 :: set UNIX_SP_DIR=%SP_DIR:\=/%
 @REM set CMAKE_ARGS=%CMAKE_ARGS% -DPDAL_DIR=$PREFIX -LAH --debug-find -DPYTHON3_NUMPY_INCLUDE_DIRS=%UNIX_SP_DIR%/numpy/core/include
 
