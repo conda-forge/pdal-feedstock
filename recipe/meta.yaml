@@ -522,5 +522,4 @@ extra:
   recipe-maintainers:
     - chambbj
     - hobu
-
-feedstock-name: pdal
+  feedstock-name: pdal
