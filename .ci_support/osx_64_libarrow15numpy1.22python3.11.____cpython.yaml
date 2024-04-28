@@ -37,7 +37,7 @@ libxml2:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
-- '1.23'
+- '1.22'
 openssl:
 - '3'
 pin_run_as_build:
@@ -46,6 +46,8 @@ pin_run_as_build:
     max_pin: x.x
 proj:
 - 9.4.0
+pybind11_abi:
+- '4'
 python:
 - 3.11.* *_cpython
 target_platform:
