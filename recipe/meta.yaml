@@ -13,7 +13,7 @@ source:
 
 build:
   number: 7
-  skip: true  # [(win and vc<14) or (py<39)]
+  skip: true  # [(win and vc<14)]
   run_exports:
     - {{ pin_subpackage('libpdal', max_pin='x.x.x') }}
 
