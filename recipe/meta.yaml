@@ -491,7 +491,7 @@ outputs:
       host:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - python
-        - numpy >=1.22
+        - numpy
         - pybind11-abi
         - pybind11
         - scikit-build-core
