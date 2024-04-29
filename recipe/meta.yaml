@@ -455,6 +455,7 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - cpd
+        - fgt
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
