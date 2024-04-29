@@ -493,6 +493,7 @@ outputs:
         - python
         - numpy >=1.22
         - pybind11-abi
+        - pybind11
         - scikit-build-core
         - pip
       run:
