@@ -13,7 +13,7 @@ source:
 
 build:
   number: 7
-  skip: true  # [(win and vc<14)]
+  skip: true  # [(win and vc<14) or (py<39)]
   run_exports:
     - {{ pin_subpackage('libpdal', max_pin='x.x.x') }}
 
@@ -21,7 +21,6 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}  # [unix]
     - cmake
     - ninja
     - pkg-config
