@@ -502,8 +502,12 @@ outputs:
         - python
 
     test:
+      requires:
+        - pip
       commands:
-        - python -c "import pdal"
+        - pip check
+      imports:
+        - pdal
 
     about:
       summary: Point Data Abstraction Library (PDAL)
