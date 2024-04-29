@@ -8,41 +8,41 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_libarrow12numpy1.22python3.11.____cpython:
-        CONFIG: win_64_libarrow12numpy1.22python3.11.____cpython
+      win_64_libarrow12numpy1.22python3.10.____cpython:
+        CONFIG: win_64_libarrow12numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_libarrow12numpy1.22python3.9.____cpython:
         CONFIG: win_64_libarrow12numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow12numpy1.23python3.10.____cpython:
-        CONFIG: win_64_libarrow12numpy1.23python3.10.____cpython
+      win_64_libarrow12numpy1.23python3.11.____cpython:
+        CONFIG: win_64_libarrow12numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow13numpy1.22python3.11.____cpython:
-        CONFIG: win_64_libarrow13numpy1.22python3.11.____cpython
+      win_64_libarrow13numpy1.22python3.10.____cpython:
+        CONFIG: win_64_libarrow13numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_libarrow13numpy1.22python3.9.____cpython:
         CONFIG: win_64_libarrow13numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow13numpy1.23python3.10.____cpython:
-        CONFIG: win_64_libarrow13numpy1.23python3.10.____cpython
+      win_64_libarrow13numpy1.23python3.11.____cpython:
+        CONFIG: win_64_libarrow13numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow14numpy1.22python3.11.____cpython:
-        CONFIG: win_64_libarrow14numpy1.22python3.11.____cpython
+      win_64_libarrow14numpy1.22python3.10.____cpython:
+        CONFIG: win_64_libarrow14numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_libarrow14numpy1.22python3.9.____cpython:
         CONFIG: win_64_libarrow14numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow14numpy1.23python3.10.____cpython:
-        CONFIG: win_64_libarrow14numpy1.23python3.10.____cpython
+      win_64_libarrow14numpy1.23python3.11.____cpython:
+        CONFIG: win_64_libarrow14numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow15numpy1.22python3.11.____cpython:
-        CONFIG: win_64_libarrow15numpy1.22python3.11.____cpython
+      win_64_libarrow15numpy1.22python3.10.____cpython:
+        CONFIG: win_64_libarrow15numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_libarrow15numpy1.22python3.9.____cpython:
         CONFIG: win_64_libarrow15numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow15numpy1.23python3.10.____cpython:
-        CONFIG: win_64_libarrow15numpy1.23python3.10.____cpython
+      win_64_libarrow15numpy1.23python3.11.____cpython:
+        CONFIG: win_64_libarrow15numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
     maxParallel: 8
   timeoutInMinutes: 360

@@ -8,148 +8,148 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_libarrow12numpy1.22python3.11.____cpython:
-        CONFIG: linux_64_libarrow12numpy1.22python3.11.____cpython
+      linux_64_libarrow12numpy1.22python3.10.____cpython:
+        CONFIG: linux_64_libarrow12numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_libarrow12numpy1.22python3.9.____cpython:
         CONFIG: linux_64_libarrow12numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libarrow12numpy1.23python3.10.____cpython:
-        CONFIG: linux_64_libarrow12numpy1.23python3.10.____cpython
+      linux_64_libarrow12numpy1.23python3.11.____cpython:
+        CONFIG: linux_64_libarrow12numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libarrow13numpy1.22python3.11.____cpython:
-        CONFIG: linux_64_libarrow13numpy1.22python3.11.____cpython
+      linux_64_libarrow13numpy1.22python3.10.____cpython:
+        CONFIG: linux_64_libarrow13numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_libarrow13numpy1.22python3.9.____cpython:
         CONFIG: linux_64_libarrow13numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libarrow13numpy1.23python3.10.____cpython:
-        CONFIG: linux_64_libarrow13numpy1.23python3.10.____cpython
+      linux_64_libarrow13numpy1.23python3.11.____cpython:
+        CONFIG: linux_64_libarrow13numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libarrow14numpy1.22python3.11.____cpython:
-        CONFIG: linux_64_libarrow14numpy1.22python3.11.____cpython
+      linux_64_libarrow14numpy1.22python3.10.____cpython:
+        CONFIG: linux_64_libarrow14numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_libarrow14numpy1.22python3.9.____cpython:
         CONFIG: linux_64_libarrow14numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libarrow14numpy1.23python3.10.____cpython:
-        CONFIG: linux_64_libarrow14numpy1.23python3.10.____cpython
+      linux_64_libarrow14numpy1.23python3.11.____cpython:
+        CONFIG: linux_64_libarrow14numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libarrow15numpy1.22python3.11.____cpython:
-        CONFIG: linux_64_libarrow15numpy1.22python3.11.____cpython
+      linux_64_libarrow15numpy1.22python3.10.____cpython:
+        CONFIG: linux_64_libarrow15numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_libarrow15numpy1.22python3.9.____cpython:
         CONFIG: linux_64_libarrow15numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libarrow15numpy1.23python3.10.____cpython:
-        CONFIG: linux_64_libarrow15numpy1.23python3.10.____cpython
+      linux_64_libarrow15numpy1.23python3.11.____cpython:
+        CONFIG: linux_64_libarrow15numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_libarrow12numpy1.22python3.11.____cpython:
-        CONFIG: linux_aarch64_libarrow12numpy1.22python3.11.____cpython
+      linux_aarch64_libarrow12numpy1.22python3.10.____cpython:
+        CONFIG: linux_aarch64_libarrow12numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_libarrow12numpy1.22python3.9.____cpython:
         CONFIG: linux_aarch64_libarrow12numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_libarrow12numpy1.23python3.10.____cpython:
-        CONFIG: linux_aarch64_libarrow12numpy1.23python3.10.____cpython
+      linux_aarch64_libarrow12numpy1.23python3.11.____cpython:
+        CONFIG: linux_aarch64_libarrow12numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_libarrow13numpy1.22python3.11.____cpython:
-        CONFIG: linux_aarch64_libarrow13numpy1.22python3.11.____cpython
+      linux_aarch64_libarrow13numpy1.22python3.10.____cpython:
+        CONFIG: linux_aarch64_libarrow13numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_libarrow13numpy1.22python3.9.____cpython:
         CONFIG: linux_aarch64_libarrow13numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_libarrow13numpy1.23python3.10.____cpython:
-        CONFIG: linux_aarch64_libarrow13numpy1.23python3.10.____cpython
+      linux_aarch64_libarrow13numpy1.23python3.11.____cpython:
+        CONFIG: linux_aarch64_libarrow13numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_libarrow14numpy1.22python3.11.____cpython:
-        CONFIG: linux_aarch64_libarrow14numpy1.22python3.11.____cpython
+      linux_aarch64_libarrow14numpy1.22python3.10.____cpython:
+        CONFIG: linux_aarch64_libarrow14numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_libarrow14numpy1.22python3.9.____cpython:
         CONFIG: linux_aarch64_libarrow14numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_libarrow14numpy1.23python3.10.____cpython:
-        CONFIG: linux_aarch64_libarrow14numpy1.23python3.10.____cpython
+      linux_aarch64_libarrow14numpy1.23python3.11.____cpython:
+        CONFIG: linux_aarch64_libarrow14numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_libarrow15numpy1.22python3.11.____cpython:
-        CONFIG: linux_aarch64_libarrow15numpy1.22python3.11.____cpython
+      linux_aarch64_libarrow15numpy1.22python3.10.____cpython:
+        CONFIG: linux_aarch64_libarrow15numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_libarrow15numpy1.22python3.9.____cpython:
         CONFIG: linux_aarch64_libarrow15numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_libarrow15numpy1.23python3.10.____cpython:
-        CONFIG: linux_aarch64_libarrow15numpy1.23python3.10.____cpython
+      linux_aarch64_libarrow15numpy1.23python3.11.____cpython:
+        CONFIG: linux_aarch64_libarrow15numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_libarrow12numpy1.22python3.11.____cpython:
-        CONFIG: linux_ppc64le_libarrow12numpy1.22python3.11.____cpython
+      linux_ppc64le_libarrow12numpy1.22python3.10.____cpython:
+        CONFIG: linux_ppc64le_libarrow12numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_libarrow12numpy1.22python3.9.____cpython:
         CONFIG: linux_ppc64le_libarrow12numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_libarrow12numpy1.23python3.10.____cpython:
-        CONFIG: linux_ppc64le_libarrow12numpy1.23python3.10.____cpython
+      linux_ppc64le_libarrow12numpy1.23python3.11.____cpython:
+        CONFIG: linux_ppc64le_libarrow12numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_libarrow13numpy1.22python3.11.____cpython:
-        CONFIG: linux_ppc64le_libarrow13numpy1.22python3.11.____cpython
+      linux_ppc64le_libarrow13numpy1.22python3.10.____cpython:
+        CONFIG: linux_ppc64le_libarrow13numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_libarrow13numpy1.22python3.9.____cpython:
         CONFIG: linux_ppc64le_libarrow13numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_libarrow13numpy1.23python3.10.____cpython:
-        CONFIG: linux_ppc64le_libarrow13numpy1.23python3.10.____cpython
+      linux_ppc64le_libarrow13numpy1.23python3.11.____cpython:
+        CONFIG: linux_ppc64le_libarrow13numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_libarrow14numpy1.22python3.11.____cpython:
-        CONFIG: linux_ppc64le_libarrow14numpy1.22python3.11.____cpython
+      linux_ppc64le_libarrow14numpy1.22python3.10.____cpython:
+        CONFIG: linux_ppc64le_libarrow14numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_libarrow14numpy1.22python3.9.____cpython:
         CONFIG: linux_ppc64le_libarrow14numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_libarrow14numpy1.23python3.10.____cpython:
-        CONFIG: linux_ppc64le_libarrow14numpy1.23python3.10.____cpython
+      linux_ppc64le_libarrow14numpy1.23python3.11.____cpython:
+        CONFIG: linux_ppc64le_libarrow14numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_libarrow15numpy1.22python3.11.____cpython:
-        CONFIG: linux_ppc64le_libarrow15numpy1.22python3.11.____cpython
+      linux_ppc64le_libarrow15numpy1.22python3.10.____cpython:
+        CONFIG: linux_ppc64le_libarrow15numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_libarrow15numpy1.22python3.9.____cpython:
         CONFIG: linux_ppc64le_libarrow15numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_libarrow15numpy1.23python3.10.____cpython:
-        CONFIG: linux_ppc64le_libarrow15numpy1.23python3.10.____cpython
+      linux_ppc64le_libarrow15numpy1.23python3.11.____cpython:
+        CONFIG: linux_ppc64le_libarrow15numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
     maxParallel: 25
