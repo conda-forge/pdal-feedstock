@@ -43,8 +43,8 @@ mkdir !DEACTIVATE_DIR!
 :: This will allow them to be run on environment activation.
 for %%F in (activate deactivate) DO (
     if not exist %PREFIX%\etc\conda\%%F.d mkdir %PREFIX%\etc\conda\%%F.d
-    copy %RECIPE_DIR%\%%F-%PKG_NAME%.bat %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.bat
-    copy %RECIPE_DIR%\%%F-%PKG_NAME%.ps1 %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.ps1
+    copy %RECIPE_DIR%\scripts\%%F-%PKG_NAME%.bat %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.bat
+    copy %RECIPE_DIR%\scripts\%%F-%PKG_NAME%.ps1 %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.ps1
     :: Copy unix shell activation scripts, needed by Windows Bash users
-    copy %RECIPE_DIR%\%%F-%PKG_NAME%.sh %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.sh
+    copy %RECIPE_DIR%\scripts\%%F-%PKG_NAME%.sh %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.sh
 )
