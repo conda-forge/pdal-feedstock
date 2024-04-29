@@ -22,6 +22,13 @@ fi
 fi
 
 
+PY_VERSION=$(${PYTHON} -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
+
+# scikit-build only passes PYTHON_EXECUTABLE and doesn't pass Python3_EXECUTABLE
+export CMAKE_ARGS="${CMAKE_ARGS} -DPDAL_DIR=$PREFIX -LAH --debug-find -DPython3_NumPy_INCLUDE_DIR=$PREFIX/lib/python${PY_VERSION}/site-packages/numpy/core/include/"
+
+
+
 ${PYTHON} -m pip install . -vv --no-deps --no-build-isolation  --upgrade
 
 mkdir plugins && pushd plugins
