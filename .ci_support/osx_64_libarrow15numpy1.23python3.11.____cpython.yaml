@@ -25,7 +25,7 @@ gflags:
 hdf5:
 - 1.14.3
 libarrow:
-- '14'
+- '15'
 libcurl:
 - '8'
 libgdal:
@@ -37,7 +37,7 @@ libxml2:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
-- '1.22'
+- '1.23'
 openssl:
 - '3'
 pin_run_as_build:
