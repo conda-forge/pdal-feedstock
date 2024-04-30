@@ -151,17 +151,16 @@ outputs:
         - ninja
         - pkg-config
       host:
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - libgdal
         - geotiff
         - libcurl
-        - zstd
         - openssl
+        - proj
       run:
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - libgdal
         - geotiff
         - libcurl
         - proj
-        - zstd
         - openssl
     test:
       commands:
@@ -205,7 +204,6 @@ outputs:
         - mkl  # [win]
         - blas  # [win]
       run:
-        - {{ pin_subpackage('libpdal', exact=True) }}
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
@@ -507,6 +505,7 @@ outputs:
     test:
       requires:
         - pip
+        - python
       commands:
         - pip check
       imports:
