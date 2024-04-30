@@ -28,6 +28,15 @@ Package license: BSD-3-Clause
 
 Summary: Point Data Abstraction Library (PDAL)
 
+About libpdal-pgpointcloud
+--------------------------
+
+
+
+Package license: BSD-3-Clause
+
+Summary: Point Data Abstraction Library (PDAL)
+
 About libpdal-arrow
 -------------------
 
@@ -66,15 +75,6 @@ Summary: Point Data Abstraction Library (PDAL)
 
 About libpdal-nitf
 ------------------
-
-
-
-Package license: BSD-3-Clause
-
-Summary: Point Data Abstraction Library (PDAL)
-
-About libpdal-pgpointcloud
---------------------------
 
 
 

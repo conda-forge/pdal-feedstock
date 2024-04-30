@@ -12,10 +12,10 @@ source:
     - cpd-find.patch
 
 build:
-  number: 1
+  number: 7
   skip: true  # [(win and vc<14) or (py<39)]
   run_exports:
-    - {{ pin_subpackage('libpdal', max_pin='x.x') }}
+    - {{ pin_subpackage('libpdal', max_pin='x.x.x') }}
 
 requirements:
   build:
@@ -30,7 +30,6 @@ requirements:
     {% set libarrow = "14" %}
     {% endif %}
     {% if libarrow.split(".")[0] | int >= 14 %}
-    - libarrow-dataset
     - libparquet
     {% endif %}
     - ceres-solver
@@ -61,7 +60,6 @@ requirements:
     {% set libarrow = "14" %}
     {% endif %}
     {% if libarrow.split(".")[0] | int >= 14 %}
-    - libarrow-dataset
     - libparquet
     {% endif %}
     - ceres-solver
@@ -153,17 +151,16 @@ outputs:
         - ninja
         - pkg-config
       host:
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - libgdal
         - geotiff
         - libcurl
-        - zstd
         - openssl
+        - proj
       run:
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - libgdal
         - geotiff
         - libcurl
         - proj
-        - zstd
         - openssl
     test:
       commands:
@@ -207,7 +204,6 @@ outputs:
         - mkl  # [win]
         - blas  # [win]
       run:
-        - {{ pin_subpackage('libpdal', exact=True) }}
         - ceres-solver
         - mkl  # [win]
         - blas  # [win]
@@ -345,11 +341,11 @@ outputs:
       host:
         - libpq
         - libxml2
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
         - libpq
         - libxml2
-        - {{ pin_subpackage('libpdal', exact=True) }}
+        # - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_pgpointcloud.dylib  # [osx]
@@ -381,7 +377,6 @@ outputs:
         {% set libarrow = "14" %}
         {% endif %}
         {% if libarrow.split(".")[0] | int >= 14 %}
-        - libarrow-dataset
         - libparquet
         {% endif %}
         - {{ pin_subpackage('libpdal', exact=True) }}
@@ -455,6 +450,7 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - cpd
+        - fgt
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
@@ -474,6 +470,12 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage('libpdal-python', max_pin='x.x.x') }}
+      script_env:
+        - PDAL_PYTHON_BINDINGS_VERSION=3.4.1
+        - PDAL_PYTHON_PLUGINS_VERSION=1.5.0
+      ignore_run_exports:
+        - numpy
+        - pybind11-abi
     requirements:
       build:
         - {{ compiler('cxx') }}
@@ -491,17 +493,23 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - python
         - numpy
+        - pybind11-abi
         - pybind11
         - scikit-build-core
         - pip
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
-        - numpy
+        - {{ pin_compatible('numpy') }}
         - python
 
     test:
+      requires:
+        - pip
+        - python
       commands:
-        - python -c "import pdal"
+        - pip check
+      imports:
+        - pdal
 
     about:
       summary: Point Data Abstraction Library (PDAL)
@@ -521,3 +529,4 @@ extra:
   recipe-maintainers:
     - chambbj
     - hobu
+  feedstock-name: pdal
