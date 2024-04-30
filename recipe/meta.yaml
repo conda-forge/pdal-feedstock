@@ -30,7 +30,6 @@ requirements:
     {% set libarrow = "14" %}
     {% endif %}
     {% if libarrow.split(".")[0] | int >= 14 %}
-    - libarrow-dataset
     - libparquet
     {% endif %}
     - ceres-solver
@@ -61,7 +60,6 @@ requirements:
     {% set libarrow = "14" %}
     {% endif %}
     {% if libarrow.split(".")[0] | int >= 14 %}
-    - libarrow-dataset
     - libparquet
     {% endif %}
     - ceres-solver
@@ -345,11 +343,11 @@ outputs:
       host:
         - libpq
         - libxml2
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
         - libpq
         - libxml2
-        - {{ pin_subpackage('libpdal', exact=True) }}
+        # - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_pgpointcloud.dylib  # [osx]
@@ -381,7 +379,6 @@ outputs:
         {% set libarrow = "14" %}
         {% endif %}
         {% if libarrow.split(".")[0] | int >= 14 %}
-        - libarrow-dataset
         - libparquet
         {% endif %}
         - {{ pin_subpackage('libpdal', exact=True) }}
@@ -475,6 +472,12 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage('libpdal-python', max_pin='x.x.x') }}
+      script_env:
+        - PDAL_PYTHON_BINDINGS_VERSION=3.4.1
+        - PDAL_PYTHON_PLUGINS_VERSION=1.5.0
+      ignore_run_exports:
+        - numpy
+        - pybind11-abi
     requirements:
       build:
         - {{ compiler('cxx') }}
