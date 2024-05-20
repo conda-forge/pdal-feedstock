@@ -10,6 +10,7 @@ source:
 
 build:
   number: 7
+  skip: true  # [ppc64le]
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
