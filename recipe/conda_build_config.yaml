@@ -1,0 +1,6 @@
+c_stdlib_version:          # [osx]
+  - "11.0"                # [osx]
+MACOSX_SDK_VERSION:          # [osx]
+  - "11.0"                # [osx]
+c_stdlib:
+  - macosx_deployment_target
