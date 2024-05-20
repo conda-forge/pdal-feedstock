@@ -5,6 +5,7 @@ set -ex
 # strip std settings from conda
 CXXFLAGS="${CXXFLAGS/-std=c++14/}"
 CXXFLAGS="${CXXFLAGS/-std=c++11/}"
+CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 export CXXFLAGS
 
 if [ "$(uname)" == "Linux" ]; then
