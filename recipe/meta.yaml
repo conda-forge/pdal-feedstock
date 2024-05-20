@@ -30,7 +30,7 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - curl
+    - libcurl
     - zlib
     - hdf5
     - tiledb
@@ -49,7 +49,7 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - curl
+    - libcurl
     - zlib
     - hdf5
     - tiledb
