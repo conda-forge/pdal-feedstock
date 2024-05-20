@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
+MACOSX_SDK_VERSION:
+- '11.0'
 c_compiler:
 - clang
 c_compiler_version:
@@ -12,8 +14,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-curl:
-- '8'
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
@@ -22,6 +22,8 @@ geotiff:
 - 1.7.1
 hdf5:
 - 1.14.3
+libcurl:
+- '8'
 libkml:
 - '1.3'
 libpq:

@@ -9,9 +9,10 @@ source:
   sha256: 7769aaacfc26daeb559b511c73c241a5e9a2f31e26ef3a736204b83e791c5453
 
 build:
-  number: 6
+  number: 7
+  skip: true  # [ppc64le]
   run_exports:
-    - {{ pin_subpackage('pdal', max_pin='x.x.x') }}
+    - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
 requirements:
   build:
@@ -30,7 +31,7 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - curl
+    - libcurl
     - zlib
     - hdf5
     - tiledb
@@ -49,7 +50,7 @@ requirements:
     - libkml
     - eigen
     - nitro
-    - curl
+    - libcurl
     - zlib
     - hdf5
     - tiledb
