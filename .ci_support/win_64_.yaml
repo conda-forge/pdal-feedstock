@@ -25,7 +25,7 @@ mkl:
 target_platform:
 - win-64
 tiledb:
-- '2.22'
+- '2.23'
 zlib:
 - '1.2'
 zstd:

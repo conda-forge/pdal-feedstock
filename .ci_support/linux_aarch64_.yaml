@@ -37,7 +37,7 @@ libxml2:
 target_platform:
 - linux-aarch64
 tiledb:
-- '2.22'
+- '2.23'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
