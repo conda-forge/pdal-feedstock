@@ -35,7 +35,7 @@ macos_machine:
 target_platform:
 - osx-arm64
 tiledb:
-- '2.22'
+- '2.23'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
