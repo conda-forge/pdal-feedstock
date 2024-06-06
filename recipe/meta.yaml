@@ -9,7 +9,7 @@ source:
   sha256: 7769aaacfc26daeb559b511c73c241a5e9a2f31e26ef3a736204b83e791c5453
 
 build:
-  number: 8
+  number: 9
   skip: true  # [ppc64le]
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
@@ -24,8 +24,8 @@ requirements:
     - pkg-config
 
   host:
-    - {{ pin_compatible('libgdal', max_pin='x.x') }}
-    - {{ pin_compatible('proj', max_pin='x.x') }}
+    - libgdal
+    - proj
     - geotiff
     - libpq
     - libkml
@@ -43,8 +43,8 @@ requirements:
     - blas  # [win]
 
   run:
-    - {{ pin_compatible('libgdal', max_pin='x.x') }}
-    - {{ pin_compatible('proj', max_pin='x.x') }}
+    - libgdal
+    - proj
     - geotiff
     - libpq
     - libkml
