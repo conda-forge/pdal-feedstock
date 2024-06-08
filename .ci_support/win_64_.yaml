@@ -29,7 +29,7 @@ proj:
 target_platform:
 - win-64
 tiledb:
-- '2.23'
+- '2.24'
 zlib:
 - '1'
 zstd:
