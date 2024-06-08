@@ -25,12 +25,12 @@ libxml2:
 mkl:
 - '2023'
 proj:
-- 9.4.0
+- '9.4'
 target_platform:
 - win-64
 tiledb:
 - '2.23'
 zlib:
-- '1.2'
+- '1'
 zstd:
 - '1.5'
