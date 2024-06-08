@@ -37,7 +37,7 @@ proj:
 target_platform:
 - linux-64
 tiledb:
-- '2.23'
+- '2.24'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
