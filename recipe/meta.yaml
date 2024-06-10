@@ -246,7 +246,7 @@ outputs:
       host:
         - libpq
         - libxml2
-        - {{ pin_compatible('libgdal', max_pin='x.x') }}
+        - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
