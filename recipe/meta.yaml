@@ -106,7 +106,6 @@ outputs:
         - ceres-solver
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
-        - {{ pin_compatible('ceres-solver', max_pin='x') }}
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_filter_trajectory.dylib  # [osx]
@@ -138,7 +137,6 @@ outputs:
         - hdf5
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        - hdf5
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
@@ -174,7 +172,8 @@ outputs:
         - draco
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        - draco
+        # TODO: add run_exports to draco
+        - {{ pin_compatible('draco', exact=True) }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
@@ -212,7 +211,6 @@ outputs:
         # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        - tiledb
         # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
@@ -250,8 +248,6 @@ outputs:
         - libxml2
         - {{ pin_compatible('libgdal', max_pin='x.x') }}
       run:
-        - libpq
-        - libxml2
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
@@ -278,7 +274,6 @@ outputs:
         - {{ stdlib('c') }}
         - cmake
         - ninja
-
       host:
         - libarrow
         - libarrow-dataset  # [libarrow != 13]
@@ -324,8 +319,8 @@ outputs:
         - libcurl
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        - nitro
-        - libcurl
+        # TODO: add run_exports to nitro
+        - {{ pin_compatible('nitro', exact=True) }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
@@ -357,9 +352,13 @@ outputs:
         - eigen
       host:
         - cpd
+        - fgt
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        - cpd
+        # TODO: add run_exports to cpd
+        - {{ pin_compatible('cpd', max_pin='x.x') }}
+        # TODO: add run_exports to fgt
+        - {{ pin_compatible('fgt', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
