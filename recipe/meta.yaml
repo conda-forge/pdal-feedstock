@@ -15,7 +15,7 @@ build:
   number: 12
   skip: true  # [ppc64le]
   run_exports:
-    - {{ pin_subpackage('pdal', max_pin='x.x') }}
+    - {{ pin_subpackage('libpdal', max_pin='x.x') }}
 
 requirements:
   build:
