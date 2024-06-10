@@ -281,8 +281,8 @@ outputs:
 
       host:
         - libarrow
-        - libarrow-dataset  # [libarrow != "13"]
-        - libparquet        # [libarrow != "13"]
+        - libarrow-dataset  # [libarrow != 13]
+        - libparquet        # [libarrow != 13]
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}

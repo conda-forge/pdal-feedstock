@@ -34,7 +34,7 @@ fi
 
 rm -rf build
 mkdir -p build
-pushd build
+cd build
 
 export PDAL_BUILD_DIR=`pwd`/install
 mkdir $PDAL_BUILD_DIR
@@ -63,4 +63,10 @@ cmake -G Ninja \
 ninja -j${CPU_COUNT}
 ninja install
 
-popd
+## Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d, see
+## https://conda-forge.org/docs/maintainer/adding_pkgs.html#activate-scripts
+for CHANGE in "activate" "deactivate"
+do
+    mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
+    cp "${RECIPE_DIR}/scripts/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+done
