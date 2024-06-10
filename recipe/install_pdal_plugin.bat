@@ -1,30 +1,23 @@
-#!/bin/bash
+echo ON
 
-set -ex
+pushd plugins\%PDAL_PLUGIN_NAME%
 
-# strip std settings from conda
-CXXFLAGS="${CXXFLAGS/-std=c++14/}"
-CXXFLAGS="${CXXFLAGS/-std=c++11/}"
-export CXXFLAGS
-
-if [[ "${target_platform}" == osx-* ]]; then
-  # See https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
-  CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
-fi
-
-cd plugins/$PDAL_PLUGIN_NAME
-
-rm -rf build
+rmdir /s /q build
 mkdir -p build
-cd build
+pushd build
 
-cmake -G Ninja "$CMAKE_ARGS" \
-  -DSTANDALONE=ON \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX=$PREFIX \
-  -DCMAKE_PREFIX_PATH=$PREFIX \
-  -DBUILD_PLUGIN_$PDAL_PLUGIN_NAME=ON \
-  -DPDAL_DIR:PATH=$PREFIX/lib/cmake/PDAL \
+cmake -G Ninja ^
+  %CMAKE_ARGS% ^
+  -DSTANDALONE=ON ^
+  -DCMAKE_BUILD_TYPE=Release ^
+  -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+  -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
+  -DPDAL_DIR:PATH=%LIBRARY_PREFIX%/lib/cmake/PDAL ^
   ..
+if %ERRORLEVEL% neq 0 exit 1
 
-ninja -j${CPU_COUNT} install
+ninja -j%CPU_COUNT%
+if %ERRORLEVEL% neq 0 exit 1
+
+ninja install
+if %ERRORLEVEL% neq 0 exit 1
