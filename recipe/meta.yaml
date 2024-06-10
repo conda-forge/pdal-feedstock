@@ -207,6 +207,7 @@ outputs:
       host:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - xerces-c
+        - nlohmann_json
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
