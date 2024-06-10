@@ -206,7 +206,7 @@ outputs:
         - ninja
       host:
         - {{ pin_subpackage('libpdal', exact=True) }}
-        - xerces_c
+        - xerces-c
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
