@@ -138,8 +138,10 @@ outputs:
       host:
         - hdf5
         - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_subpackage('libpdal-icebridge', exact=True) }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
+        - {{ pin_subpackage('libpdal-icebridge', exact=True) }}
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.dylib  # [osx]
