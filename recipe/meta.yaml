@@ -41,16 +41,16 @@ test:
   commands:
     - echo "Testing for header"
     - test -f $PREFIX/include/pdal/pdal.hpp  # [unix]
-    - if not exist %CONDA_PREFIX%\Library\include\pdal\pdal.hpp exit 1  # [win]
+    - if not exist %LIBRARY_INC%\pdal\pdal.hpp exit 1  # [win]
 
     - echo "Testing for library"
     - test -f $PREFIX/lib/libpdalcpp.dylib  # [osx]
     - test -f $PREFIX/lib/libpdalcpp.so  # [linux]
-    - if not exist %CONDA_PREFIX%\Library\bin\pdalcpp.dll exit 1  # [win]
+    - if not exist %LIBRARY_INC%\bin\pdalcpp.dll exit 1  # [win]
 
     - echo "Testing for CLI"
     - test -f $PREFIX/bin/pdal  # [unix]
-    - if not exist %CONDA_PREFIX%\Library\bin\pdal.exe exit 1  # [win]
+    - if not exist %LIBRARY_INC%\bin\pdal.exe exit 1  # [win]
 
     - pdal --version
     - pdal --drivers --debug
@@ -142,11 +142,11 @@ outputs:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_reader_hdf.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_hdf.dll exit 1  # [win]
 
         - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_reader_icebridge.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_icebridge.dll exit 1  # [win]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause
@@ -179,11 +179,11 @@ outputs:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_writer_draco.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_writer_draco.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_writer_draco.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_writer_draco.dll exit 1  # [win]
 
         - test -f $PREFIX/lib/libpdal_plugin_reader_draco.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_draco.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_reader_draco.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_draco.dll exit 1  # [win]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause
@@ -217,11 +217,11 @@ outputs:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_writer_tiledb.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_writer_tiledb.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_writer_tiledb.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_writer_tiledb.dll exit 1  # [win]
 
         - test -f $PREFIX/lib/libpdal_plugin_reader_tiledb.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_tiledb.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_reader_tiledb.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_tiledb.dll exit 1  # [win]
 
     about:
       summary: Point Data Abstraction Library (PDAL)
@@ -253,7 +253,7 @@ outputs:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_pgpointcloud.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_pgpointcloud.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_reader_pgpointcloud.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_pgpointcloud.dll exit 1  # [win]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause
@@ -285,11 +285,11 @@ outputs:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_writer_arrow.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_writer_arrow.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_writer_arrow.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_writer_arrow.dll exit 1  # [win]
 
         - test -f $PREFIX/lib/libpdal_plugin_reader_arrow.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_arrow.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_reader_arrow.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_arrow.dll exit 1  # [win]
 
     about:
       summary: Point Data Abstraction Library (PDAL)
@@ -326,7 +326,7 @@ outputs:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_nitf.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_nitf.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_reader_nitf.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_nitf.dll exit 1  # [win]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause
@@ -364,7 +364,7 @@ outputs:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_filter_cpd.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_filter_cpd.so  # [linux]
-        - if not exist %CONDA_PREFIX%\Library\bin\libpdal_plugin_filter_cpd.dll exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_filter_cpd.dll exit 1  # [win]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause
