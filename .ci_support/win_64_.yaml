@@ -1,23 +1,20 @@
 c_compiler:
 - vs2019
-c_stdlib:
-- vs
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge pdal_rc
-curl:
-- '8'
 cxx_compiler:
 - vs2019
 geotiff:
 - 1.7.1
-gflags:
-- '2.2'
 hdf5:
 - 1.14.3
 libarrow:
+- '13'
 - '14'
+- '15'
+- '16.1'
 libcurl:
 - '8'
 libgdal:
@@ -26,28 +23,17 @@ libpq:
 - '16'
 libxml2:
 - '2'
-mkl:
-- '2023'
-numpy:
-- '1.22'
 openssl:
 - '3'
-pin_run_as_build:
-  python:
-    min_pin: x.x
-    max_pin: x.x
 proj:
 - 9.4.0
-python:
-- 3.9.* *_cpython
 target_platform:
 - win-64
 tiledb:
-- '2.22'
-vc:
-- '14'
-zip_keys:
-- - python
-  - numpy
+- '2.24'
+xerces_c:
+- '3.2'
+zlib:
+- '1'
 zstd:
 - '1.5'

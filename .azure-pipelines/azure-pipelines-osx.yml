@@ -5,82 +5,15 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-11
+    vmImage: macOS-12
   strategy:
     matrix:
-      osx_64_libarrow12numpy1.22python3.10.____cpython:
-        CONFIG: osx_64_libarrow12numpy1.22python3.10.____cpython
+      osx_64_:
+        CONFIG: osx_64_
         UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow12numpy1.22python3.9.____cpython:
-        CONFIG: osx_64_libarrow12numpy1.22python3.9.____cpython
+      osx_arm64_:
+        CONFIG: osx_arm64_
         UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow12numpy1.23python3.11.____cpython:
-        CONFIG: osx_64_libarrow12numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow13numpy1.22python3.10.____cpython:
-        CONFIG: osx_64_libarrow13numpy1.22python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow13numpy1.22python3.9.____cpython:
-        CONFIG: osx_64_libarrow13numpy1.22python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow13numpy1.23python3.11.____cpython:
-        CONFIG: osx_64_libarrow13numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow14numpy1.22python3.10.____cpython:
-        CONFIG: osx_64_libarrow14numpy1.22python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow14numpy1.22python3.9.____cpython:
-        CONFIG: osx_64_libarrow14numpy1.22python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow14numpy1.23python3.11.____cpython:
-        CONFIG: osx_64_libarrow14numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow15numpy1.22python3.10.____cpython:
-        CONFIG: osx_64_libarrow15numpy1.22python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow15numpy1.22python3.9.____cpython:
-        CONFIG: osx_64_libarrow15numpy1.22python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_libarrow15numpy1.23python3.11.____cpython:
-        CONFIG: osx_64_libarrow15numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow12numpy1.22python3.10.____cpython:
-        CONFIG: osx_arm64_libarrow12numpy1.22python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow12numpy1.22python3.9.____cpython:
-        CONFIG: osx_arm64_libarrow12numpy1.22python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow12numpy1.23python3.11.____cpython:
-        CONFIG: osx_arm64_libarrow12numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow13numpy1.22python3.10.____cpython:
-        CONFIG: osx_arm64_libarrow13numpy1.22python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow13numpy1.22python3.9.____cpython:
-        CONFIG: osx_arm64_libarrow13numpy1.22python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow13numpy1.23python3.11.____cpython:
-        CONFIG: osx_arm64_libarrow13numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow14numpy1.22python3.10.____cpython:
-        CONFIG: osx_arm64_libarrow14numpy1.22python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow14numpy1.22python3.9.____cpython:
-        CONFIG: osx_arm64_libarrow14numpy1.22python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow14numpy1.23python3.11.____cpython:
-        CONFIG: osx_arm64_libarrow14numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow15numpy1.22python3.10.____cpython:
-        CONFIG: osx_arm64_libarrow15numpy1.22python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow15numpy1.22python3.9.____cpython:
-        CONFIG: osx_arm64_libarrow15numpy1.22python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libarrow15numpy1.23python3.11.____cpython:
-        CONFIG: osx_arm64_libarrow15numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-    maxParallel: 17
   timeoutInMinutes: 360
   variables: {}
 
