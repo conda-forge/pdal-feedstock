@@ -34,8 +34,6 @@ requirements:
     - zlib
     - libxml2
     - proj
-    # for e57
-    - xerces-c
 
 test:
   commands:
@@ -69,6 +67,8 @@ outputs:
         - {{ pin_subpackage("libpdal-draco", max_pin="x") }}
         - {{ pin_subpackage("libpdal-arrow", max_pin="x") }}
         - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-e57", max_pin="x") }}
+        - {{ pin_subpackage("libpdal-icebridge", max_pin="x") }}
         - {{ pin_subpackage("libpdal-cpd", max_pin="x") }}  # [not win]
     requirements:
       run:
@@ -80,6 +80,8 @@ outputs:
         - {{ pin_subpackage("libpdal-draco", exact=True ) }}
         - {{ pin_subpackage("libpdal-arrow", exact=True ) }}
         - {{ pin_subpackage("libpdal-nitf", exact=True ) }}
+        - {{ pin_subpackage("libpdal-e57", exact=True ) }}
+        - {{ pin_subpackage("libpdal-icebridge", exact=True ) }}
         - {{ pin_subpackage("libpdal-cpd", exact=True ) }}  # [not win]
     test:
       commands:
@@ -126,8 +128,6 @@ outputs:
         - PDAL_PLUGIN_NAME=hdf
       run_exports:
         - {{ pin_subpackage("libpdal-hdf", max_pin="x") }}
-      ignore_run_exports:
-        - libgdal
     requirements:
       build:
         - {{ compiler('cxx') }}
@@ -145,10 +145,6 @@ outputs:
         - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.dylib  # [osx]
         - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.so  # [linux]
         - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_hdf.dll exit 1  # [win]
-
-        - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.dylib  # [osx]
-        - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.so  # [linux]
-        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_icebridge.dll exit 1  # [win]
     about:
       summary: Point Data Abstraction Library (PDAL)
       license: BSD-3-Clause
@@ -191,6 +187,62 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE.txt
 
+  - name: libpdal-e57
+    script: install_pdal_plugin.sh  # [unix]
+    script: install_pdal_plugin.bat  # [win]
+    build:
+      script_env:
+        - PDAL_PLUGIN_NAME=e57
+      run_exports:
+        - {{ pin_subpackage("libpdal-e57", max_pin="x") }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - {{ stdlib('c') }}
+        - cmake
+        - ninja
+      host:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - xerces_c
+      run:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_writer_e57.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_writer_e57.so  # [linux]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_writer_e57.dll exit 1  # [win]
+
+        - test -f $PREFIX/lib/libpdal_plugin_reader_e57.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_e57.so  # [linux]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_e57.dll exit 1  # [win]
+
+  - name: libpdal-icebridge
+    script: install_pdal_plugin.sh  # [unix]
+    script: install_pdal_plugin.bat  # [win]
+    build:
+      script_env:
+        - PDAL_PLUGIN_NAME=icebridge
+      run_exports:
+        - {{ pin_subpackage("libpdal-icebridge", max_pin="x") }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - {{ stdlib('c') }}
+        - cmake
+        - ninja
+      host:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+        - hdf5
+      run:
+        - {{ pin_subpackage('libpdal', exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.dylib  # [osx]
+        - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.so  # [linux]
+        - if not exist %LIBRARY_BIN%\libpdal_plugin_reader_icebridge.dll exit 1  # [win]
+
   - name: libpdal-tiledb
     script: install_pdal_plugin.sh  # [unix]
     script: install_pdal_plugin.bat  # [win]
@@ -199,8 +251,6 @@ outputs:
         - PDAL_PLUGIN_NAME=tiledb
       run_exports:
         - {{ pin_subpackage("libpdal-tiledb", max_pin="x") }}
-      ignore_run_exports:
-        - libgdal
     requirements:
       build:
         - {{ compiler('cxx') }}
@@ -210,10 +260,8 @@ outputs:
         - ninja
       host:
         - tiledb
-        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
-        # - {{ pin_compatible('libgdal', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
     test:
       commands:
@@ -306,8 +354,7 @@ outputs:
         - PDAL_PLUGIN_NAME=nitf
       run_exports:
         - {{ pin_subpackage("libpdal-nitf", max_pin="x") }}
-      ignore_run_exports:
-        - libgdal
+      ignore_run_exports_from:
         - libcurl
     requirements:
       build:
