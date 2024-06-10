@@ -30,7 +30,7 @@ libarrow:
 libcurl:
 - '8'
 libgdal:
-- '3.8'
+- '3.9'
 libpq:
 - '16'
 libxml2:
@@ -38,7 +38,7 @@ libxml2:
 openssl:
 - '3'
 proj:
-- 9.4.0
+- '9.4'
 target_platform:
 - linux-aarch64
 tiledb:
