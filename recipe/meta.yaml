@@ -10,6 +10,7 @@ source:
   patches:
     - no-arrow-gdal-link.patch
     - cpd-find.patch
+    - pdal-e57-link.diff
 
 build:
   number: 12
