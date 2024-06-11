@@ -35,6 +35,8 @@ requirements:
     - zlib
     - libxml2
     - proj
+  run_constrained:
+    - pdal {{ version }}.*
 
 test:
   commands:
@@ -84,6 +86,8 @@ outputs:
         - {{ pin_subpackage("libpdal-e57", exact=True ) }}
         - {{ pin_subpackage("libpdal-icebridge", exact=True ) }}
         - {{ pin_subpackage("libpdal-cpd", exact=True ) }}  # [not win]
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - echo "tested in other outputs"
@@ -111,6 +115,8 @@ outputs:
         - gflags
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_filter_trajectory.dylib  # [osx]
@@ -143,6 +149,8 @@ outputs:
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
         - {{ pin_subpackage('libpdal-icebridge', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_hdf.dylib  # [osx]
@@ -176,6 +184,8 @@ outputs:
         # TODO: add run_exports to draco
         - {{ pin_compatible('draco', exact=True) }}
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_writer_draco.dylib  # [osx]
@@ -210,6 +220,8 @@ outputs:
         - xerces-c
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_writer_e57.dylib  # [osx]
@@ -240,6 +252,8 @@ outputs:
         - hdf5
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_icebridge.dylib  # [osx]
@@ -266,6 +280,8 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_writer_tiledb.dylib  # [osx]
@@ -302,6 +318,8 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_pgpointcloud.dylib  # [osx]
@@ -334,6 +352,8 @@ outputs:
         - {{ pin_subpackage('libpdal', exact=True) }}
       run:
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_writer_arrow.dylib  # [osx]
@@ -374,6 +394,8 @@ outputs:
         # TODO: add run_exports to nitro
         - {{ pin_compatible('nitro', exact=True) }}
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_reader_nitf.dylib  # [osx]
@@ -412,6 +434,8 @@ outputs:
         # TODO: add run_exports to fgt
         - {{ pin_compatible('fgt', max_pin='x.x') }}
         - {{ pin_subpackage('libpdal', exact=True) }}
+      run_constrained:
+        - pdal {{ version }}.*
     test:
       commands:
         - test -f $PREFIX/lib/libpdal_plugin_filter_cpd.dylib  # [osx]
