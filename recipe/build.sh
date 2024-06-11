@@ -8,69 +8,65 @@ CXXFLAGS="${CXXFLAGS/-std=c++11/}"
 CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 export CXXFLAGS
 
-if [ "$(uname)" == "Linux" ]; then
-   export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,${PREFIX}/lib"
-
-   # need this for draco finding
-   export PKG_CONFIG_PATH="$PKG_CONFIG_PATH;${PREFIX}/lib64/pkgconfig"
-fi
-
-
 if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
-  mkdir native; cd native;
+  mkdir native; pushd native;
 
-  # Unset them as we're ok with builds that are either slow or non-portable
-  unset CFLAGS
-  unset CXXFLAGS
+  CXXFLAGS_NATIVE=${CXXFLAGS//$PREFIX/$BUILD_PREFIX}
+  LDFLAGS_NATIVE=${LDFLAGS//$PREFIX/$BUILD_PREFIX}
+  CFLAGS_NATIVE=${CFLAGS//$PREFIX/$BUILD_PREFIX}
 
-  CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD LDFLAGS=${LDFLAGS//$PREFIX/$BUILD_PREFIX} cmake -G "Unix Makefiles" \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_OSX_ARCHITECTURES="x86_64" \
-    ..
+  CC=$CC_FOR_BUILD CXX=$CXX_FOR_BUILD \
+    LDFLAGS=${LDFLAGS_NATIVE} \
+    CFLAGS=${CFLAGS_NATIVE} \
+    CXXFLAGS=${CXXFLAGS_NATIVE} \
+    cmake -G Ninja \
+        -DCMAKE_BUILD_TYPE=Release \
+        ${EXTRA_CMAKE_ARGS} \
+        ..
 
   export DIMBUILDER=`pwd`/bin/dimbuilder
-  make dimbuilder
-  cd ..
+  ninja dimbuilder
+  popd
 else
   export DIMBUILDER=dimbuilder
 
 fi
 
+rm -rf build
+mkdir -p build
+cd build
 
-rm -rf build && mkdir build &&  cd build
-cmake ${CMAKE_ARGS} \
+export PDAL_BUILD_DIR=`pwd`/install
+mkdir $PDAL_BUILD_DIR
+
+if [[ "${target_platform}" == osx-* ]]; then
+    # See https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
+    CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+fi
+
+cmake -G Ninja \
+  ${CMAKE_ARGS} \
   -DBUILD_SHARED_LIBS=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DDIMBUILDER_EXECUTABLE=$DIMBUILDER \
-  -DBUILD_PLUGIN_I3S=ON \
-  -DBUILD_PLUGIN_TRAJECTORY=ON \
-  -DBUILD_PLUGIN_E57=ON \
-  -DBUILD_PLUGIN_PGPOINTCLOUD=ON \
-  -DBUILD_PLUGIN_ICEBRIDGE=ON \
-  -DBUILD_PLUGIN_NITF=ON \
-  -DBUILD_PLUGIN_TILEDB=ON \
-  -DBUILD_PLUGIN_HDF=ON \
-  -DBUILD_PLUGIN_DRACO=ON \
+  -DBUILD_PLUGIN_E57=OFF \
+  -DBUILD_PLUGIN_PGPOINTCLOUD=OFF \
+  -DBUILD_PLUGIN_ARROW=OFF \
   -DENABLE_CTEST=OFF \
   -DWITH_TESTS=OFF \
   -DWITH_ZLIB=ON \
   -DWITH_ZSTD=ON \
-  -DWITH_LASZIP=ON \
-  -DWITH_LAZPERF=ON \
   ..
 
-make -j $CPU_COUNT ${VERBOSE_CM}
-make install
+ninja -j${CPU_COUNT}
+ninja install
 
-# This will not be needed once we fix upstream.
-chmod 755 $PREFIX/bin/pdal-config
-
-ACTIVATE_DIR=$PREFIX/etc/conda/activate.d
-DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d
-mkdir -p $ACTIVATE_DIR
-mkdir -p $DEACTIVATE_DIR
-
-cp $RECIPE_DIR/scripts/activate.sh $ACTIVATE_DIR/pdal-activate.sh
-cp $RECIPE_DIR/scripts/deactivate.sh $DEACTIVATE_DIR/pdal-deactivate.sh
+## Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d, see
+## https://conda-forge.org/docs/maintainer/adding_pkgs.html#activate-scripts
+for CHANGE in "activate" "deactivate"
+do
+    mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
+    cp "${RECIPE_DIR}/scripts/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+done
