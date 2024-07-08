@@ -19,7 +19,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '16'
 geotiff:
-- 1.7.1
+- 1.7.3
 hdf5:
 - 1.14.3
 libcurl:
