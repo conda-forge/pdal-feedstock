@@ -9,8 +9,11 @@ source:
   sha256: f6ae0f3dc012b19c70dde2361799ecac0cdcbeb9cad5cfd96313c9fdc8608f32
 
 build:
-  number: 2
+  number: 3
   skip: true  # [ppc64le]
+
+  run_exports:
+    - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
 requirements:
   build:
