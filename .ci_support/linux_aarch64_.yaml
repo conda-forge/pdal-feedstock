@@ -37,7 +37,7 @@ libpq:
 libxml2:
 - '2'
 proj:
-- '9.4'
+- 9.4.0
 target_platform:
 - linux-aarch64
 tiledb:
