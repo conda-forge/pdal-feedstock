@@ -9,59 +9,17 @@ source:
   sha256: f6ae0f3dc012b19c70dde2361799ecac0cdcbeb9cad5cfd96313c9fdc8608f32
 
 build:
-  number: 3
-  skip: true  # [ppc64le]
-
+  number: 4
+  noarch: generic
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
-    - cmake
-    - make
-    - pkg-config
-
   host:
-    - libgdal
-    - proj
-    - geotiff
-    - libpq
-    - libkml
-    - eigen
-    - nitro
-    - libcurl
-    - zlib
-    - hdf5
-    - tiledb
-    - zstd
-    - libxml2
-    - draco
-    - ceres-solver
-    - mkl  # [win]
-    - blas  # [win]
-
   run:
-    - libgdal
-    - proj
-    - geotiff
-    - libpq
-    - libkml
-    - eigen
-    - nitro
-    - libcurl
-    - zlib
-    - hdf5
-    - tiledb
-    - zstd
-    - libxml2
-    - draco
-    - ceres-solver
-    - mkl  # [win]
-    - blas  # [win]
-
+    - libpdal {{ version }}
+    - python-pdal
 
 test:
   commands:
@@ -72,8 +30,8 @@ about:
   home: https://www.pdal.io
   license: BSD-3-Clause
   license_file: LICENSE.txt
-  summary: Point Data Abstraction Library (PDAL)
-  description: Point cloud data processing.
+  summary: Point Data Abstraction Library (PDAL) meta package
+  description: Point cloud data processing library meta package
   doc_url: https://pdal.io
   dev_url: https://github.com/pdal/pdal
 
