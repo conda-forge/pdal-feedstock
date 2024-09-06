@@ -1,4 +1,4 @@
-{% set version = "2.7.2" %}
+{% set version = "2.8.0" %}
 
 package:
   name: pdal
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: f6ae0f3dc012b19c70dde2361799ecac0cdcbeb9cad5cfd96313c9fdc8608f32
+  sha256: 8a6d7646912a4e7a382f06451b14a1f5f2e8aa4e0b391dc91c30701222198b77
 
 build:
-  number: 4
+  number: 0
   noarch: generic
   run_exports:
     - {{ pin_subpackage('pdal', max_pin='x.x') }}
