@@ -1,4 +1,4 @@
-{% set version = "2.8.2" %}
+{% set version = "2.8.3" %}
 
 package:
   name: pdal
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/{{ version }}/PDAL-{{ version }}-src.tar.bz2
-  sha256: da431616d8a3178fbc8b8e5c57e646a696f22e08cbae30d9ce96a349d8ad3bd9
+  sha256: 13dfdb0d634bdd568b351fd535aaa03f7611df4c2cdb8be938117751355ad09b
 
 build:
   number: 0
