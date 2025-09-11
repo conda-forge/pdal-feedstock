@@ -3,7 +3,7 @@ About pdal-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pdal-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.pdal.io
+Home: https://www.pdal.io/
 
 Package license: BSD-3-Clause
 
@@ -11,7 +11,7 @@ Summary: Point Data Abstraction Library (PDAL) meta package
 
 Development: https://github.com/pdal/pdal
 
-Documentation: https://pdal.io
+Documentation: https://pdal.io/
 
 Point cloud data processing library meta package
 
