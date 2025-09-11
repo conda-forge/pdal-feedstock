@@ -1,0 +1,44 @@
+schema_version: 1
+
+context:
+  version: 2.8.4
+
+package:
+  name: pdal
+  version: ${{ version }}
+
+source:
+  url: https://github.com/PDAL/PDAL/releases/download/${{ version }}/PDAL-${{ version }}-src.tar.bz2
+  sha256: c27dc79af0b26f9cb3209b694703e9d576f1b0c8c05b36206fd5e310494e75b5
+
+build:
+  number: 1
+  noarch: generic
+
+requirements:
+  build:
+  host:
+  run:
+    - libpdal 2.8.4.*
+    - python-pdal
+  run_exports:
+    - ${{ pin_subpackage('pdal', upper_bound='x.x') }}
+
+tests:
+  - script:
+      - pdal --version
+      - pdal --drivers --debug
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  summary: Point Data Abstraction Library (PDAL) meta package
+  description: Point cloud data processing library meta package
+  homepage: https://www.pdal.io
+  repository: https://github.com/pdal/pdal
+  documentation: https://pdal.io
+
+extra:
+  recipe-maintainers:
+    - chambbj
+    - hobu
