@@ -16,9 +16,7 @@ build:
   noarch: generic
 
 requirements:
-  build:
   host:
-  run:
     - libpdal 2.8.4.*
     - python-pdal
   run_exports:
