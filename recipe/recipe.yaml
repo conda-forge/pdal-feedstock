@@ -19,7 +19,7 @@ requirements:
   build:
   host:
   run:
-    - libpdal 2.10.0.*
+    - libpdal ${{ version }}.*
     - python-pdal
   run_exports:
     - ${{ pin_subpackage('pdal', upper_bound='x.x') }}
