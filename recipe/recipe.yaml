@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 2.10.0
+  version: "2.10.1"
 
 package:
   name: pdal
@@ -9,17 +9,17 @@ package:
 
 source:
   url: https://github.com/PDAL/PDAL/releases/download/${{ version }}/PDAL-${{ version }}-src.tar.bz2
-  sha256: 65eba26e24a2cb1752d3542cc84e8035ecb8dc890b72145128f9b33bd184f2f5
+  sha256: 78765f1d06584c8e9b3b4a5b58c0ebea478d42ad21f1432717b31c20def05522
 
 build:
-  number: 1
+  number: 0
   noarch: generic
 
 requirements:
   build:
   host:
   run:
-    - libpdal 2.10.0.*
+    - libpdal ${{ version }}.*
     - python-pdal
   run_exports:
     - ${{ pin_subpackage('pdal', upper_bound='x.x') }}
